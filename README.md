@@ -30,7 +30,7 @@
 
   效率，一切都是为了效率。
 
-有些标题有[OCD]字样的章节，是我个人色彩比较强的做法，如果你跟我臭味相投，欢迎借鉴，如果你并不认同，请忽略掉好了。
+有些章节标题标注了[OCD]，意思是这些章节带有我强烈的个人色彩，如果你跟我臭味相投，欢迎借鉴，如果你并不认同，请忽略掉好了。
 
 PS：虽然本文名为“强迫症”，但其实并不是[真正意义上的强迫症](https://zh.wikipedia.org/wiki/强迫症)，真正意义上的强迫症是一种会对患者的日常生活产生负面影响的疾病。
 
@@ -339,11 +339,27 @@ $ java -version
 java version "1.8.0_60"
 Java(TM) SE Runtime Environment (build 1.8.0_60-b27)
 Java HotSpot(TM) 64-Bit Server VM (build 25.60-b23, mixed mode)
-$ JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home java -version
+$ JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home java -version
 java version "1.6.0_65"
 Java(TM) SE Runtime Environment (build 1.6.0_65-b14-466.1-11M4716)
 Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-466.1, mixed mode)
 ```
+
+其中`JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home`可以用`` JAVA_HOME=`/usr/libexec/java_home -v 1.6` ``这种更加通用的方式代替。
+
+### Java[OCD]
+
+作为一个强迫症患者，每当我看到 Java 的错误写法就想纠正过来。
+
+当指编程语言时，Java 的正确写法是首字母大写，其余小写。其他写法比如`JAVA`、`java`都是不对的。
+
+在其他一些地方会使用小写的`java`：
+
+- `java`命令
+- 原文件`Main.java`
+- 包名`java.lang`
+
+只有在全大写的标题里使用`JAVA`或者环境变量`JAVA_HOME`。
 
 ### IntelliJ IDEA
 
