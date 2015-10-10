@@ -2,26 +2,41 @@
 
 ## 如何配置一个高效的 Mac 工作环境
 
-使用合适的工具，可以大大提高效率。总结了一些工具和方法，可以提高效率。
+一直想写这么一篇文章，把和我一起工作的人的经验分享出来。市面上有很多类似的文章，写得都非常好，让我受益匪浅。不过我还是有一些没人写过的经验想要分享。另外本文也更加适合我周围的环境。
+
+我深知自己的知识有限，更有效率的方法和更好的工具也在不断涌现。所以本文的另外一个目的是为了和大家交流。同时我还贪心的希望把更好的方法和工具都收集更到到这里。我把本文放到GitHub上，地址是：<https://github.com/macdao/ocds-guide-to-setting-up-mac>。
+
+我认为“一个高效的 Mac 工作环境”有以下几个特点：
 
 - 自动化
 
+  举个例子。手动安装一个应用，需要1)打开浏览器，2)搜索应用的名字，3)打开应用网站，4)寻找下载链接和安装方法，5)下载并等待下载完成，6)安装下载文件，7)可能还有后续的安装步骤。而自动化安装一个应用，只需要1)打开终端工具，2)敲入安装命令，3)等待完成这几个步骤。
+
+  自动化可以大大简化操作，提高效率。
+
 - 统一
 
-现在有了很多虚拟化工具可以方便的让软件运行环境相同，不过对于IDE等一些工具还是无法被虚拟化。
-我和很多人结对编程过，经常会遇到问题，比如快捷键不一样，命令不同等
+  我经常结对编程，偶尔会遇到快捷键不一样，命令不同等问题。我强烈建议，至少在一个团队中，大家尽量使用相同的快捷键、命令等环境。（我记得有个实践就是这个，可是我一直没找到该实践的名字和出处，求告诉）
+
+  尽管现在有了很多虚拟化工具（比如 Docker）可以方便的让软件运行在相同的环境下，不过对于IDE等一些工具还是无法被虚拟化，所以我们还是需要配置 Mac。
+
+  虽说统一是一件能提高效率的事情，为了统一而提供一个“超级脚本”自动把一切都设置好或许是一个更好的想法。不过我对于这个“超级脚本”的想法还是有一些怀疑，完全的统一也许并不是一件好事。所以本文只是一个指南，并不是一个强制的规范。
+
+- 够用
+
+  够用就好，如果系统本身已经满足了我的需求，我不会再使用第三方工具。
 
 - 效率
 
-够用，如果系统本身已经满足了我的需求，我不会再使用第三方工具。
+  效率，一切都是为了效率。
 
-一般的章节，有些章节有[OCD]字样，如果不能被稳定重现，我就认为是不安全的。
+有些标题有[OCD]字样的章节，是我个人色彩比较强的做法，如果你跟我臭味相投，欢迎借鉴，如果你并不认同，请忽略掉好了。
 
-我把这篇文章放到GitHub上，
-
-虽然本文名为“强迫症”，但其实并不是[真正意义上的强迫症](https://zh.wikipedia.org/wiki/强迫症)，真正意义上的强迫症是一种会对患者的日常生活产生负面影响的疾病。
+PS：虽然本文名为“强迫症”，但其实并不是[真正意义上的强迫症](https://zh.wikipedia.org/wiki/强迫症)，真正意义上的强迫症是一种会对患者的日常生活产生负面影响的疾病。
 
 ## 1. OS X
+
+本节介绍操作系统本身的一些设置。
 
 ### 功能键
 
@@ -49,10 +64,8 @@
 
 一般来说 Spotlight 的快捷键是`⌃Space`。这个快捷键有一些问题：
 
-- 对于没有添加中文输入法的 Mac 来说，Spotlight 的快捷键是`⌘Space`。英语国家的人都是这样的，所以如果你跟老外结对可能会遇到问题。
-- JetBrains 的 IDE，比如 IntelliJ IDEA、WebStorm 等都使用`⌃Space`作为自动完成这个最常用功能的快捷键。
-
-所以建议把 Spotlight 的快捷键设置为`⌘Space`，可以避免上述两个问题。
+- JetBrains 的 IDE，比如 IntelliJ IDEA、WebStorm 等都使用`⌃Space`作为自动完成这个最常用功能的快捷键。我不建议更改 IDE 的快捷键，而建议更改 Spotlight 的快捷键。
+- 对于没有添加中文输入法的 Mac 来说，Spotlight 的快捷键是`⌘Space`。英语国家的人都是这样的。所以我建议把 Spotlight 的快捷键设置为`⌘Space`，跟他们一致。
 
 ### 输入法快捷键
 
@@ -85,14 +98,14 @@ say hello
 可以和`&&`或者`;`配合使用来提示你某任务已经完成：
 
 ```sh
-brew update && brew upgrade && brew cleanup ; say done
+brew update && brew upgrade && brew cleanup ; say mission complete
 ```
 
 通过命令行来听取发音还是有点麻烦。其实我们几乎可以在任何地方选中单词，然后使用快捷键`⌥+ESC`发音。仅仅需要这样设置一下：选择`System Preferences` > `Dictation & Speech`，在`Text to Speech`标签页中选中`Speak selected text when the key is pressed`。
 
 ### 词典
 
-OS X 自带了词典。你几乎可以在任何应用中通过三指轻拍触摸板来现实对应单词的释义。
+OS X 自带了词典（Dictionary）。你几乎可以在任何应用中通过三指轻拍触摸板来现实对应单词的释义。
 
 也可以打开 Dictionary 应用来查找单词。
 
@@ -106,7 +119,7 @@ OS X 自带了词典。你几乎可以在任何应用中通过三指轻拍触摸
 
 本条目对于强迫症适用。
 
-默认情况下 Dock 被一堆系统自带的 App 占据着，而其中大部分我都很少使用，当我打开几个常用 App 后，Dock 上会有很多图标，每个图标都会被挤得很小。所以我会把所有 Dock 上固定的图标都删掉，这样一来 Dock 上只有我打开的应用。
+默认情况下 Dock 被一堆系统自带的应用占据着，而其中大部分我都很少使用，当我打开几个常用应用后，Dock 上会有很多图标，每个图标都会被挤得很小。所以我会把所有 Dock 上固定的图标都删掉，这样一来 Dock 上只有我打开的应用。
 
 PS：Finder 图标是删不掉的。
 
@@ -114,23 +127,23 @@ PS：Finder 图标是删不掉的。
 
 本条目对于强迫症适用。
 
-新的 App 被安装后，经常会跑到 Launchpad 的第一屏，所以它们的位置跟安装的顺序有关系，而我更希望它们可以按照某种更加稳定的顺序排列，比如按照系统默认的顺序：
+新的应用被安装后，经常会跑到 Launchpad 的第一屏，所以它们的位置跟安装的顺序有关系，而我更希望它们可以按照某种更加稳定的顺序排列，比如按照系统默认的顺序：
 
 ```sh
 defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
 ```
 
-在默认顺序中，Launchpad 第一屏只有 Apple 自家 App。
+在默认顺序中，Launchpad 第一屏只有 Apple 自家应用。
 
 ## 2. 常用工具
 
-常用的，跟开发没有直接关系的第三方应用。
+本节介绍一些常用的，跟开发没有直接关系的第三方应用及其设置。
 
 ### [Homebrew](http://brew.sh)
 
 包管理工具，官方称之为`The missing package manager for OS X`。
 
-安装：
+安装步骤：先打开 Terminal 应用，输入：
 
 ```sh
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -158,13 +171,13 @@ brew-cask 是社区驱动的，如果你发现 brew-cask 上的应用不是最�
 brew install caskroom/cask/brew-cask
 ```
 
-应用也可以通过 App Store 安装，而且有些应用只能通过 App Store 安装，比如 Xcode 等一些 Apple 的应用。但是不能通过命令行安装，还需要 Apple ID，倒是更新起来很方便。
+应用也可以通过 App Store 安装，而且有些应用只能通过 App Store 安装，比如 Xcode 等一些 Apple 的应用。App Store 没有对应的命令行工具，还需要 Apple ID。倒是更新起来很方便。
 
 几乎所有常用的应用都可以通过 brew-cask 安装，所以你要安装新的应用时，建议用 brew-cask 安装。如果你不知道应用在 brew-cask 中的 ID，可以先用`brew cask search`命令搜索。
 
 ### [iTerm2](https://www.iterm2.com/)
 
-iTerm2 是最常用的终端应用。
+iTerm2 是最常用的终端应用，是 Terminal 应用的替代品。提供了诸如`Split Panes`等[一群实用特性](https://www.iterm2.com/features.html)。它默认的黑色背景让我毫不犹豫的抛弃了 Terminal。
 
 安装：
 
@@ -182,9 +195,11 @@ brew cask install iterm2
 
 选择`Iterm`菜单 > `Preferences` > `Profiles`，选择你在使用的 Profile（默认是Default），在`General`标签页中的`Working Directory`部分中选择`Reuse previous seesion's directory`。
 
-### [Oh My ZSH](http://ohmyz.sh)
+至此，Terminal 应用已经出色的完成了其历史使命。后面就交给 iTerm2 啦。
 
-默认的 bash 是黑白的，没有色彩。而 Oh My Zsh 可以让你的 Shell 变得漂亮。Oh My Zsh 同时提供一套插件和工具，可以简化命令行操作。后面我们会看到很多，你会看到我爱死这家伙了。
+### [Oh My Zsh](http://ohmyz.sh)
+
+默认的 Bash 是黑白的，没有色彩。而 Oh My Zsh 可以带你进入彩色时代。Oh My Zsh 同时提供一套插件和工具，可以简化命令行操作。后面我们会看到很多介绍，你会看到我爱死这家伙了。
 
 安装：
 
@@ -192,11 +207,11 @@ brew cask install iterm2
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-目前我使用的插件有：git z sublime history rbenv bundler rake
+目前我使用的插件有：`git z sublime history rbenv bundler rake`
 
-Oh My Zsh 使用了 Z shell（zsh），一个和 bash 相似的shell，而非 bash。
+Oh My Zsh 使用了 Z shell（zsh），一个和 Bash 相似的 Shell，而非 Bash。
 
-在 Z shell 中，`~/.zshrc`是最重要的配置文件。Oh My Zsh 在安装的时候会把当前环境的`$PATH`写入`~/.zshrc`中。这并不是我期望的行为，因为使用了 brew，我们不再需要去定制`$PATH`。而文件`~/.oh-my-zsh/templates/zshrc.zsh-template`，也就是`~/.zshrc`的模版，其默认的`$PATH`值是`$HOME/bin:/usr/local/bin:$PATH`，它把`$HOME/bin`加入了`$PATH`，可以让我们把自己用的脚本放到`$HOME/bin`下。
+在 Z shell 中，`~/.zshrc`是最重要的配置文件。Oh My Zsh 在安装的时候会把当前环境的`$PATH`写入`~/.zshrc`中。这并不是我期望的行为，因为使用了 brew，我们基本不再需要去定制`$PATH`，而 Oh My Zsh 提供的默认`$PATH`值`$HOME/bin:/usr/local/bin:$PATH`是非常合适的一个值，它把`$HOME/bin`加入了`$PATH`，可以让我们把自己用的脚本放到`$HOME/bin`下。
 
 所以建议把`~/.zshrc`重置：
 
@@ -204,13 +219,15 @@ Oh My Zsh 使用了 Z shell（zsh），一个和 bash 相似的shell，而非 ba
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 ```
 
+Oh My Zsh 还有很多[有价值的插件](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview)。
+
 替代品有 [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)，使用了 [Fishshell](http://fishshell.com/) 作为基础。
 
 ### Git
 
-几乎每个人都会使用一些方法比如 alias 来提高效率，几乎所有人都会把使用`git st`来代替`git status`。然而这需要手动设置，每个人也都不完全一样。
+几乎每个人都会使用一些方法比如 Git 别名来提高效率，几乎所有人都会把使用`git st`来代替`git status`。然而这需要手动设置，每个人也都不完全一样。
 
-Oh My Zsh 提供了一套 alias，来达到相同的功能。比如`gst`作为`git status`的别名。而且 Git 插件是 Oh My Zsh 默认启用的，相当于你使用了 Oh My Zsh，你就拥有了一套高效率的别名，而且还是全球通用的。是不是很棒啊？下面是一些 Oh My Zsh 提供的别名：
+Oh My Zsh 提供了一套别名（alias），来达到相同的功能。比如`gst`作为`git status`的别名。而且 Git 插件是 Oh My Zsh 默认启用的，相当于你使用了 Oh My Zsh，你就拥有了一套高效率的别名，而且还是全球通用的。是不是很棒啊？下面是一些 Oh My Zsh 提供的别名：
 
 Alias | Command
 ----- | -------
@@ -236,7 +253,7 @@ gwip  | `git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -
 
 ### Scroll Reverser
 
-默认情况下，在 Trackpad 上双指下滑，以及鼠标滚轮向下滚动，都会让网页向下滚动。这是被称作“自然”的滚动方向。我习惯于这样的 Trackpad，但是不习惯这样的鼠标，这和 Windows 下相反。而 OS X 下鼠标和 Trackpad 的滚动方向是同一个设置，要改变鼠标的滚动方向必须同时改变 Trackpad 的。为了让鼠标滚轮和 Windows 下表现一致，我们需要 Scroll Reverser：
+默认情况下，在 Trackpad 上双指下滑，以及鼠标滚轮向下滚动，都会让网页向下滚动。这是被称作“自然”的滚动方向。我习惯于这样的 Trackpad，但是不习惯这样的鼠标，因为这和 Windows 下相反。而 OS X 下鼠标和 Trackpad 的滚动方向是同一个设置，要改变鼠标的滚动方向必须同时改变 Trackpad 的。为了让鼠标滚轮和 Windows 下表现一致，我们需要 Scroll Reverser：
 
 ```sh
 brew cask install scroll-reverser
@@ -246,13 +263,13 @@ PS：这货会让三指点击失效
 
 ### ShiftIt
 
-原生 OS X 下只能手动调整窗口大小，所以我们需要窗口管理工具。我用过很多窗口管理工具，可惜大部分工具都存在快捷键冲突的问题（貌似主要是 IntelliJ IDEA）。ShiftIt 是少见的没有冲突的应用：
+原生 OS X 下只能手动调整窗口大小，所以我们需要窗口管理工具。我用过很多窗口管理工具，可惜大部分工具都存在快捷键冲突的问题（对我来说主要是 IntelliJ IDEA）。ShiftIt 是少见的没有冲突的窗口管理工具：
 
 ```sh
 brew cask install shiftit
 ```
 
-PS：之前的版本需要安装 X11，最新版本已经修正了这个问题。
+PS：ShiftIt的旧版本需要安装 X11，最新版本已经修正了这个问题。
 
 替代者有 SizeUp，主要快捷键和 ShiftIt 相同。
 
@@ -264,7 +281,7 @@ PS：之前的版本需要安装 X11，最新版本已经修正了这个问题�
 brew cask install sublime-text
 ```
 
-在命令后中指定使用 Sublime Text 打开某文件，是一个非常常用的功能，一般我们会按照 [OS X Command Line](https://www.sublimetext.com/docs/2/osx_command_line.html) 中所说执行 `ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl` 来增加`subl`命令。但是如果你用 brew-cask 安装的话，恭喜你，你不需要运行这个命令，因为 brew-cask 自动帮你做了这件事情。而且你卸载 Sublime Text 的时候 brew-cask 会自动删掉这个链接。
+在命令行中指定使用 Sublime Text 打开某文件，是一个非常常用的功能，一般我们会按照 [OS X Command Line](https://www.sublimetext.com/docs/2/osx_command_line.html) 中所说执行 `ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl` 来增加`subl`链接。但是如果你用 brew-cask 安装的话，恭喜你，你不需要运行这个命令，因为 brew-cask 自动帮你做了这件事情。而且你卸载 Sublime Text 的时候 brew-cask 会自动删掉这个链接。
 
 同时 Oh My Zsh 也提供了 Sublime Text 插件，叫做`sublime`。参考：<https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/sublime>，这个插件和通过 brew-cask 安装的 Sublime Text 完美兼容。
 
@@ -274,7 +291,7 @@ brew cask install sublime-text
 
 MacDown 是 Markdown 编辑器。自从 Mou 不再开发后，我就转向了 MacDown。完美支持 [GFM](https://help.github.com/articles/github-flavored-markdown/)。
 
-我特别喜欢 [Markdown](https://daringfireball.net/projects/markdown/)，我用 Makdown 来写文章（包括这篇文章），写幻灯片（[reveal.js](https://github.com/hakimel/reveal.js/)）。
+我特别喜欢 [Markdown](https://daringfireball.net/projects/markdown/)，我用 Makdown 来写文章（包括本文），写幻灯片（[reveal.js](https://github.com/hakimel/reveal.js/)）。Markdown 可以让我专注于内容本身，而无需花精力在排版、样式上。
 
 安装：
 
@@ -284,13 +301,13 @@ brew cask install macdown
 
 ### z
 
-在打开终端后，你是怎么进入项目的工作目录？是`cd`，`⌃R`还是用别名？
+在打开终端后，你是怎么进入项目的工作目录？是`cd xxx`，`⌃R`还是用别名？
 
 [z](https://github.com/rupa/z) 工具可以帮你快速进入目录。比如在我的 Mac 上运行`z cask`就会进入`/usr/local/Library/Taps/caskroom/homebrew-cask/Casks`目录。
 
-这货的安装非常方便，甚至都不需要下载任何东西，因为它已经整合在了 Oh My Zsh 中。编辑`~/.zshrc`文件，在`plugins=(git)`这行中加上`z`变成`plugins=(git z)`，然后运行`source ~/.zshrc`就可以使用 z 了。
+这货的安装非常方便，甚至都不需要下载任何东西，因为它已经整合在了 Oh My Zsh 中。编辑`~/.zshrc`文件，在`plugins=(git)`这行中加上`z`变成`plugins=(git z)`，然后运行`source ~/.zshrc`重新加载配置文件，就可以使用 z 了。
 
-替代品有 autojump，autojump 需要使用 brew 安装。
+替代品有 autojump。autojump 需要使用 brew 安装。
 
 ## 3. 开发工具
 
@@ -298,7 +315,7 @@ brew cask install macdown
 
 现在 OS X 都不会自带 JDK 了，所以进行 Java 开发的话，需要下载 JDK。在 brew-cask 之前，我们需要从 <https://developer.apple.com/downloads/> 或者 Oracle 网站上下载。还有更麻烦的－－卸载 JDK 和升级 JDK。
 
-JDK 安装文件是 pkg 格式，卸载和 .app 不一样，且没有自动卸载方式。
+JDK 安装文件是 pkg 格式，卸载和`.app`不一样，且没有自动卸载方式。
 
 而 brew-cask 提供了自动安装和卸载功能，能够自动从官网上下载并安装 JDK 8。
 
@@ -344,12 +361,12 @@ brew cask install intellij-idea-ce
 
 IntelliJ IDEA 有几套内建的快捷键方案（Keymap）。其中适用于 OS X 的有`Mac OS X`和`Mac OS X 10.5+`两种。区别是:
 
-- `Mac OS X`方案和其他OS上的快捷键类似，
+- `Mac OS X`方案和其他平台上的快捷键类似，
 - 而`Mac OS X 10.5+`更加符合 OS X 常用的快捷键。
 
-一个团队使用不同的快捷键严重影响效率。可以用`View | Quick Switch Scheme`（`⌃ Back Quote`）快速切换 Keymap。
+一个团队使用不同的快捷键会严重影响效率。可以用`View | Quick Switch Scheme`（`⌃ Back Quote`）快速切换 Keymap。
 
-如果可以选择的话，我建议使用`Mac OS X`方案。因为在客户现场，客户很可能使用的是 Windows，默认的快捷键和`Mac OS X`方案类似，重构时，你可以直接告诉客户用什么快捷键，而不需要再去查询一遍。
+如果可以选择的话，我建议使用`Mac OS X`方案。因为我经常遇到使用 Windows 的客户，而 Windows 平台上的快捷键和`Mac OS X`方案类似。
 
 ### [rbenv](https://github.com/sstephenson/rbenv)
 
@@ -361,13 +378,15 @@ IntelliJ IDEA 有几套内建的快捷键方案（Keymap）。其中适用于 OS
 brew install rbenv ruby-build
 ```
 
-有时候项目会依赖一些奇怪的版本号，比如`ruby-2.1.0`，这个时候你需要 [rbenv-aliases](https://github.com/tpope/rbenv-aliases) 帮你：
+然后在`~/.zshrc`中加上`rbenv`插件。否则你需要手动添加`eval "$(rbenv init -)"`到`~/zshrc`或者`~/.zprofile`文件里。
+
+有时候项目会依赖一些奇怪的版本号，比如`ruby-2.1.0`，这个时候你需要 [rbenv-aliases](https://github.com/tpope/rbenv-aliases) 帮忙：
 
 ```sh
 brew install rbenv-aliases
 ```
 
-替代品 RVM、chruby。因为 RVM 不能通过 brew 安装，并且安装的时候会没有节操的修改一堆文件，所以被我早早的弃用了。chruby也是一个轻量级工具，可以完美的和 Oh My Zsh 集成在一起，我看到有些生产环境在用它。
+替代品有 RVM、chruby。因为 RVM 不能通过 brew 安装，并且安装的时候会没有节操的修改一堆文件，所以被我早早的弃用了。chruby 也是一个轻量级工具，而且可以完美的和 Oh My Zsh 集成在一起，我看到有些生产环境在用它。
 
 ### `bi`
 
