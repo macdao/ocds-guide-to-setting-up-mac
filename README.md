@@ -66,6 +66,7 @@ PS：虽然本文名为“强迫症”，但其实并不是[真正意义上的�
 3. [开发工具](#3-开发工具)
 
    - [Java](#java)
+   - [jEnv](#jenv)
    - [Java[OCD]](#javaocd)
    - [IntelliJ IDEA](#intellij-idea)
    - [rbenv](#rbenv)
@@ -383,6 +384,18 @@ Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-466.1, mixed mode)
 ```
 
 其中`JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home`可以用`` JAVA_HOME=`/usr/libexec/java_home -v 1.6` ``这种更加通用的方式代替。
+
+### [jEnv](https://github.com/gcuisinier/jenv)
+
+也可以使用 jEnv 来管理不同版本的 JDK，这个工具跟 [rbenv](#rbenv) 类似，通过当前目录下的`.java-version`来决定使用哪个 JDK。jEnv 也可以用 brew 安装。不过要使用 jEnv 要有几个问题：
+
+- 需要手动把`eval "$(jenv init -)"`加入 profile，没有 Oh My Zsh 插件。这点是我非常反感的。
+
+  可以把`eval "$(jenv init -)"`加入`~/.zlogin`，这样可以避免修改`~/.zshrc`。
+- 需要手动添加 JDK，不会自动采集系统 JDK。跟 Ruby 不同，OS X 已经提供`/usr/libexec/java_home`工具来管理安装的 JDK。
+- 需要 `jenv rehash`。这个是跟 rbenv 学的。
+
+所以我建议不要使用 jEnv。
 
 ### Java[OCD]
 
