@@ -17,7 +17,7 @@
 
 一般的章节，有些章节有[OCD]字样，如果不能被稳定重现，我就认为是不安全的。
 
-我把这篇文章放倒GitHub上，
+我把这篇文章放到GitHub上，
 
 虽然本文名为“强迫症”，但其实并不是[真正意义上的强迫症](https://zh.wikipedia.org/wiki/强迫症)，真正意义上的强迫症是一种会对患者的日常生活产生负面影响的疾病。
 
@@ -76,7 +76,7 @@
 
 ### Say
 
-OS X 自带了阅读功能，可以用`say`命令让Mac开口说话：
+OS X 自带了朗读功能，可以用`say`命令让Mac开口说话：
 
 ```sh
 say hello
@@ -89,7 +89,6 @@ brew update && brew upgrade && brew cleanup ; say done
 ```
 
 通过命令行来听取发音还是有点麻烦。其实我们几乎可以在任何地方选中单词，然后使用快捷键`⌥+ESC`发音。仅仅需要这样设置一下：选择`System Preferences` > `Dictation & Speech`，在`Text to Speech`标签页中选中`Speak selected text when the key is pressed`。
-
 
 ### 词典
 
@@ -137,7 +136,7 @@ defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-有了 brew 以后，要下载工具，比如 MySQL，就不需要去网上下载了，只要一行命令就能搞定：
+有了 brew 以后，要下载工具，比如 MySQL、Gradle、Maven、Node.js 等工具，就不需要去网上下载了，只要一行命令就能搞定：
 
 ```sh
 brew install mysql gradle maven node
@@ -372,9 +371,15 @@ brew install rbenv-aliases
 
 ### `bi`
 
-几乎所有 Ruby 开发人员都会把`bi`作为`bundle install`的别名。Oh My Zsh 提供 builder 插件，这个插件提供了一套别名，比如`bi`、`be`。同时还能让你在运行一些常用 gem 的时候直接输入`rspec`，不需要`be rspec`这样了。具体包括哪些命令请参考[这里](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/bundler)。
+几乎所有 Ruby 开发人员都会把`bi`作为`bundle install`的别名。Oh My Zsh 提供`builder`插件，这个插件提供了一套别名，比如`bi`、`be`。同时还能让你在运行一些常用 gem 的时候直接输入`rspec`，不需要`be rspec`这样了。具体包括哪些命令请参考[这里](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/bundler)。
 
-### Node.js
+Z shell 对于`[`和`]`符号有特殊的处理，所以在运行`rake task[parameter]`的时候会报错，你需要改成`rake task\[parameter\]`或者`noglob rake task[parameter]`。然而 Oh My Zsh 已经看穿这一切，自带的 rake 插件已经解决了这个问题：`brake task[parameter]`。
+
+添加插件的时候注意把`rake`放到`bundler`后面，例如这样：
+
+```
+plugins=(git z sublime history rbenv bundler rake)
+```
 
 ## 参考资料
 
