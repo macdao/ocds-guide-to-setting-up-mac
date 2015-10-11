@@ -99,7 +99,7 @@ PS：虽然本文名为“强迫症”，但其实并不是[真正意义上的�
 
 ### Spotlight 快捷键
 
-一般来说 Spotlight 的快捷键是`⌃Space`。这个快捷键有一些问题：
+中文版 OS X 的 Spotlight 的快捷键是`⌃Space`。这个快捷键有一些问题：
 
 - JetBrains 的 IDE，比如 IntelliJ IDEA、WebStorm 等都使用`⌃Space`作为自动完成这个最常用功能的快捷键。我不建议更改 IDE 的快捷键，而建议更改 Spotlight 的快捷键。
 - 对于没有添加中文输入法的 Mac 来说，Spotlight 的快捷键是`⌘Space`。英语国家的人都是这样的。所以我建议把 Spotlight 的快捷键设置为`⌘Space`，跟他们一致。
