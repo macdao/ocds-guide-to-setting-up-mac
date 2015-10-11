@@ -30,6 +30,7 @@
    - [Sublime Text 2](#sublime-text-2)
    - [MacDown](#macdown)
    - [z](#z)
+   - [Vimium](#vimium)
 
 3. [开发工具](#3-开发工具)
 
@@ -346,6 +347,14 @@ brew cask install macdown
 这货的安装非常方便，甚至都不需要下载任何东西，因为它已经整合在了 Oh My Zsh 中。编辑`~/.zshrc`文件，在`plugins=(git)`这行中加上`z`变成`plugins=(git z)`，然后运行`source ~/.zshrc`重新加载配置文件，就可以使用 z 了。
 
 替代品有 autojump。autojump 需要使用 brew 安装。
+
+### [Vimium](https://vimium.github.io/)
+
+Vimium 是一个 Google Chrome 扩展，让你可以纯键盘操作 Chrome，把你的 Chrome 变成“黑客的浏览器”。
+
+安装方法请参考官方网站。
+
+其他浏览器也有类似的工具。
 
 ## 3. 开发工具
 
