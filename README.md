@@ -2,9 +2,9 @@
 
 ## 如何配置一个高效的 Mac 工作环境
 
-一直想写这么一篇文章，把和我一起工作的人的经验分享出来。市面上有很多类似的文章，写得都非常好，让我受益匪浅。不过我还是有一些没人写过的经验想要分享。另外本文也更加适合我周围的环境。
+一直想写这么一篇文章，把我从同事那里学到的经验分享出来。市面上有很多类似的文章，写得都非常好，让我受益匪浅。不过我还是有一些没人写过的经验想要分享。另外本文也更加适合我工作的环境。
 
-我深知自己的知识有限，更有效率的方法和更好的工具也在不断涌现。所以本文的另外一个目的是为了和大家交流。同时我还贪心的希望把更好的方法和工具都收集更到到这里。我把本文放到GitHub上，地址是：<https://github.com/macdao/ocds-guide-to-setting-up-mac>。
+我深知自己的知识有限，更有效率的方法和更好的工具也在不断涌现。所以写下本文的另外一个目的是可以和大家切磋交流。同时我还贪心的希望把更好的方法和工具都收集更到到这里。我把本文放到GitHub上，地址是：<https://github.com/macdao/ocds-guide-to-setting-up-mac>。欢迎通过`Issues`或者直接`Pull Requests`方式来分享你的经验。
 
 我认为“一个高效的 Mac 工作环境”有以下几个特点：
 
@@ -470,5 +470,5 @@ plugins=(git z sublime history rbenv bundler rake)
 
 - [Hacker's Guide to Setting up Your Mac](http://lapwinglabs.com/blog/hacker-guide-to-setting-up-your-mac)
 - [Setting up a new (OS X) development machine](https://mattstauffer.co/blog/setting-up-a-new-os-x-development-machine-part-1-core-files-and-custom-shell)
-- [高效MacBook工作环境配置](http://www.xialeizhou.com/?p=71)
+- [高效 MacBook 工作环境配置](http://www.xialeizhou.com/?p=71)
 - [程序员如何优雅地使用 Mac？](http://www.zhihu.com/question/20873070)
