@@ -2,9 +2,47 @@
 
 ## 如何配置一个高效的 Mac 工作环境
 
+## Table of Contents
+
+1. [OS X](#1-os-x)
+
+   - [功能键](#功能键)
+   - [全键盘控制](#全键盘控制)
+   - [Spotlight 快捷键](#spotlight-快捷键)
+   - [输入法快捷键](#输入法快捷键)
+   - [其他快捷键](#其他快捷键)
+   - [设置 Trackpad 轻拍以点击](#设置-trackpad-轻拍以点击)
+   - [Say](#say)
+   - [词典](#词典)
+   - [Dock Position](#dock-position)
+   - [Remove all Dock icons[OCD]](#remove-all-dock-iconsocd)
+   - [重置 Launchpad 上图标位置[OCD]](#重置-launchpad-上图标位置ocd)
+
+2. [常用工具](#2-常用工具)
+
+   - [Homebrew](#homebrew)
+   - [Homebrew Cask](#homebrew-cask)
+   - [iTerm2](#iterm2)
+   - [Oh My Zsh](#oh-my-zsh)
+   - [Git 常用别名](#git-常用别名)
+   - [Scroll Reverser](#scroll-reverser)
+   - [ShiftIt](#shiftit)
+   - [Sublime Text 2](#sublime-text-2)
+   - [MacDown](#macdown)
+   - [z](#z)
+
+3. [开发工具](#3-开发工具)
+
+   - [Java](#java)
+   - [jEnv](#jenv)
+   - [Java[OCD]](#javaocd)
+   - [IntelliJ IDEA](#intellij-idea)
+   - [rbenv](#rbenv)
+   - [Ruby 常用别名](#ruby-常用别名)
+
 一直想写这么一篇文章，把我从同事那里学到的经验分享出来。市面上有很多类似的文章，写得都非常好，让我受益匪浅。不过我还是有一些没人写过的经验想要分享。另外本文也更加适合我工作的环境。
 
-我深知自己的知识有限，更有效率的方法和更好的工具也在不断涌现。所以写下本文的另外一个目的是可以和大家切磋交流。同时我还贪心的希望把更好的方法和工具都收集更到到这里。我把本文放到GitHub上，地址是：<https://github.com/macdao/ocds-guide-to-setting-up-mac>。欢迎通过`Issues`或者直接`Pull Requests`方式来分享你的经验。
+我深知自己的知识有限，更有效率的方法和更好的工具也在不断涌现。所以写下本文的另外一个目的是可以和大家切磋交流。同时我还贪心的希望把更好的方法和工具都收集更到到这里。我把本文放到 GitHub 上，地址是：<https://github.com/macdao/ocds-guide-to-setting-up-mac>。欢迎通过`Issues`或者直接`Pull Requests`方式来分享你的经验。
 
 我认为“一个高效的 Mac 工作环境”有以下几个特点：
 
@@ -33,44 +71,6 @@
 有些章节标题标注了[OCD]，意思是这些章节带有我强烈的个人色彩，如果你跟我臭味相投，欢迎借鉴，如果你并不认同，请忽略掉好了。
 
 PS：虽然本文名为“强迫症”，但其实并不是[真正意义上的强迫症](https://zh.wikipedia.org/wiki/强迫症)，真正意义上的强迫症是一种会对患者的日常生活产生负面影响的疾病。
-
-## Table of Contents
-
-1. [OS X](#1-os-x)
-
-   - [功能键](#功能键)
-   - [全键盘控制](#全键盘控制)
-   - [Spotlight 快捷键](#spotlight-快捷键)
-   - [输入法快捷键](#输入法快捷键)
-   - [其他快捷键](#其他快捷键)
-   - [设置 Trackpad 轻拍以点击](#设置-trackpad-轻拍以点击)
-   - [Say](#say)
-   - [词典](#词典)
-   - [Dock Position](#dock-position)
-   - [Remove all Dock icons[OCD]](#remove-all-dock-iconsocd)
-   - [重置 Launchpad 上图标位置[OCD]](#重置-launchpad-上图标位置ocd)
-
-2. [常用工具](#2-常用工具)
-
-   - [Homebrew](#homebrew)
-   - [Homebrew Cask](#homebrew-cask)
-   - [iTerm2](#iterm2)
-   - [Oh My Zsh](#oh-my-zsh)
-   - [Git](#git)
-   - [Scroll Reverser](#scroll-reverser)
-   - [ShiftIt](#shiftit)
-   - [Sublime Text 2](#sublime-text-2)
-   - [MacDown](#macdown)
-   - [z](#z)
-
-3. [开发工具](#3-开发工具)
-
-   - [Java](#java)
-   - [jEnv](#jenv)
-   - [Java[OCD]](#javaocd)
-   - [IntelliJ IDEA](#intellij-idea)
-   - [rbenv](#rbenv)
-   - [bi](#bi)
 
 ## 1. OS X
 
@@ -127,7 +127,7 @@ PS：虽然本文名为“强迫症”，但其实并不是[真正意义上的�
 
 ### Say
 
-OS X 自带了朗读功能，可以用`say`命令让Mac开口说话：
+OS X 自带了朗读功能，可以用`say`命令让 Mac 开口说话：
 
 ```sh
 say hello
@@ -151,7 +151,7 @@ OS X 自带了词典（Dictionary）。你几乎可以在任何应用中通过�
 
 ### Dock Position
 
-默认 Dock 在屏幕下方。我们的屏幕一般都是16:10，Dock 在屏幕下方的话会占据本来就不大的垂直空间。建议把 Dock 放到左边或者右边。
+默认 Dock 在屏幕下方。我们的屏幕一般都是 16:10，Dock 在屏幕下方的话会占据本来就不大的垂直空间。建议把 Dock 放到左边或者右边。
 
 ### Remove all Dock icons[OCD]
 
@@ -199,7 +199,7 @@ brew 的替代品有 [MacPorts](https://www.macports.org/)，现在基本没人�
 
 ### [Homebrew Cask](http://caskroom.io)
 
-brew-cask 允许你使用命令行安装 OS X 应用。比如你可以这样安装 Chrome：`brew cask install google-chrome`。还有 Evernote、Skype、Sublime Text、VirtualBox等都可以用 brew-cask 安装。
+brew-cask 允许你使用命令行安装 OS X 应用。比如你可以这样安装 Chrome：`brew cask install google-chrome`。还有 Evernote、Skype、Sublime Text、VirtualBox 等都可以用 brew-cask 安装。
 
 brew-cask 是社区驱动的，如果你发现 brew-cask 上的应用不是最新版本，或者缺少你某个应用，你可以自己提交 pull request。
 
@@ -261,11 +261,11 @@ Oh My Zsh 还有很多[有价值的插件](https://github.com/robbyrussell/oh-my
 
 替代品有 [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)，使用了 [Fishshell](http://fishshell.com/) 作为基础。
 
-### Git
+### Git 常用别名
 
 几乎每个人都会使用一些方法比如 Git 别名来提高效率，几乎所有人都会把使用`git st`来代替`git status`。然而这需要手动设置，每个人也都不完全一样。
 
-Oh My Zsh 提供了一套别名（alias），来达到相同的功能。比如`gst`作为`git status`的别名。而且 Git 插件是 Oh My Zsh 默认启用的，相当于你使用了 Oh My Zsh，你就拥有了一套高效率的别名，而且还是全球通用的。是不是很棒啊？下面是一些 Oh My Zsh 提供的别名：
+Oh My Zsh 提供了一套系统别名（alias），来达到相同的功能。比如`gst`作为`git status`的别名。而且 Git 插件是 Oh My Zsh 默认启用的，相当于你使用了 Oh My Zsh，你就拥有了一套高效率的别名，而且还是全球通用的。是不是棒棒哒？下面是一些我常用的别名：
 
 Alias | Command
 ----- | -------
@@ -323,13 +323,13 @@ brew cask install sublime-text
 
 同时 Oh My Zsh 也提供了 Sublime Text 插件，叫做`sublime`。参考：<https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/sublime>，这个插件和通过 brew-cask 安装的 Sublime Text 完美兼容。
 
-替代品有 TextMate，Sublime Text 3等。
+替代品有 TextMate，Sublime Text 3 等。
 
 ### MacDown
 
-MacDown 是 Markdown 编辑器。自从 Mou 不再开发后，我就转向了 MacDown。完美支持 [GFM](https://help.github.com/articles/github-flavored-markdown/)。
+MacDown 是 Markdown 编辑器。由于 Mou 一直不支持代码高亮，我就转向了 MacDown。完美支持 [GFM](https://help.github.com/articles/github-flavored-markdown/)。
 
-我特别喜欢 [Markdown](https://daringfireball.net/projects/markdown/)，我用 Makdown 来写文章（包括本文），写幻灯片（[reveal.js](https://github.com/hakimel/reveal.js/)）。Markdown 可以让我专注于内容本身，而无需花精力在排版、样式上。
+我特别喜欢 [Markdown](https://daringfireball.net/projects/markdown/)，我用 Makdown 来写文章（包括本文），写幻灯片（[reveal.js](https://github.com/hakimel/reveal.js/)）。Markdown 可以让我专注于内容本身，而无需花精力在排版和样式上。
 
 安装：
 
@@ -370,7 +370,7 @@ brew cask install java6
 
 在 OS X 上，你可以同时安装多个版本的 JDK。你可以通过命令`/usr/libexec/java_home -V`来查看安装了哪几个 JDK。
 
-那问题来了，当你运行`java`或者 Java 程序时使用的是哪个 JDK 呢？在 OS X 下，`java`也就是`/usr/bin/java`在默认情况下指向的是已经安装的最新版本。但是你可以设置环境变量`JAVA_HOME`来更改其指向。
+那问题来了，当你运行`java`或者 Java 程序时使用的是哪个 JDK 呢？在 OS X 下，`java`也就是`/usr/bin/java`在默认情况下指向的是已经安装的最新版本。但是你可以设置环境变量`JAVA_HOME`来更改其指向：
 
 ```sh
 $ java -version
@@ -454,7 +454,7 @@ brew install rbenv-aliases
 
 替代品有 RVM、chruby。因为 RVM 不能通过 brew 安装，并且安装的时候会没有节操的修改一堆文件，所以被我早早的弃用了。chruby 也是一个轻量级工具，而且可以完美的和 Oh My Zsh 集成在一起，我看到有些生产环境在用它。
 
-### `bi`
+### Ruby 常用别名
 
 几乎所有 Ruby 开发人员都会把`bi`作为`bundle install`的别名。Oh My Zsh 提供`builder`插件，这个插件提供了一套别名，比如`bi`、`be`。同时还能让你在运行一些常用 gem 的时候直接输入`rspec`，不需要`be rspec`这样了。具体包括哪些命令请参考[这里](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/bundler)。
 
