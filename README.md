@@ -45,7 +45,7 @@
 
 在工作中，我一般会在 1 到 10 人的团队中，经常会结对编程，即两个人共用一台 Mac 工作，因此也经常会把 Mac 外接一个大显示器、鼠标和键盘。我的常用开发平台有 Java、Ruby、Node.js、Web 等，使用 [JetBrains](https://www.jetbrains.com/) 的开发工具，比如 IntelliJ IDEA、RubyMine、WebStorm 等。
 
-我深知自己的知识有限，更有效率的方法和更好的工具也在不断涌现。所以写下本文的另外一个目的是可以和大家切磋交流。同时我还贪心的希望把更好的方法和工具都收集更到到这里。我把本文放到 GitHub 上，地址是：<https://github.com/macdao/ocds-guide-to-setting-up-mac>。欢迎通过`Issues`或者直接`Pull Requests`方式来分享你的经验。期待你的反馈。
+我深知自己的知识有限，所以写下本文以便和大家切磋交流。同时更有效率的方法和更好的工具也在不断涌现，我也贪心的希望把更好的方法和工具都收集更到到这里，我会不断更新本文，让它尽量不过时。最新内容请访问：<https://github.com/macdao/ocds-guide-to-setting-up-mac>。欢迎通过 GitHub 的`Issues`或者直接`Pull Requests`方式来分享你的经验。期待你的反馈。
 
 我认为“一个高效的 Mac 工作环境”有以下几个特点：
 
