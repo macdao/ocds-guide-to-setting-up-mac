@@ -31,7 +31,7 @@
    - [MacDown](#macdown)
    - [z](#z)
    - [Vimium](#vimium)
-   - [Lastpass](#lastpass)
+   - [LastPass](#lastpass)
 
 3. [开发工具](#3-开发工具)
 
@@ -365,9 +365,9 @@ Vimium 是一个 Google Chrome 扩展，让你可以纯键盘操作 Chrome，把
 
 其他浏览器也有类似的工具，比如 FireFox 的 [KeySnail](https://github.com/mooz/keysnail)。
 
-### [Lastpass](https://lastpass.com)
+### [LastPass](https://lastpass.com)
 
-Lastpass 是管理密码的工具，支持二次验证，提供所有浏览器插件以及 mac 桌面版本。
+LastPass 是管理密码的工具，支持二次验证，提供所有浏览器插件以及 Mac 桌面版本。
 
 最重要的是，它提供 **命令行** 的版本，可以直接通过 brew 安装
 
@@ -382,6 +382,7 @@ lpass login you@email.com
 ```
 
 就可以拷贝密码或者集成到其他命令中了：
+
 ```sh
 lpass show --password gmail.com -c
 ```
