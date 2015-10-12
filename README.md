@@ -11,7 +11,7 @@
    - [Spotlight 快捷键](#spotlight-快捷键)
    - [输入法快捷键](#输入法快捷键)
    - [其他快捷键](#其他快捷键)
-   - [设置 Trackpad 轻拍以点击](#设置-trackpad-轻拍以点击)
+   - [设置 Trackpad 轻点来点按](#设置-trackpad-轻点来点按)
    - [语音](#语音)
    - [词典](#词典)
    - [Dock Position](#dock-position)
@@ -32,6 +32,7 @@
    - [z](#z)
    - [Vimium](#vimium)
    - [LastPass](#lastpass)
+   - [SourceTree](#sourcetree)
 
 3. [开发工具](#3-开发工具)
 
@@ -90,7 +91,7 @@ PS：虽然本文名为“强迫症”，但其实并不是[真正意义上的�
 
 ![dialog-box-without-all-controls](dialog-box-without-all-controls.png)
 
-注意这个`Save`按钮跟其他两个按钮不太一样，它的底色是蓝的。像这种按钮，除了用鼠标点击触发外，还可以通过回车键触发。
+注意这个`Save`按钮跟其他两个按钮不太一样，它的底色是蓝的。这种按钮被称为默认按钮，除了用鼠标点击触发外，还可以通过回车键触发。
 
 那么问题来了，如果你不想保存，想点击`Don't Save`，是不是只能用鼠标点击了呢？
 
@@ -99,6 +100,10 @@ PS：虽然本文名为“强迫症”，但其实并不是[真正意义上的�
 ![dialog-box-with-all-controls](dialog-box-with-all-controls.png)
 
 这个`Don't Save`按钮有了一圈蓝边，这个意味着你可以通过空格键触发。不仅如此，你还可以用`Tab`键把蓝边转移到其他按钮，来实现全键盘控制。
+
+除了`All controls`这个方法，你还可以用`⌘⌫`在包含“删除”或“不存储”按钮的对话框中选择“删除”或“不存储”。
+
+在这个对话框上，你可以用`Esc`来执行`Cancel`操作。
 
 ### Spotlight 快捷键
 
@@ -123,9 +128,9 @@ PS：虽然本文名为“强迫症”，但其实并不是[真正意义上的�
 
   苹果官方文档。回车触发蓝底按钮，空格触发蓝边按钮，都出自这里。
 
-### 设置 Trackpad 轻拍以点击
+### 设置 Trackpad 轻点来点按
 
-默认情况下按下触摸板才是点击。我喜欢设置成用轻拍作为点击：
+默认情况下按下触摸板才是点按（click）。我喜欢设置成用轻点作为点按：
 
 选择`System Preferences` > `Trackpad`，在`Point & Click`标签页中选中`Tap to click`。
 
@@ -215,7 +220,7 @@ brew install caskroom/cask/brew-cask
 
 应用也可以通过 App Store 安装，而且有些应用只能通过 App Store 安装，比如 Xcode 等一些 Apple 的应用。App Store 没有对应的命令行工具，还需要 Apple ID。倒是更新起来很方便。
 
-几乎所有常用的应用都可以通过 brew-cask 安装，所以你要安装新的应用时，建议用 brew-cask 安装。如果你不知道应用在 brew-cask 中的 ID，可以先用`brew cask search`命令搜索。
+几乎所有常用的应用都可以通过 brew-cask 安装，而且是从应用的官网上下载，所以你要安装新的应用时，建议用 brew-cask 安装。如果你不知道应用在 brew-cask 中的 ID，可以先用`brew cask search`命令搜索。
 
 ### [iTerm2](https://www.iterm2.com/)
 
@@ -386,6 +391,18 @@ lpass login you@email.com
 ```sh
 lpass show --password gmail.com -c
 ```
+
+### [SourceTree](https://www.sourcetreeapp.com/)
+
+SourceTree 是 Atlassian 公司出品的一款优秀的 Git 图形化客户端。如果你发现命令行无法满足你的要求，可以试试 SourceTree。
+
+安装：
+
+```sh
+brew cask install sourcetree
+```
+
+用 brew-cask 安装会自动增加命令行工具`stree`到`$PATH`里。在命令行中输入`stree`可以快速用 SourceTree 打开当前 Git 仓库。详细用法请参见`stree --help`。
 
 ## 3. 开发工具
 
