@@ -15,6 +15,7 @@
    - [语音](#语音)
    - [词典](#词典)
    - [Dock Position](#dock-position)
+   - [更改 Caps Lock 键为 Control 键](#更改-caps-lock-键为-control-键)
    - [Remove all Dock icons[OCD]](#remove-all-dock-iconsocd)
    - [重置 Launchpad 上图标位置[OCD]](#重置-launchpad-上图标位置ocd)
 
@@ -166,6 +167,14 @@ OS X 自带了词典（Dictionary）。你几乎可以在任何应用中通过�
 
 默认 Dock 在屏幕下方。我们的屏幕一般都是 16:10，Dock 在屏幕下方的话会占据本来就不大的垂直空间。建议把 Dock 放到左边或者右边。
 
+### 更改 Caps Lock 键为 Control 键
+
+我经常用到`Control`键，但这个键在键盘的左下角，很难按到。同时我发现我很少使用`Caps Lock`键，我一般会用`Shift`键加字母来输入大写字母，或者先输入小写再（通过快捷键）转换成大写。
+
+基于以上原因，我把`Caps Lock`键的功能改成了`Control`键。很多同事也都这么做的，可能是受到 [HHKB](https://en.wikipedia.org/wiki/Happy_Hacking_Keyboard) 的影响。
+
+设置方法：选择`System Preferences` > `Keyboard`，在`Keyboard`标签页中点击`Modifier Keys...`按钮，在弹出的窗口中，把`Caps Lock (⇪) Key:`对应的选项改成`⌃ Control`。
+
 ### Remove all Dock icons[OCD]
 
 本条目对于强迫症适用。
@@ -240,13 +249,15 @@ brew cask install iterm2
 
 在终端里，除了可以用`⌃E`等快捷键（详见[其他快捷键](#其他快捷键)）之外，还可以使用`⌥B`、`⌥F`等快捷键（具体可以参考[这里](http://ss64.com/bash/syntax-keyboard.html)）。前提是这样设置一下：
 
-选择`Iterm`菜单 > `Preferences` > `Profiles`，选择你在使用的 Profile（默认是Default），在`Keys`标签页中把`Left option (⌥) key acts as`和`Right option (⌥) key acts as`都设置成`+ESC`。
+选择`Iterm`菜单 > `Preferences` > `Profiles`，选择你在使用的 Profile（默认是`Default`），在`Keys`标签页中把`Left option (⌥) key acts as`和`Right option (⌥) key acts as`都设置成`+ESC`。
 
 在打开新的窗口/标签页的时候，默认情况下新窗口总是 HOME 目录，还需要我每次敲命令才能进入工作目录。如果想要这个新窗口在打开的时候就自动进入工作目录，需要如下设置：
 
 选择`Iterm`菜单 > `Preferences` > `Profiles`，选择你在使用的 Profile（默认是Default），在`General`标签页中的`Working Directory`部分中选择`Reuse previous seesion's directory`。
 
-至此，Terminal 应用已经出色的完成了其历史使命。后面就交给 iTerm2 啦。
+至此，Terminal 应用已经出色的完成了其历史使命。后面命令行就交给 iTerm2 啦。
+
+在 iTerm2 中双击会自动选中对应的词，三击会选中对应的整行。选中的内容会自动进入剪贴板，不需要再按`⌘C`复制。
 
 ### [Oh My Zsh](http://ohmyz.sh)
 
