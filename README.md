@@ -34,7 +34,7 @@
    - [Vimium](#vimium)
    - [LastPass](#lastpass)
    - [SourceTree](#sourcetree)
-   - [CheetSheet](#CheetSheet)
+   - [CheetSheet](#cheetsheet)
 
 3. [开发工具](#3-开发工具)
 
