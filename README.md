@@ -412,9 +412,6 @@ lpass show --password gmail.com -c
 
 SourceTree 是 Atlassian 公司出品的一款优秀的 Git 图形化客户端。如果你发现命令行无法满足你的要求，可以试试 SourceTree。
 
-### [CheetSheet](http://www.mediaatelier.com/CheatSheet/)
-CheetSheet 是用来显示当前程序的快捷键列表，默认的快捷键是，常按 ⌘-command 键就可以显示。
-
 安装：
 
 ```sh
@@ -422,6 +419,9 @@ brew cask install sourcetree
 ```
 
 用 brew-cask 安装会自动增加命令行工具`stree`到`$PATH`里。在命令行中输入`stree`可以快速用 SourceTree 打开当前 Git 仓库。详细用法请参见`stree --help`。
+
+### [CheetSheet](http://www.mediaatelier.com/CheatSheet/)
+CheetSheet 是用来显示当前程序的快捷键列表，默认的快捷键是，常按 ⌘-command 键就可以显示。
 
 ## 3. 开发工具
 
