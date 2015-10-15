@@ -34,6 +34,7 @@
    - [Vimium](#vimium)
    - [LastPass](#lastpass)
    - [SourceTree](#sourcetree)
+   - [CheetSheet](#cheetsheet)
 
 3. [开发工具](#3-开发工具)
 
@@ -418,6 +419,9 @@ brew cask install sourcetree
 ```
 
 用 brew-cask 安装会自动增加命令行工具`stree`到`$PATH`里。在命令行中输入`stree`可以快速用 SourceTree 打开当前 Git 仓库。详细用法请参见`stree --help`。
+
+### [CheetSheet](http://www.mediaatelier.com/CheatSheet/)
+CheetSheet 是用来显示当前程序的快捷键列表，默认的快捷键是，常按 ⌘-command 键就可以显示。
 
 ## 3. 开发工具
 
