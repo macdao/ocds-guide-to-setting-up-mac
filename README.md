@@ -34,6 +34,7 @@
    - [Vimium](#vimium)
    - [LastPass](#lastpass)
    - [SourceTree](#sourcetree)
+   - [CheetSheet](#CheetSheet)
 
 3. [开发工具](#3-开发工具)
 
@@ -410,6 +411,9 @@ lpass show --password gmail.com -c
 ### [SourceTree](https://www.sourcetreeapp.com/)
 
 SourceTree 是 Atlassian 公司出品的一款优秀的 Git 图形化客户端。如果你发现命令行无法满足你的要求，可以试试 SourceTree。
+
+### [CheetSheet](http://www.mediaatelier.com/CheatSheet/)
+CheetSheet 是用来显示当前程序的快捷键列表，默认的快捷键是，常按 ⌘-command 键就可以显示。
 
 安装：
 
