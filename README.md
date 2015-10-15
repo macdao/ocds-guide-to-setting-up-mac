@@ -354,7 +354,7 @@ brew cask install sublime-text
 
 同时 Oh My Zsh 也提供了 Sublime Text 插件，叫做`sublime`。参考：<https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/sublime>，这个插件和通过 brew-cask 安装的 Sublime Text 完美兼容。
 
-替代品有 TextMate，Sublime Text 3 等。
+替代品有 Atom、TextMate、Sublime Text 3 等，跟 Sublime Text 2 一样，用 brew-cask 安装的话命令行工具会被自动加入`$PATH`。
 
 ### MacDown
 
@@ -509,6 +509,8 @@ IntelliJ IDEA 有几套内建的快捷键方案（Keymap）。其中适用于 OS
 一个团队使用不同的快捷键会严重影响效率。可以用`View | Quick Switch Scheme`（`⌃ Back Quote`）快速切换 Keymap。
 
 如果可以选择的话，我建议使用`Mac OS X`方案。因为我经常遇到使用 Windows 的客户，而 Windows 平台上的快捷键和`Mac OS X`方案类似。
+
+可以从 IDEA 的`Help > Default Keymap Reference`打开快捷键的参考手册。不过从这里打开的是`Mac OS X 10.5+`方案的，而`Mac OS X`方案的可以从这里找到：<http://www.basrikahveci.com/static/ij_keymap_mac.pdf>。
 
 ### [rbenv](https://github.com/sstephenson/rbenv)
 
