@@ -435,7 +435,8 @@ brew cask install cheatsheet
 
 ### [Kaleidoscope](http://www.kaleidoscopeapp.com)
 
-Kaleidoscope 是一款对比文件差异的软件。可以与git相关联，使用`git difftool`便可以调用次工具来查看文件差异
+Kaleidoscope 是一款对比文件差异的软件。可以与git相关联，使用`git difftool`便可以调用此工具来查看文件差异。
+更多的使用方法可以参考其[官方网站](http://www.kaleidoscopeapp.com)。
 
 ## 3. 开发工具
 
