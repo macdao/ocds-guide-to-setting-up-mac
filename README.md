@@ -35,6 +35,7 @@
    - [LastPass](#lastpass)
    - [SourceTree](#sourcetree)
    - [CheatSheet](#cheatsheet)
+   - [Kaleidoscope](#kaleidoscope)
 
 3. [开发工具](#3-开发工具)
 
@@ -431,6 +432,10 @@ CheatSheet 能够显示当前程序的快捷键列表，默认的快捷键是长
 ```sh
 brew cask install cheatsheet
 ```
+
+### [Kaleidoscope](http://www.kaleidoscopeapp.com)
+
+Kaleidoscope 是一款对比文件差异的软件。可以与git相关联，使用`git difftool`便可以调用次工具来查看文件差异
 
 ## 3. 开发工具
 
