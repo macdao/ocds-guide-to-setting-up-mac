@@ -36,6 +36,7 @@
    - [LastPass](#lastpass)
    - [SourceTree](#sourcetree)
    - [CheatSheet](#cheatsheet)
+   - [Alfred](#alfred)
 
 3. [开发工具](#3-开发工具)
 
@@ -443,6 +444,13 @@ CheatSheet 能够显示当前程序的快捷键列表，默认的快捷键是长
 ```sh
 brew cask install cheatsheet
 ```
+
+### [Alfred](https://www.alfredapp.com)
+
+Mac 用户不用鼠标键盘的必备神器，配合大量 Workflows，习惯之后可以大大减少操作时间。
+
+上手简单，调教成本在后期自定义 Workflows，不过有大量雷锋使用者提供的现成扩展，访问[这里](http://www.alfredworkflow.com/)挑选喜欢的，并可以及其简单地根据自己的需要修改。
+
 
 ## 3. 开发工具
 
