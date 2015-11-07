@@ -206,11 +206,7 @@ defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
 
 包管理工具，官方称之为`The missing package manager for OS X`。
 
-安装步骤：先打开 Terminal 应用，输入：
-
-```sh
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
+安装步骤见官网。
 
 有了 brew 以后，要下载工具，比如 MySQL、Gradle、Maven、Node.js 等工具，就不需要去网上下载了，只要一行命令就能搞定：
 
@@ -266,11 +262,7 @@ brew cask install iterm2
 
 默认的 Bash 是黑白的，没有色彩。而 Oh My Zsh 可以带你进入彩色时代。Oh My Zsh 同时提供一套插件和工具，可以简化命令行操作。后面我们会看到很多介绍，你会看到我爱死这家伙了。
 
-安装：
-
-```sh
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-```
+安装方法见官网。
 
 目前我使用的插件有：`git z sublime history rbenv bundler rake`
 
@@ -449,8 +441,13 @@ brew cask install cheatsheet
 
 Mac 用户不用鼠标键盘的必备神器，配合大量 Workflows，习惯之后可以大大减少操作时间。
 
-上手简单，调教成本在后期自定义 Workflows，不过有大量雷锋使用者提供的现成扩展，访问[这里](http://www.alfredworkflow.com/)挑选喜欢的，并可以及其简单地根据自己的需要修改。
+上手简单，调教成本在后期自定义 Workflows，不过有大量雷锋使用者提供的现成扩展，访问[这里](http://www.alfredworkflow.com/)挑选喜欢的，并可以极其简单地根据自己的需要修改。
 
+安装：
+
+```sh
+brew cask install alfred
+```
 
 ## 3. 开发工具
 
