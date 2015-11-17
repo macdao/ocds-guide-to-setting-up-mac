@@ -2,6 +2,8 @@
 
 ## 如何配置一个高效的 Mac 工作环境
 
+[English Version](https://github.com/macdao/ocds-guide-to-setting-up-mac/blob/master/README.en.md)
+
 ## Table of Contents
 
 1. [OS X](#1-os-x)

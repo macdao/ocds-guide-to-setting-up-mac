@@ -91,6 +91,8 @@ Things related with OS X settings.
 
 By default, F1-F12 are special funtion keys, like adjust screen brightness. You are required to press Fn at the same time, when you need input F1-F12(like IntelliJ IDEA shortcuts). It's not so convenient for developers.
 
+To avoid pressing Fn: go to `System Preferences` > `Keyboard`，select `Use all F1, F2, etc. keys as standard function keys` in `Keyboard` tab。
+
 ### Keyboard Only Control
 
 You may see this dialog before, when you try to close files in Sublime Text:
@@ -101,7 +103,7 @@ You may notice that the `Save` button is quite different with the other two, it'
 
 What else, how to trigger `Don't Save` without mouse clicking?
 
-Go to `System Preferences` > `Keyboard`, select `All controls` in `Shortcuts` tab. And the dialog will turn into:
+Go to `System Preferences` > `Keyboard`, select `All controls` in `Shortcuts` tab or just press `⌃F7`. And the dialog will turn into:
 
 ![dialog-box-with-all-controls](dialog-box-with-all-controls.png)
 
@@ -201,9 +203,9 @@ PS: install brew will download and install Apple Command Line Tools automaticall
 
 ### [Homebrew Cask](http://caskroom.io)
 
-Brew-cask helps you to install OS X Applications. Like to install Chrome：`brew cask install google-chrome`. Also Evernote,Skype,Sublime Text,VirtualBox,Java7 ...
+brew-cask helps you to install OS X Applications. Like to install Chrome：`brew cask install google-chrome`. Also Evernote, Skype, Sublime Text, VirtualBox, Java7 ...
 
-Brew-cask is driven by community, you may raise a pull request when you found any missing or outdated application.
+brew-cask is driven by community, you may raise a pull request when you found any missing or outdated application.
 
 Installation:
 
@@ -345,7 +347,7 @@ Replacers: Atom, TextMate, Sublime Text 3 etc. For all of them, brew-cask will m
 
 MacDown is a Markdown editor. As Mou doesn't support code highlighting, I switched to MacDown, which supports [GFM](https://help.github.com/articles/github-flavored-markdown/) perfectly.
 
-I like MarkDown a lot, and I write articles(include this one) with Markdown, also for slides([reveal.js](https://github.com/hakimel/reveal.js/)). Markdown makes me focus on the content itself, and won't waste me too much time on the styles and layouts.
+I like Markdown a lot, and I write articles(include this one) with Markdown, also for slides([reveal.js](https://github.com/hakimel/reveal.js/)). Markdown makes me focus on the content itself, and won't waste me too much time on the styles and layouts.
 
 Installation:
 
@@ -466,7 +468,7 @@ Java(TM) SE Runtime Environment (build 1.6.0_65-b14-466.1-11M4716)
 Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-466.1, mixed mode)
 ```
 
-You may change `JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home` into `JAVA_HOME=/usr/libexec/java_home -v 1.6`, which is more widly used.
+You may change `JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home` into `` JAVA_HOME=`/usr/libexec/java_home -v 1.6` ``, which is more widly used.
 
 *Some lines are missing here. As not helping a lot - fff*
 
