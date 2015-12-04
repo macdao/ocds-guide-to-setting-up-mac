@@ -575,7 +575,7 @@ plugins=(git z sublime history rbenv bundler rake)
 
 [Atom](http://atom.io/)，这是专属于Github的编辑器，虽然还不是很成熟，但是，能够安装的插件每天都在快速的增长。
 
-而且，特别酷炫的[activate power mode]()这个插件也是为Atom定制的哦。
+而且，特别酷炫的[activate power mode](https://atom.io/packages/activate-power-mode)这个插件也是为Atom定制的哦。
 
 安装了Atom之后，它的插件可以使用这个命令：
 
