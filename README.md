@@ -30,6 +30,7 @@
    - [ShiftIt](#shiftit)
    - [Sublime Text 2](#sublime-text-2)
    - [MacDown](#macdown)
+   - [Marxico](#Marxico)
    - [z](#z)
    - [Vimium](#vimium)
    - [LastPass](#lastpass)
@@ -45,6 +46,7 @@
    - [IntelliJ IDEA](#intellij-idea)
    - [rbenv](#rbenv)
    - [Ruby 常用别名](#ruby-常用别名)
+   - [Atom](#Atom)
 
 一直想写这么一篇文章，把我从同事那里学到的经验分享出来。市面上有很多类似的文章，写得都非常好，让我受益匪浅。不过我还是有一些自己总结出来的经验想要分享。
 
@@ -369,6 +371,16 @@ MacDown 是 Markdown 编辑器。由于 Mou 一直不支持代码高亮，我就
 brew cask install macdown
 ```
 
+### Marxico
+
+Macdown是一款很不错的markdown编辑器，但是呢，单纯的从本地写markdown会不会太麻烦了，不能实时编辑，而且，没觉得Macdown的主题不是很好看吗。
+
+所以，就出现了[Marxico](https://marxi.co)，即马克飞象，这是一款可以和Evernote相结合使用的markdown编辑器，可以实时同步到你的Evernote账户。
+
+相信你看了它的样子一下就会喜欢的。
+
+不过，这款漂亮的编辑器可不免费哦。价格是79元/年，可以供你免费试用10天。如果真的喜欢的话，还是可以购买的。
+
 ### z
 
 在打开终端后，你是怎么进入项目的工作目录？是`cd xxx`，`⌃R`还是用别名？
@@ -557,6 +569,18 @@ Z shell 对于`[`和`]`符号有特殊的处理，所以在运行`rake task[para
 
 ```
 plugins=(git z sublime history rbenv bundler rake)
+```
+
+### Atom
+
+[Atom](http://atom.io/)，这是专属于Github的编辑器，虽然还不是很成熟，但是，能够安装的插件每天都在快速的增长。
+
+而且，特别酷炫的[activate power mode]()这个插件也是为Atom定制的哦。
+
+安装了Atom之后，它的插件可以使用这个命令：
+
+```
+$ apm install PACKAGE_NAME
 ```
 
 ## 参考资料
