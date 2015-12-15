@@ -20,6 +20,7 @@
    - [更改 Caps Lock 键为 Control 键](#更改-caps-lock-键为-control-键)
    - [Remove all Dock icons[OCD]](#remove-all-dock-iconsocd)
    - [重置 Launchpad 上图标位置[OCD]](#重置-launchpad-上图标位置ocd)
+   - [创建大小写敏感的工作区](#创建大小写敏感的工作区)
 
 2. [常用工具](#2-常用工具)
 
@@ -199,6 +200,14 @@ defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
 ```
 
 在默认顺序中，Launchpad 第一屏只有 Apple 自家应用。
+
+### 创建大小写敏感的工作区
+
+在多人合作的项目开发时, 因为mac文件系统默认是大小写不敏感的, 经常出现一些诡异的问题, 建议创建一个大小写敏感的工作区(workspace).
+
+```sh
+hdiutil create -type SPARSE -fs 'Case-sensitive Journaled HFS+' -size 100g -volname workspace ~/workspace
+```
 
 ## 2. 常用工具
 
