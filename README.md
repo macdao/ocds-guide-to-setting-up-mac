@@ -206,8 +206,14 @@ defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
 在多人合作的项目开发时, 因为mac文件系统默认是大小写不敏感的, 经常出现一些诡异的问题, 建议创建一个大小写敏感的工作区(workspace).
 
 ```sh
-hdiutil create -type SPARSE -fs 'Case-sensitive Journaled HFS+' -size 100g -volname workspace ~/workspace
+hdiutil create -type SPARSE -fs 'Case-sensitive Journaled HFS+' -size 100g -volname workspace ~/Documents/workspace.dmg.sparseimage
 ```
+
+可以通过三种方式挂载镜像
+
+1. `~/Documents/workspace.dmg.sparseimage`
+2. `open ~/Documents/workspace.dmg.sparseimage`
+3. `hdiutil attach ~/Documents/workspace.dmg.sparseimage`
 
 ## 2. 常用工具
 
