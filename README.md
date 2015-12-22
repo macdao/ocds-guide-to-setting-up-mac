@@ -211,7 +211,7 @@ hdiutil create -type SPARSE -fs 'Case-sensitive Journaled HFS+' -size 100g -voln
 
 可以通过三种方式挂载镜像：
 
-1. `~/Documents/workspace.dmg.sparseimage`
+1. 直接双击打开 `~/Documents/workspace.dmg.sparseimage`
 2. `open ~/Documents/workspace.dmg.sparseimage`
 3. `hdiutil attach ~/Documents/workspace.dmg.sparseimage`
 
