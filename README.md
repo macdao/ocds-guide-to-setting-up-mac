@@ -45,7 +45,7 @@
 
    - [Java](#java)
    - [jEnv](#jenv)
-   - [民间使用的Java环境变量设置方法](#民间使用的Java环境变量设置方法)
+   - [民间使用的Java环境变量设置方法](#民间使用的java环境变量设置方法)
    - [Java[OCD]](#javaocd)
    - [IntelliJ IDEA](#intellij-idea)
    - [rbenv](#rbenv)
