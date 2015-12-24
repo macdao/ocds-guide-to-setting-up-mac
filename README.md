@@ -45,7 +45,7 @@
 
    - [Java](#java)
    - [jEnv](#jenv)
-   - [民间使用的Java环境变量设置方法](#民间使用的Java环境变量设置方法)
+   - [民间使用的 Java 版本切换方法](#民间使用的-java-版本切换方法)
    - [Java[OCD]](#javaocd)
    - [IntelliJ IDEA](#intellij-idea)
    - [rbenv](#rbenv)
@@ -517,19 +517,19 @@ Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-466.1, mixed mode)
 
 所以我建议不要使用 jEnv。
 
-### 民间使用的Java环境变量设置方法
+### 民间使用的 Java 版本切换方法
 
-添加以下脚本到当前shell配置文件中：`~/.zshrc`,`~/.zprofile`或者`~/.bash_profile`。
+添加以下脚本到当前 shell 配置文件中：`~/.zprofile`或者`~/.bash_profile`。
 
-```
+```sh
 function setjdk() {
     export JAVA_HOME=`/usr/libexec/java_home -v $@`
 }
 ```
-这样我们就可以通过输入一下命令进行版本切换了
+这样我们就可以通过输入一条命令进行版本切换了：
 
-```
-$ setjdk 1.8
+```sh
+setjdk 1.8
 ```
 
 ### Java[OCD]
