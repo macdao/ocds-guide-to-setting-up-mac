@@ -45,6 +45,7 @@
 
    - [Java](#java)
    - [jEnv](#jenv)
+   - [民间使用的Java环境变量设置方法](#民间使用的Java环境变量设置方法)
    - [Java[OCD]](#javaocd)
    - [IntelliJ IDEA](#intellij-idea)
    - [rbenv](#rbenv)
@@ -515,6 +516,21 @@ Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-466.1, mixed mode)
 - 需要 `jenv rehash`。这个是跟 rbenv 学的。
 
 所以我建议不要使用 jEnv。
+
+### 民间使用的Java环境变量设置方法
+
+添加以下脚本到当前shell配置文件中：`~/.zshrc`,`~/.zprofile`或者`~/.bash_profile`。
+
+```
+function setjdk() {
+    export JAVA_HOME=`/usr/libexec/java_home -v $@`
+}
+```
+这样我们就可以通过输入一下命令进行版本切换了
+
+```
+$ setjdk 1.8
+```
 
 ### Java[OCD]
 
