@@ -242,11 +242,7 @@ brew-cask 允许你使用命令行安装 OS X 应用。比如你可以这样安�
 
 brew-cask 是社区驱动的，如果你发现 brew-cask 上的应用不是最新版本，或者缺少你某个应用，你可以自己提交 pull request。
 
-安装：
-
-```sh
-brew install caskroom/cask/brew-cask
-```
+安装步骤见官网。
 
 应用也可以通过 App Store 安装，而且有些应用只能通过 App Store 安装，比如 Xcode 等一些 Apple 的应用。App Store 没有对应的命令行工具，还需要 Apple ID。倒是更新起来很方便。
 
@@ -299,6 +295,7 @@ Oh My Zsh 还有很多[有价值的插件](https://github.com/robbyrussell/oh-my
 替代品有 [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)，使用了 [Fishshell](http://fishshell.com/) 作为基础。
 
 ### [Stow](http://www.gnu.org/software/stow/)
+
 GNU stow 是管理符号链接（symlink）的一个小公举。主要用于 symlink 你的 [dotfiles](http://dotfiles.github.io/) 如 emacs，git，fish/zsh 的配置文件。安装只需要
 
 ```
