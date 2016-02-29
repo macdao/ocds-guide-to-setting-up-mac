@@ -37,11 +37,11 @@
     * [Ruby Daily Alias](#ruby-daily-alias)
   * [References](#references)
 
-I was always thinking about to write this article, to share all the experiences I've learnt from other colleagues. Though there are already some really good books, from which I've learnt a lot also. But I still want to share my own experiences.
+I was always thinking about writing this article, to share all the experiences I've learnt from other colleagues. Though there are already some really good books, from which I've learnt a lot also. But I still want to share my own experiences.
 
-In project, I normally work with 1 to 10 people, and paring a lot by sharing the same laptop, with external display, and extra mouse, keyboard. I'm most working on Java, Ruby, Node.js, Web and etc, and using lots softwares from [JetBrains](https://www.jetbrains.com/), like IntelliJ IDEA, RubyMine, WebStorm and ect.
+In projects, I normally work with 1 to 10 people, and pairing a lot by sharing the same laptop, with external display, and extra mouse, keyboard. I'm mostly working with Java, Ruby, Node.js, Web and etc, and using lots of software from [JetBrains](https://www.jetbrains.com/), like IntelliJ IDEA, RubyMine, WebStorm, etc.
 
-I know my knowledge is so limited, so I want the opinions from you by sharing you this article. Now days, more efficient way and better tools are still keeping comming, I'll keep updating it, to collect the better ways and tools here, it's my greedy wish. For latest version please visit: <https://github.com/macdao/ocds-guide-to-setting-up-mac>. Issues or Pull Requests are welcomed. Looking forward to your feedbacks.
+I know my knowledge is so limited, so I want the opinions from you by sharing you this article. Now days, more efficient way and better tools are still keeping comming, I'll keep updating it, to collect the better ways and tools here, it's my greedy wish. For latest version please visit: <https://github.com/macdao/ocds-guide-to-setting-up-mac>. Issues or Pull Requests are welcomed. Looking forward to your feedback.
 
 Several points of efficient Mac environment in my opinion:
 
@@ -61,23 +61,23 @@ Several points of efficient Mac environment in my opinion:
   2. Type in commands,
   3. Wait to be finished.
 
-  Automate helps to limit the steps and increase the efficiency a lot.
+  Automate helps to reduce the steps and increase efficiency significantly.
 
 - Consistence
 
-  When I'm paring, sometime the shortcuts or commands are different between each other's laptop. I strogly recommend that, at least in the team, try to keep using the same shortcut and commands(I forget the practice name, there have to be one, please let me know if you get it).
+  When I'm pairing, sometimes the shortcuts or commands are different between each other's laptop. I strongly recommend that, at least in the team, try to keep using the same shortcut and commands(I forget the practice name, there have to be one, please let me know if you get it).
 
 - Just enough
 
   Enough is perfect. If the system itself provides the function, I won't install any other third party tools.
 
-- Efficience
+- Efficiency
 
-  Everything is about efficience.
+  Everything is about efficiency.
 
 *For third party applications only simple steps are provided, please go to offial site for detailed installation and instruction documents.*
 
-*Some sections are marked with [OCD], that means it's quite personal choices from me, take it or ignore it all depends on if you like it or not.*
+*Some sections are marked with [OCD], that means it's my personal preference, take it or ignore it, it all depends on if you like it or not.*
 
 *[OCD(obsessive-compulsive disorder)](https://www.google.co.za/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0CBsQFjAAahUKEwiDve-b7JHJAhUDxxQKHXF2DOE&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FObsessive%25E2%2580%2593compulsive_disorder&usg=AFQjCNGDkJsHHtm6hy60uzEMBn2ee3rSoA&bvm=bv.107467506,d.d24), I didn't mean it, just make fun. Yes, I don't have that disease ;)*
 
@@ -89,7 +89,7 @@ Things related with OS X settings.
 
 ### Function Keys
 
-By default, F1-F12 are special funtion keys, like adjust screen brightness. You are required to press Fn at the same time, when you need input F1-F12(like IntelliJ IDEA shortcuts). It's not so convenient for developers.
+By default, F1-F12 are special function keys, like adjust screen brightness. You are required to press Fn at the same time, when you need input F1-F12(like IntelliJ IDEA shortcuts). It's not so convenient for developers.
 
 To avoid pressing Fn: go to `System Preferences` > `Keyboard`，select `Use all F1, F2, etc. keys as standard function keys` in `Keyboard` tab。
 
@@ -183,11 +183,11 @@ defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
 
 ## 2. Daily Tools
 
-Some daily softwares, and not related with developing.
+Some routine software, and not necessarily related to development.
 
 ### [Homebrew](http://brew.sh)
 
-Package management, official decription: "The missing package manager for OS X".
+Package management, official description: "The missing package manager for OS X".
 
 Go to official site for installation steps.
 
@@ -222,7 +222,7 @@ brew cask search java7
 
 ### [iTerm2](https://www.iterm2.com/)
 
-iTerm2 is the most widely used terminal tool, considered as the replacement of Terminal. It provides [a group of practical features](https://www.iterm2.com/features.html), include `Split Panes`. Its default black background makes me throw away terminal without any hesitation.
+iTerm2 is the most widely used terminal tool, considered as the replacement of Terminal. It provides [a group of practical features](https://www.iterm2.com/features.html), including `Split Panes`. Its default black background makes me throw away OS X' inbuilt Terminal application without any hesitation.
 
 Installation:
 
@@ -263,7 +263,7 @@ cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
 Oh-My-Zsh gets [more valuable plugins](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview).
 
-Besides Oh-My-Zsh, there is [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)，which take [Fishshell](http://fishshell.com/) as fundation.
+Besides Oh-My-Zsh, there is [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)，which take [Fishshell](http://fishshell.com/) as foundation.
 
 ### [Stow](http://www.gnu.org/software/stow/)
 GNU stow is the super girl(-.-) of symlink management. Mainly it's used to symlink your [dotfiles](http://dotfiles.github.io/), like emacs，git configuration files of fish/zsh.
@@ -274,17 +274,17 @@ Installation:
 brew install stow
 ```
 
-After installing, we can symlink the dotfiles. The full instructions of stow and dotfiles are here:<https://github.com/jcouyang/dotfiles>.
+After installing, we can symlink the dotfiles. The full instructions for stow and dotfiles are here:<https://github.com/jcouyang/dotfiles>.
 
 After symlinking all your dotfiles to `~/dotfiles`, push it to github. There is no worries any more for setuping another new laptop.
 
 ### Git Alias
 
-Almost everyone is looking for ways to make himself efficient, like git alias, using `git st` instead of `git status`. But it requires some manual configuration, which makes everyone's some different.
+Almost everyone is looking for ways to increase their efficiency, like git alias, using `git st` instead of `git status`. But it requires some manual configuration, which makes everyone's configuration differ.
 
-Oh-My-Zsh provides a set of system aliases to achieve the same prepose. For example take `gst` as the alias of `git status`. Also the git plugin of Oh-My-Zsh is enabled by default, which means if you're using Oh-My-Zsh, you are having a set of efficient aliases, which is been commonly used globally, isn't that wonderful?!
+Oh-My-Zsh provides a set of system aliases to achieve the same purpose. For example: take `gst` as the alias of `git status`. Also the git plugin of Oh-My-Zsh is enabled by default, which means if you're using Oh-My-Zsh, you are having a set of efficient aliases, which is been commonly used globally, isn't that wonderful?!
 
-Some frequently used aliases for me:
+Some of my frequently used aliases are:
 
 Alias | Command
 ----- | -------
@@ -359,7 +359,7 @@ brew cask install macdown
 
 After opening new terminal, how do you get to the working directory? `cd xxx` or `^R`(ctrl+R, bash reverse search), or alias?
 
-z helps you get the target directory easily. Like running `z cask` in my term, it will lead me to `/usr/local/Library/Taps/caskroom/homebrew-cask/Casks`.
+z helps you get the target directory easily. Like running `z cask` in my terminal, it will lead me to `/usr/local/Library/Taps/caskroom/homebrew-cask/Casks`.
 
 It's quite easy to install, nothing is required to be downloaded, as it's already in Oh-My-Zsh. Open `~/.zshrc`, find plugins configuration line like this:`plugins=(git)`, and put `z` inside the parentheses like:`plugins=(git z)`, then re-initial terminal by `source ~/.zshrc`, it's there now.
 
@@ -367,15 +367,15 @@ Autojump is a replacer, which requires to be installed by brew.
 
 ### [Vimium](https://vimium.github.io/)
 
-Vimium is a Google Chrome extension, which turns your chrome into a "hackers's browser", you can operate your chrome all by keyboard.
+Vimium is a Google Chrome extension, which turns your chrome into a "hackers's browser", you can operate your Chrome via keyboard.
 
-For installation please go to Chrome extension market.
+For installation please go to Chrome Extension Market.
 
 For firefox there is a similar solution: [KeySnail](https://github.com/mooz/keysnail).
 
 ### [LastPass](https://lastpass.com)
 
-LastPass is a password management tool, support a second login step, provides plugins for every browser and also Mac desktop version.
+LastPass is a password management tool, support a second login step, provides plugins for every browser and also OS X desktop version.
 
 The most important thing, it provides **command line** version, install it by:
 
@@ -397,7 +397,7 @@ lpass show --password gmail.com -c
 
 ### [SourceTree](https://www.sourcetreeapp.com/)
 
-SourceTree is an outstanding git GUI client from Atlassian. You may try if you want more than command line.
+SourceTree is an outstanding git GUI client by Atlassian. You may try if you want more than command line.
 
 Installation:
 
@@ -421,9 +421,9 @@ brew cask install cheatsheet
 
 ### [Alfred](https://www.alfredapp.com)
 
-The msut have tool for Mac user, comes together with a bunch of workflows, which will extremely save your operating time.
+The must have tool for Mac user, comes together with a bunch of workflows, which will extremely save your operating time.
 
-Easy to start, but takes more time to setup your self-defined workflows, but anyway there are already lots of workflows shared by nice peoples, visit [here](http://www.alfredworkflow.com/), choose what you like, and modify it in your way.
+Easy to start, but takes more time to setup your self-defined workflows, but anyway there are already lots of workflows shared by nice people, visit [here](http://www.alfredworkflow.com/), choose what you like, and modify it in your way.
 
 Installation:
 
@@ -437,7 +437,7 @@ brew cask install alfred
 
 There is no default JDK any more for new version of OS X, so you need to download and install it before you want to do some Java projects.
 
-Before brew-cask, we are used to download from: <https://developer.apple.com/downloads/>. But which worse is that uninstall or upgrade takes such time.
+Before brew-cask, we are used to download from: <https://developer.apple.com/downloads/>. But the drawback is that uninstall or upgrades take significant time.
 For JDK package, which is pkg format, there is no automatic way to uninstall it.
 
 But good news is brew-cask can do it for you:
@@ -455,7 +455,7 @@ brew cask install java6
 
 You can install several versions of JDK in Mac OS X, `/usr/libexec/java_home -V` will list all of them.
 
-So here is the problem, Which one is the one used by running `java` or any Java application? normally, OS X invoke the newest version of all those installed JDK versions. But you can change it by set `JAVA_HOME`:
+So here is the problem, Which one is the one used by running `java` or any Java application? normally, OS X invokes the newest version of all those installed JDK versions. But you can change it by set `JAVA_HOME`:
 
 ```sh
 $ java -version
@@ -468,13 +468,13 @@ Java(TM) SE Runtime Environment (build 1.6.0_65-b14-466.1-11M4716)
 Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-466.1, mixed mode)
 ```
 
-You may change `JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home` into `` JAVA_HOME=`/usr/libexec/java_home -v 1.6` ``, which is more widly used.
+You may change `JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home` into `` JAVA_HOME=`/usr/libexec/java_home -v 1.6` ``, which is more widely used.
 
 *Some lines are missing here. As not helping a lot - fff*
 
 ### [rbenv](https://github.com/sstephenson/rbenv)
 
-Everyone need a Ruby version management tool. That's rbenv, which is quite light and can be installed by brew.
+Everyone needs a Ruby version management tool. That's rbenv, which is quite light and can be installed by brew.
 
 Installation:
 
@@ -484,23 +484,23 @@ brew install rbenv ruby-build
 
 Then you need to enable `rbenv` plugin of Oh-My-Zsh, or you need to add `eval "$(rbenv init -)"` to `~/.zshrc` or `~/.zprofile`
 
-Sometimes project will depend on some odd version, like: `ruby-2.1.0`, you should go checkout [rbenv-aliases](https://github.com/tpope/rbenv-aliases).
+Sometimes projects will depend on unique Ruby versions, like: `ruby-2.1.0`, you should go checkout [rbenv-aliases](https://github.com/tpope/rbenv-aliases).
 
 ```sh
 brew install rbenv-aliases
 ```
 
-Replacer: RVM, chruby. But as RVM is unable to be installed by brew, and it also changes a bunch of files without any respect, that's why I already give RVM up. chruby is another light weight tool, and works perfactly with Oh-My-Zsh, it seems someone is using it in production enviroment.
+Alternatives: RVM, chruby. But as RVM is unable to be installed by brew, and it also changes a bunch of files without any respect, that's why I already gave RVM up. chruby is another light weight tool, and works perfactly with Oh-My-Zsh, it seems someone is using it in production enviroment.
 
 ### Ruby Daily Alias
 
 Almost every Rubyist takes `bi` as alias of `bundle install`. Oh-My-Zsh provides `builder` plugin to setup a set of alias, like `bi`, `be`. Also allow you to run `rspec` directly, without any leading `be` or `bundle exec`. 
 
-For detail list please go to <https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/bundler>.
+For a detailed list please go to <https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/bundler>.
 
 Zsh shell has special usage for `[` and `]`, so `rake task[parameter]` will fail, you need to run it like this: `rake task\[parameter\]` or `noglob rake task[parameter]`. However Oh-My-Zsh already solves it, using the buildin rake plugin: `brake task[parameter]`.
 
-Be aware of that, put `rake` after `bundler` when modifying the plugin settings in `~/.zshrc`, like:
+Be aware of that, put `rake` after `bundler` when modifying the plugin settings in `~/.zshrc`, for example:
 ```
 plugins=(git z sublime history rbenv bundler rake)
 ```
