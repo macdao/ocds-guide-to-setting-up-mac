@@ -15,6 +15,7 @@
     * [Change `Caps Lock` to `Control`](#change-`caps-lock`-to-`control`)
     * [Remove all Dock icons[OCD]](#remove-all-dock-icons[ocd])
     * [Reset the order of icons on Launchpad[OCD]](#reset-the-order-of-icons-on-launchpad[ocd])
+    * [Keychain Access](#keychain-access)
   * [2. Daily Tools](#2-daily-tools)
     * [Homebrew](#homebrew)
     * [Homebrew Cask](#homebrew-cask)
@@ -178,6 +179,10 @@ There are some default icons on the docker, I hardly use most of them. And after
 ```sh
 defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
 ```
+
+### Keychain Access
+
+Keychain Access is a Mac OS X application. It can be used to find saved accounts and passwords including Wi-Fi password.
 
 *Some lines are missing here. As not helping a lot - fff*
 

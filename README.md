@@ -21,6 +21,7 @@
    - [Remove all Dock icons[OCD]](#remove-all-dock-iconsocd)
    - [重置 Launchpad 上图标位置[OCD]](#重置-launchpad-上图标位置ocd)
    - [创建大小写敏感的工作区](#创建大小写敏感的工作区)
+   - [Keychain Access](#keychain-access)
 
 2. [常用工具](#2-常用工具)
 
@@ -215,6 +216,10 @@ hdiutil create -type SPARSE -fs 'Case-sensitive Journaled HFS+' -size 100g -voln
 1. 直接双击打开 `~/Documents/workspace.dmg.sparseimage`
 2. `open ~/Documents/workspace.dmg.sparseimage`
 3. `hdiutil attach ~/Documents/workspace.dmg.sparseimage`
+
+### Keychain Access
+
+钥匙串访问（Keychain Access）是一个 OS X 应用程序，对我来说它最大的功能就是查看已经保存的各种账号和密码，包括 Wi-Fi 密码。
 
 ## 2. 常用工具
 
