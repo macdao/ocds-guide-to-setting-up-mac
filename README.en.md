@@ -168,9 +168,24 @@ Howto: goto `System Preferences` > `Keyboard`, click `Modifier Keys...` in `Keyb
 
 *本条目对于强迫症适用。It's for OCD(obsessive-compulsive disorder)*
 
-There are some default icons on the docker, I hardly use most of them. And after opening several daily applications, the docker comes so noisy, and the icons turn to really small. So I remove all the default icons on the docker, to make space for runing applications.
+There are several icons on the Dock by default, I rarely use most of them. And after opening several daily applications, the Dock comes so noisy, and the icons turn to really small. So I remove all the static icons on the Dock, to make space for runing applications.
 
 *Finder cannot be removed.*
+
+This command can easily hide all static Dock icons instead of removing them one by one:
+
+```sh
+defaults write com.apple.dock static-only -boolean true; killall Dock
+```
+
+It's easy to recovery:
+
+```sh
+defaults delete com.apple.dock static-only; killall Dock
+```
+
+*The `Downloads`Folder on the Dock will be hidden too*
+
 
 ### Reset the order of icons on Launchpad[OCD]
 
@@ -516,3 +531,4 @@ plugins=(git z sublime history rbenv bundler rake)
 - [Setting up a new (OS X) development machine](https://mattstauffer.co/blog/setting-up-a-new-os-x-development-machine-part-1-core-files-and-custom-shell)
 - [高效 MacBook 工作环境配置](http://www.xialeizhou.com/?p=71) **"Efficient MacBook working configurration", you need google translate*
 - [程序员如何优雅地使用 Mac？](http://www.zhihu.com/question/20873070) **"How to use Mac elegantly for programmer", you need google translate also*
+- [装点你的 Dock：外观篇](http://sspai.com/33493)

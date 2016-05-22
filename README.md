@@ -191,6 +191,20 @@ OS X 自带了词典（Dictionary）。你几乎可以在任何应用中通过�
 
 PS：Finder 图标是删不掉的。
 
+除了一个一个删除图标，也可以通过这个命令来隐藏所有的固定图标：
+
+```sh
+defaults write com.apple.dock static-only -boolean true; killall Dock
+```
+
+恢复也非常简单：
+
+```sh
+defaults delete com.apple.dock static-only; killall Dock
+```
+
+PS：使用这个方法的话，Dock 上的`Downloads`也会被隐藏掉。
+
 ### 重置 Launchpad 上图标位置[OCD]
 
 本条目对于强迫症适用。
@@ -611,3 +625,4 @@ plugins=(git z sublime history rbenv bundler rake)
 - [Setting up a new (OS X) development machine](https://mattstauffer.co/blog/setting-up-a-new-os-x-development-machine-part-1-core-files-and-custom-shell)
 - [高效 MacBook 工作环境配置](http://www.xialeizhou.com/?p=71)
 - [程序员如何优雅地使用 Mac？](http://www.zhihu.com/question/20873070)
+- [装点你的 Dock：外观篇](http://sspai.com/33493)
