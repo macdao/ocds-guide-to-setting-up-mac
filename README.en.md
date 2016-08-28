@@ -273,7 +273,7 @@ Plugins I'm using: `git z sublime history rbenv bundler rake`
 
 Oh-My-Zsh uses Z shell（zsh）, which is quite close to Bash, but it's not Bash.
 
-In Z shell, `~/.zshrc` is the most important configure file. Oh-My-Zsh will set the current path into `~/.zshrc` as `$PATH` during installation. As I'm using brew, this is not something that I want to have. With brew, we are not encouraged to customize `$PAHT`, and by default Oh-My-Zsh already set `$PAHT` with quite good value:`$HOME/bin:/usr/local/bin:$PATH`, in which contains the `$HOME/bin`, it means we can put our self defined script under `$HOME/bin`.
+In Z shell, `~/.zshrc` is the most important configure file. Oh-My-Zsh will set the current path into `~/.zshrc` as `$PATH` during installation. As I'm using brew, this is not something that I want to have. With brew, we are not encouraged to customize `$PAHT`, and by default Oh-My-Zsh already set `$PAHT` with quite good value:`$HOME/bin:/usr/local/bin:$PATH`, in which contains the `$HOME/bin`, it means we can put customized scripts in `$HOME/bin`.
 
 so I recommend you to reset the `~/.zshrc`:
 
@@ -281,9 +281,11 @@ so I recommend you to reset the `~/.zshrc`:
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 ```
 
+> [Since a commit on Jun 17 2016](https://github.com/robbyrussell/oh-my-zsh/commit/551abfcbb48a0c001eadef80abc3276af4e9ad26), the `zshrc.zsh-template` didn't change `$PATH` any more. Find `# export PATH=$HOME/bin:/usr/local/bin:$PATH` and remove the `#` to make our life better。
+
 Oh-My-Zsh gets [more valuable plugins](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview).
 
-Besides Oh-My-Zsh, there is [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)，which take [Fishshell](http://fishshell.com/) as foundation.
+Besides Oh-My-Zsh, there is [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)，which based on [Fishshell](http://fishshell.com/).
 
 ### [Stow](http://www.gnu.org/software/stow/)
 GNU stow is the super girl(-.-) of symlink management. Mainly it's used to symlink your [dotfiles](http://dotfiles.github.io/), like emacs，git configuration files of fish/zsh.

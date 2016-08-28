@@ -309,9 +309,11 @@ Oh My Zsh 使用了 Z shell（zsh），一个和 Bash 相似的 Shell，而非 B
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 ```
 
+> [2016年6月17号的一次提交](https://github.com/robbyrussell/oh-my-zsh/commit/551abfcbb48a0c001eadef80abc3276af4e9ad26)后，`zshrc.zsh-template`就不再修改`$PATH`了。请找到`# export PATH=$HOME/bin:/usr/local/bin:$PATH`这一行，把前面的`#`去掉。
+
 Oh My Zsh 还有很多[有价值的插件](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview)。
 
-替代品有 [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)，使用了 [Fishshell](http://fishshell.com/) 作为基础。
+替代品有 [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)。基于 [Fishshell](http://fishshell.com/) 。
 
 ### [Stow](http://www.gnu.org/software/stow/)
 
