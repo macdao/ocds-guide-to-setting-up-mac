@@ -255,7 +255,7 @@ PS：安装 brew 的时候会自动下载和安装 Apple 的 Command Line Tools�
 
 brew 的替代品有 [MacPorts](https://www.macports.org/)，现在基本没人用它。
 
-### [Homebrew Cask](http://caskroom.io)
+### [Homebrew Cask](https://caskroom.github.io)
 
 brew-cask 允许你使用命令行安装 OS X 应用。比如你可以这样安装 Chrome：`brew cask install google-chrome`。还有 Evernote、Skype、Sublime Text、VirtualBox 等都可以用 brew-cask 安装。
 

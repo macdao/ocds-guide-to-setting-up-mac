@@ -221,17 +221,13 @@ PS: install brew will download and install Apple Command Line Tools automaticall
 
 *Some lines are missing here. As not helping a lot - fff*
 
-### [Homebrew Cask](http://caskroom.io)
+### [Homebrew Cask](https://caskroom.github.io/)
 
 brew-cask helps you to install OS X Applications. Like to install Chrome：`brew cask install google-chrome`. Also Evernote, Skype, Sublime Text, VirtualBox, Java7 ...
 
 brew-cask is driven by community, you may raise a pull request when you found any missing or outdated application.
 
-Installation:
-
-```sh
-brew install caskroom/cask/brew-cask
-```
+You can find the installation method on offical website.
 
 You would like to search if you not sure if some application is already in cask.
 ```sh
@@ -249,6 +245,7 @@ Installation:
 ```sh
 brew cask install iterm2
 ```
+
 Thanks to brew-cask ~
 
 In iTerm2, except the commond shortcuts like `^E`(ctrl+E)(find more [here](#Others)). And after some configuration you can have more shortcuts like `⌥B`(alt+B), `⌥F`(alt+F). 
