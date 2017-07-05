@@ -51,7 +51,7 @@
    - [IntelliJ IDEA](#intellij-idea)
    - [rbenv](#rbenv)
    - [Ruby 常用别名](#ruby-常用别名)
-   - [Node 版本管理](#Node-版本管理)
+   - [Node 版本管理](#node-版本管理)
 
 一直想写这么一篇文章，把我从同事那里学到的经验分享出来。市面上有很多类似的文章，写得都非常好，让我受益匪浅。不过我还是有一些自己总结出来的经验想要分享。
 
@@ -628,34 +628,28 @@ Node 的版本管理工具有很多，常用的会有以下几个：
 
 * [nodenv](https://github.com/nodenv/nodenv)
 
-  该工具是一个类似rbenv的工具，命令和其完全一样，安装和配置也一样。
+  该工具是一个类似 rbenv 的工具，命令和其完全一样，安装和配置也一样。
 
-```
-$> brew install nodenv
-```
+  ```
+  brew install nodenv
+  ```
 
-你需要手动添加以下配置
+  你需要手动添加以下配置到`~/.zshrc`或者`~/.zprofile`文件里。
 
-```sh
-export PATH="$HOME/.nodenv/bin:$PATH"
-eval "$(nodenv init -)"
-```
-
-到`~/zshrc`或者`~/.zprofile`文件里。
+  ```sh
+  export PATH="$HOME/.nodenv/bin:$PATH"
+  eval "$(nodenv init -)"
+  ```
 
 * [nvm](https://github.com/creationix/nvm)
 
-  该工具是一个类似RVM的工具，命令安装方式也基本一样，可以参考官方文档。
+  该工具是一个类似 RVM 的工具，命令安装方式也基本一样，可以参考官方文档。
 
 * [n](https://github.com/tj/n)
 
-  一个简单的工具，安装方式类似NVM，无需额外配置。具体参考官方文档。
+  一个简单的工具，安装方式类似 nvm，无需额外配置。具体参考官方文档。
 
-**NODE:** 目前根据Github Starts。
-
-  这三个管理工具 `NVM` 第一，`n` 第二， `nodenv` 第三。
-
-  但是个人建议采用 `nodenv` 原因同 `rbenv`，尤其已经在使用 `rbenv` 的伙伴们会觉得 `nodenv` 更顺手 :smile: 。
+目前根据 GitHub Stars，这三个管理工具的排名依次是 nvm、n、nodenv。但是个人建议采用 nodenv，原因同 rbenv，尤其已经在使用 rbenv 的伙伴们会觉得 nodenv 更顺手 :smile: 。
 
 
 ## 参考资料

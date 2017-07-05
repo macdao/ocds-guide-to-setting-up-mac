@@ -527,33 +527,32 @@ plugins=(git z sublime history rbenv bundler rake)
 
 ### Node Version Manager
 
-There are many Node version management tools. In here, I recommend `nodenv`, which is quite light and can be installed by brew.
+There are many node version management tools. In here, I recommend nodenv, which is quite light and can be installed by brew.
 
 * [nodenv](https://github.com/nodenv/nodenv)
 
-  This tool is the same as `rbenv`, you can install it like this:
+  This tool is the same as rbenv, you can install it like this:
 
-```
-$> brew install nodenv
-```
+  ```
+  brew install nodenv
+  ```
 
-Then you need to add the following code into `~/zshrc` or `~/.zprofile`.
+  Then you need to add the following code into `~/zshrc` or `~/.zprofile`.
 
-```sh
-export PATH="$HOME/.nodenv/bin:$PATH"
-eval "$(nodenv init -)"
-```
+  ```sh
+  export PATH="$HOME/.nodenv/bin:$PATH"
+  eval "$(nodenv init -)"
+  ```
 
 Other tools:
 
 * [nvm](https://github.com/creationix/nvm)
 
-  This tool is the same as `rvm`, you can reference official doc to install it.
+  This tool is the same as RVM, you can reference official doc to install it.
 
 * [n](https://github.com/tj/n)
 
-  Another simple tool, pls reference official doc.
-
+  Another simple tool, please reference official doc.
 
 ## References
 
