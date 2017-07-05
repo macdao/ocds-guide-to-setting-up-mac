@@ -36,6 +36,7 @@
     * [Java](#java)
     * [rbenv](#rbenv)
     * [Ruby Daily Alias](#ruby-daily-alias)
+    * [Node Version Manager](#node-version-manager)
   * [References](#references)
 
 I was always thinking about writing this article, to share all the experiences I've learnt from other colleagues. Though there are already some really good books, from which I've learnt a lot also. But I still want to share my own experiences.
@@ -48,15 +49,15 @@ Several points of efficient Mac environment in my opinion:
 
 - Automate
 
-  Take a example, there are several steps to install an application manually: 
-  1. Open your browser, 
+  Take a example, there are several steps to install an application manually:
+  1. Open your browser,
   2. Search by the application name,
   3. Open the official site for the applicaiton,
   4. Find the download link,
   5. Downloading,
   6. Install it,
   7. Some post steps.
-  
+
   But with automatic tools, you only required to do:
   1. Open terminal,
   2. Type in commands,
@@ -123,7 +124,7 @@ Reduce using of Mouse and Trackpad may increase your efficiency.
 - [Mac keyboard shortcts](https://support.apple.com/kb/HT201236)
 
   Apple official documents. Like how to move cursor between lines, words and so on.
-  
+
 - [Mac keyboard shortcuts for accessibility features](https://support.apple.com/kb/HT204434)
 
   Apple official documents. The selection of blue button part is from this.
@@ -148,7 +149,7 @@ Combine it with other bash commands using `&&` or `;` like this:
 brew update && brew upgrade && brew cleanup ; say mission complete
 ```
 
-Also you can let it speak almost anywhere by selecting one word and press `⌥+Esc`(Alt/Option+Esc). Before that you need goto `System Preferences` > `Dictation & Speech`, check `Speak selected text when the key is pressed` in `Text to Speech` tab. 
+Also you can let it speak almost anywhere by selecting one word and press `⌥+Esc`(Alt/Option+Esc). Before that you need goto `System Preferences` > `Dictation & Speech`, check `Speak selected text when the key is pressed` in `Text to Speech` tab.
 
 *Some lines are missing here. As not helping a lot - fff*
 
@@ -248,7 +249,7 @@ brew cask install iterm2
 
 Thanks to brew-cask ~
 
-In iTerm2, except the commond shortcuts like `^E`(ctrl+E)(find more [here](#Others)). And after some configuration you can have more shortcuts like `⌥B`(alt+B), `⌥F`(alt+F). 
+In iTerm2, except the commond shortcuts like `^E`(ctrl+E)(find more [here](#Others)). And after some configuration you can have more shortcuts like `⌥B`(alt+B), `⌥F`(alt+F).
 HowTo: go to `Preferences` > `Profiles` > `Keys`, change the option of `Left option (⌥) key acts as` and `Right option (⌥) key acts as` to `+ESC`.
 
 When you open new window/tab, by default you're at user home directory, and need input commands to go somewhere else. If you want to open new window/tab in previous directory, you can set it like this:
@@ -354,7 +355,7 @@ Installation:
 brew cask install sublime-text
 ```
 
-Open file with Sublime Text in command line is quite handy, normally we need to link it first(following:[OS X Command Line](https://www.sublimetext.com/docs/2/osx_command_line.html)) with: `ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl`. 
+Open file with Sublime Text in command line is quite handy, normally we need to link it first(following:[OS X Command Line](https://www.sublimetext.com/docs/2/osx_command_line.html)) with: `ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl`.
 
 But if you install it with brew-cask, the problem is already sorted by brew-cask, and it will remove the link when you uninstall Sublime Text.
 
@@ -513,7 +514,7 @@ Alternatives: RVM, chruby. But as RVM is unable to be installed by brew, and it 
 
 ### Ruby Daily Alias
 
-Almost every Rubyist takes `bi` as alias of `bundle install`. Oh-My-Zsh provides `builder` plugin to setup a set of alias, like `bi`, `be`. Also allow you to run `rspec` directly, without any leading `be` or `bundle exec`. 
+Almost every Rubyist takes `bi` as alias of `bundle install`. Oh-My-Zsh provides `builder` plugin to setup a set of alias, like `bi`, `be`. Also allow you to run `rspec` directly, without any leading `be` or `bundle exec`.
 
 For a detailed list please go to <https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/bundler>.
 
@@ -523,6 +524,36 @@ Be aware of that, put `rake` after `bundler` when modifying the plugin settings 
 ```
 plugins=(git z sublime history rbenv bundler rake)
 ```
+
+### Node Version Manager
+
+There are many Node version management tools. In here, I recommend `nodenv`, which is quite light and can be installed by brew.
+
+* [nodenv](https://github.com/nodenv/nodenv)
+
+  This tool is the same as `rbenv`, you can install it like this:
+
+```
+$> brew install nodenv
+```
+
+Then you need to add the following code into `~/zshrc` or `~/.zprofile`.
+
+```sh
+export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)"
+```
+
+Other tools:
+
+* [nvm](https://github.com/creationix/nvm)
+
+  This tool is the same as `rvm`, you can reference official doc to install it.
+
+* [n](https://github.com/tj/n)
+
+  Another simple tool, pls reference official doc.
+
 
 ## References
 
