@@ -7,6 +7,7 @@
 ## Table of Contents
   * [1. OS X](#1-os-x)
     * [Function Keys](#function-keys)
+    * [Efficient Cursor](#efficient-cursor)
     * [Keyboard Only Control](#keyboard-only-control)
     * [Others](#others)
     * [Change `click` of Trackpad to `Tap`](#change-`click`-of-trackpad-to-`tap`)
@@ -94,6 +95,12 @@ Things related with OS X settings.
 By default, F1-F12 are special function keys, like adjust screen brightness. You are required to press Fn at the same time, when you need input F1-F12(like IntelliJ IDEA shortcuts). It's not so convenient for developers.
 
 To avoid pressing Fn: go to `System Preferences` > `Keyboard`，select `Use all F1, F2, etc. keys as standard function keys` in `Keyboard` tab。
+
+### Efficient Cursor
+
+By default, cursor has pretty slow blinking and moving speed. When you need delete a large paragraphs of text by pressing the backspace, you are probably wasting your time. Even you hold the backspace key hardly, the cursor is still as slow as a snail.
+
+Speed up cursor: Go to `System Preferences` > `Keyboard`, move `Key Repeat` and `Delay Until Repeat` slidebars to rightmost under `Keyboard` tab. Enjoy your speed now!
 
 ### Keyboard Only Control
 
