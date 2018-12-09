@@ -656,6 +656,6 @@ Node 的版本管理工具有很多，常用的会有以下几个：
 
 - [Hacker's Guide to Setting up Your Mac](http://lapwinglabs.com/blog/hacker-guide-to-setting-up-your-mac)
 - [Setting up a new (OS X) development machine](https://mattstauffer.co/blog/setting-up-a-new-os-x-development-machine-part-1-core-files-and-custom-shell)
-- [高效 MacBook 工作环境配置](http://www.xialeizhou.com/?p=71)
+- [高效 MacBook 工作环境配置](http://www.xialeizhou.com/?p=71)（已失效）
 - [程序员如何优雅地使用 Mac？](http://www.zhihu.com/question/20873070)
 - [装点你的 Dock：外观篇](http://sspai.com/33493)

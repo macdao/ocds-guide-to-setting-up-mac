@@ -558,6 +558,6 @@ Other tools:
 
 - [Hacker's Guide to Setting up Your Mac](http://lapwinglabs.com/blog/hacker-guide-to-setting-up-your-mac)
 - [Setting up a new (OS X) development machine](https://mattstauffer.co/blog/setting-up-a-new-os-x-development-machine-part-1-core-files-and-custom-shell)
-- [高效 MacBook 工作环境配置](http://www.xialeizhou.com/?p=71) **"Efficient MacBook working configurration", you need google translate*
+- [高效 MacBook 工作环境配置](http://www.xialeizhou.com/?p=71) **"Efficient MacBook working configurration", you need google translate* (no longer available)
 - [程序员如何优雅地使用 Mac？](http://www.zhihu.com/question/20873070) **"How to use Mac elegantly for programmer", you need google translate also*
 - [装点你的 Dock：外观篇](http://sspai.com/33493)
