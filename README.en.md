@@ -21,7 +21,6 @@
     * [Homebrew Cask](#homebrew-cask)
     * [iTerm2](#iterm2)
     * [Oh My Zsh](#oh-my-zsh)
-    * [Stow](#stow)
     * [Git Alias](#git-alias)
     * [ShiftIt](#shiftit)
     * [Sublime Text 2](#sublime-text-2)
@@ -32,6 +31,7 @@
     * [SourceTree](#sourcetree)
     * [CheatSheet](#cheatsheet)
     * [Alfred](#alfred)
+    * [Stow](#stow)
   * [3. Tools for developers](#3-tools-for-developers)
     * [Java](#java)
     * [rbenv](#rbenv)
@@ -285,19 +285,6 @@ Oh-My-Zsh gets [more valuable plugins](https://github.com/robbyrussell/oh-my-zsh
 
 Besides Oh-My-Zsh, there is [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)，which based on [Fishshell](http://fishshell.com/).
 
-### [Stow](http://www.gnu.org/software/stow/)
-GNU stow is the super girl(-.-) of symlink management. Mainly it's used to symlink your [dotfiles](http://dotfiles.github.io/), like emacs，git configuration files of fish/zsh.
-
-Installation:
-
-```
-brew install stow
-```
-
-After installing, we can symlink the dotfiles. The full instructions for stow and dotfiles are here:<https://github.com/jcouyang/dotfiles>.
-
-After symlinking all your dotfiles to `~/dotfiles`, push it to github. There is no worries any more for setuping another new laptop.
-
 ### Git Alias
 
 Almost everyone is looking for ways to increase their efficiency, like git alias, using `git st` instead of `git status`. But it requires some manual configuration, which makes everyone's configuration differ.
@@ -450,6 +437,20 @@ Installation:
 ```sh
 brew cask install alfred
 ```
+
+### [Stow](http://www.gnu.org/software/stow/)
+
+GNU stow is the super girl(-.-) of symlink management. Mainly it's used to symlink your [dotfiles](http://dotfiles.github.io/), like Emacs，Git configuration files of fish shell/Zsh.
+
+Installation:
+
+```
+brew install stow
+```
+
+After installing, we can symlink the dotfiles. The full instructions for stow and dotfiles are here:<https://github.com/jcouyang/dotfiles>.
+
+After symlinking all your dotfiles to `~/dotfiles`, push it to github. There is no worries any more for setuping another new laptop.
 
 ## 3. Tools for developers
 

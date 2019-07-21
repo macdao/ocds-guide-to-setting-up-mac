@@ -29,7 +29,6 @@
    - [Homebrew Cask](#homebrew-cask)
    - [iTerm2](#iterm2)
    - [Oh My Zsh](#oh-my-zsh)
-   - [stow](#stow)
    - [Git 常用别名](#git-常用别名)
    - [Scroll Reverser](#scroll-reverser)
    - [ShiftIt](#shiftit)
@@ -41,6 +40,7 @@
    - [SourceTree](#sourcetree)
    - [CheatSheet](#cheatsheet)
    - [Alfred](#alfred)
+   - [Stow](#stow)
 
 3. [开发工具](#3-开发工具)
 
@@ -316,18 +316,6 @@ Oh My Zsh 还有很多[有价值的插件](https://github.com/robbyrussell/oh-my
 
 替代品有 [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)。基于 [Fishshell](http://fishshell.com/) 。
 
-### [Stow](http://www.gnu.org/software/stow/)
-
-GNU stow 是管理符号链接（symlink）的一个小公举。主要用于 symlink 你的 [dotfiles](http://dotfiles.github.io/) 如 emacs，git，fish/zsh 的配置文件。安装只需要
-
-```
-brew install stow
-```
-
-安装了 stow 之后，我们可以开始 symlink 一些 dotfiles 了。完整使用 stow 和 dotfiles 的流程可以参考 <https://github.com/jcouyang/dotfiles>
-
-当你的 dotfiles 都妥妥的 symlink 到 `~/dotfiles` 后，push 到 github 上就再也不怕换电脑了。
-
 ### Git 常用别名
 
 几乎每个人都会使用一些方法比如 Git 别名来提高效率，几乎所有人都会把使用`git st`来代替`git status`。然而这需要手动设置，每个人也都不完全一样。
@@ -485,6 +473,18 @@ Mac 用户不用鼠标键盘的必备神器，配合大量 Workflows，习惯之
 ```sh
 brew cask install alfred
 ```
+
+### [Stow](http://www.gnu.org/software/stow/)
+
+GNU Stow 是管理符号链接（symlink）的一个小公举。主要用于 symlink 你的 [dotfiles](http://dotfiles.github.io/) 如 Emacs、Git、fish shell/Zsh 的配置文件。安装只需要
+
+```
+brew install stow
+```
+
+安装了 stow 之后，我们可以开始 symlink 一些 dotfiles 了。完整使用 stow 和 dotfiles 的流程可以参考 <https://github.com/jcouyang/dotfiles>
+
+当你的 dotfiles 都妥妥的 symlink 到 `~/dotfiles` 后，push 到 github 上就再也不怕换电脑了。
 
 ## 3. 开发工具
 
