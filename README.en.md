@@ -5,7 +5,7 @@
 *Translated from [强迫症的 Mac 设置指南](https://github.com/macdao/ocds-guide-to-setting-up-mac#强迫症的-mac-设置指南), thanks to author: QiXi from Thoughtworks China - fff*
 
 ## Table of Contents
-  * [1. OS X](#1-os-x)
+  * [1. macOS](#1-macos)
     * [Function Keys](#function-keys)
     * [Keyboard Only Control](#keyboard-only-control)
     * [Others](#others)
@@ -85,9 +85,9 @@ Several points of efficient Mac environment in my opinion:
 
 
 
-## 1. OS X
+## 1. macOS
 
-Things related with OS X settings.
+Things related with macOS settings.
 
 ### Function Keys
 
@@ -137,7 +137,7 @@ Goto `System Preferences` > `Trackpad`，check `Tap to click` in `Point & Click`
 
 ### Voice
 
-OS X can speak by：
+macOS can speak by：
 
 ```sh
 say hello
@@ -198,7 +198,7 @@ defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
 
 ### Keychain Access
 
-Keychain Access is a Mac OS X application. It can be used to find saved accounts and passwords including Wi-Fi password.
+Keychain Access is a macOS application. It can be used to find saved accounts and passwords including Wi-Fi password.
 
 *Some lines are missing here. As not helping a lot - fff*
 
@@ -208,7 +208,7 @@ Some routine software, and not necessarily related to development.
 
 ### [Homebrew](http://brew.sh)
 
-Package management, official description: "The missing package manager for OS X".
+Package management, official description: "The missing package manager for macOS".
 
 Go to official site for installation steps.
 
@@ -224,7 +224,7 @@ PS: install brew will download and install Apple Command Line Tools automaticall
 
 ### [Homebrew Cask](https://caskroom.github.io/)
 
-brew-cask helps you to install OS X Applications. Like to install Chrome：`brew cask install google-chrome`. Also Evernote, Skype, Sublime Text, VirtualBox, Java7 ...
+brew-cask helps you to install macOS Applications. Like to install Chrome：`brew cask install google-chrome`. Also Evernote, Skype, Sublime Text, VirtualBox, Java7 ...
 
 brew-cask is driven by community, you may raise a pull request when you found any missing or outdated application.
 
@@ -239,7 +239,7 @@ brew cask search java7
 
 ### [iTerm2](https://www.iterm2.com/)
 
-iTerm2 is the most widely used terminal tool, considered as the replacement of Terminal. It provides [a group of practical features](https://www.iterm2.com/features.html), including `Split Panes`. Its default black background makes me throw away OS X' inbuilt Terminal application without any hesitation.
+iTerm2 is the most widely used terminal tool, considered as the replacement of Terminal. It provides [a group of practical features](https://www.iterm2.com/features.html), including `Split Panes`. Its default black background makes me throw away macOS' inbuilt Terminal application without any hesitation.
 
 Installation:
 
@@ -320,7 +320,7 @@ The full list is here: <https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:gi
 
 ### ShiftIt
 
-In OS X you only can adjust window size by dragging. I've tried lots of window management tools, but most of them have the conflict key mapping(mostly with IntelliJ IDEA). ShiftIt is the apparently rare one without any conflicts.
+In macOS you only can adjust window size by dragging. I've tried lots of window management tools, but most of them have the conflict key mapping(mostly with IntelliJ IDEA). ShiftIt is the apparently rare one without any conflicts.
 
 Installation:
 
@@ -382,7 +382,7 @@ For firefox there is a similar solution: [KeySnail](https://github.com/mooz/keys
 
 ### [LastPass](https://lastpass.com)
 
-LastPass is a password management tool, support a second login step, provides plugins for every browser and also OS X desktop version.
+LastPass is a password management tool, support a second login step, provides plugins for every browser and also macOS desktop version.
 
 The most important thing, it provides **command line** version, install it by:
 

@@ -6,7 +6,7 @@
 
 ## Table of Contents
 
-1. [OS X](#1-os-x)
+1. [macOS](#1-macos)
 
    - [功能键](#功能键)
    - [全键盘控制](#全键盘控制)
@@ -85,7 +85,7 @@
 
 PS：虽然本文名为“强迫症”，但其实并不是[真正意义上的强迫症](https://zh.wikipedia.org/wiki/强迫症)，真正意义上的强迫症是一种会对患者的日常生活产生负面影响的疾病。
 
-## 1. OS X
+## 1. macOS
 
 本节介绍操作系统本身的一些设置。
 
@@ -121,7 +121,7 @@ PS：虽然本文名为“强迫症”，但其实并不是[真正意义上的�
 
 ### Spotlight 快捷键
 
-中文版 OS X 的 Spotlight 的快捷键是`⌃Space`。这个快捷键有一些问题：
+中文版 macOS 的 Spotlight 的快捷键是`⌃Space`。这个快捷键有一些问题：
 
 - JetBrains 的 IDE，比如 IntelliJ IDEA、WebStorm 等都使用`⌃Space`作为自动完成这个最常用功能的快捷键。我不建议更改 IDE 的快捷键，而建议更改 Spotlight 的快捷键。
 - 对于没有添加中文输入法的 Mac 来说，Spotlight 的快捷键是`⌘Space`。英语国家的人都是这样的。所以我建议把 Spotlight 的快捷键设置为`⌘Space`，跟他们一致。
@@ -150,7 +150,7 @@ PS：虽然本文名为“强迫症”，但其实并不是[真正意义上的�
 
 ### 语音
 
-OS X 自带了语音功能，可以用`say`命令让 Mac 开口说话：
+macOS 自带了语音功能，可以用`say`命令让 Mac 开口说话：
 
 ```sh
 say hello
@@ -166,7 +166,7 @@ brew update && brew upgrade && brew cleanup ; say mission complete
 
 ### 词典
 
-OS X 自带了词典（Dictionary）。你几乎可以在任何应用中通过三指轻拍触摸板来现实对应单词的释义。
+macOS 自带了词典（Dictionary）。你几乎可以在任何应用中通过三指轻拍触摸板来现实对应单词的释义。
 
 也可以打开 Dictionary 应用来查找单词。
 
@@ -234,7 +234,7 @@ hdiutil create -type SPARSE -fs 'Case-sensitive Journaled HFS+' -size 100g -voln
 
 ### Keychain Access
 
-钥匙串访问（Keychain Access）是一个 OS X 应用程序，对我来说它最大的功能就是查看已经保存的各种账号和密码，包括 Wi-Fi 密码。
+钥匙串访问（Keychain Access）是一个 macOS 应用程序，对我来说它最大的功能就是查看已经保存的各种账号和密码，包括 Wi-Fi 密码。
 
 ## 2. 常用工具
 
@@ -242,7 +242,7 @@ hdiutil create -type SPARSE -fs 'Case-sensitive Journaled HFS+' -size 100g -voln
 
 ### [Homebrew](http://brew.sh)
 
-包管理工具，官方称之为`The missing package manager for OS X`。
+包管理工具，官方称之为`The missing package manager for macOS`。
 
 安装步骤见官网。
 
@@ -258,7 +258,7 @@ brew 的替代品有 [MacPorts](https://www.macports.org/)，现在基本没人�
 
 ### [Homebrew Cask](https://caskroom.github.io)
 
-brew-cask 允许你使用命令行安装 OS X 应用。比如你可以这样安装 Chrome：`brew cask install google-chrome`。还有 Evernote、Skype、Sublime Text、VirtualBox 等都可以用 brew-cask 安装。
+brew-cask 允许你使用命令行安装 macOS 应用。比如你可以这样安装 Chrome：`brew cask install google-chrome`。还有 Evernote、Skype、Sublime Text、VirtualBox 等都可以用 brew-cask 安装。
 
 brew-cask 是社区驱动的，如果你发现 brew-cask 上的应用不是最新版本，或者缺少你某个应用，你可以自己提交 pull request。
 
@@ -348,7 +348,7 @@ gwip  | `git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -
 
 当你在浏览一个很长的网页时，你看完了当前显示的内容，想要看后续的内容，你可以在 Trackpad 上双指上滑，或者鼠标滚轮向上滚动。这是被称作“自然”的滚动方向。
 
-然而在 Windows 里鼠标滚动的行为是相反的：鼠标滚轮向下滚动才会让浏览器显示后续的内容，向上滚动会达到页面的顶部。你可以在 OS X 的系统偏好设置里修改（选择`System Preferences` > `Trackpad`，在`Scroll & Zoom`标签页中不选中`Scroll direction: natural`），但是这样会同时改变鼠标滚轮的方向和 Trackpad 的方向。
+然而在 Windows 里鼠标滚动的行为是相反的：鼠标滚轮向下滚动才会让浏览器显示后续的内容，向上滚动会达到页面的顶部。你可以在 macOS 的系统偏好设置里修改（选择`System Preferences` > `Trackpad`，在`Scroll & Zoom`标签页中不选中`Scroll direction: natural`），但是这样会同时改变鼠标滚轮的方向和 Trackpad 的方向。
 
 要想只改变鼠标滚轮的方向，而保持 Trackpad 依旧是“自然”的，我们需要 Scroll Reverser：
 
@@ -360,7 +360,7 @@ PS：这货会让三指点击失效
 
 ### ShiftIt
 
-原生 OS X 下只能手动调整窗口大小，所以我们需要窗口管理工具。我用过很多窗口管理工具，可惜大部分工具都存在快捷键冲突的问题（对我来说主要是 IntelliJ IDEA）。ShiftIt 是少见的没有冲突的窗口管理工具：
+原生 macOS 下只能手动调整窗口大小，所以我们需要窗口管理工具。我用过很多窗口管理工具，可惜大部分工具都存在快捷键冲突的问题（对我来说主要是 IntelliJ IDEA）。ShiftIt 是少见的没有冲突的窗口管理工具：
 
 ```sh
 brew cask install shiftit
@@ -531,7 +531,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-466.1, mixed mode)
 - 需要手动把`eval "$(jenv init -)"`加入 profile，没有 Oh My Zsh 插件。这点是我非常反感的。
 
   可以把`eval "$(jenv init -)"`加入`~/.zlogin`，这样可以避免修改`~/.zshrc`。
-- 需要手动添加 JDK，不会自动采集系统 JDK。跟 Ruby 不同，OS X 已经提供`/usr/libexec/java_home`工具来管理安装的 JDK。
+- 需要手动添加 JDK，不会自动采集系统 JDK。跟 Ruby 不同，macOS 已经提供`/usr/libexec/java_home`工具来管理安装的 JDK。
 - 需要 `jenv rehash`。这个是跟 rbenv 学的。
 
 所以我建议不要使用 jEnv。
@@ -579,10 +579,10 @@ brew cask install intellij-idea
 brew cask install intellij-idea-ce
 ```
 
-IntelliJ IDEA 有几套内建的快捷键方案（Keymap）。其中适用于 OS X 的有`Mac OS X`和`Mac OS X 10.5+`两种。区别是:
+IntelliJ IDEA 有几套内建的快捷键方案（Keymap）。其中适用于 macOS 的有`Mac OS X`和`Mac OS X 10.5+`两种。区别是:
 
 - `Mac OS X`方案和其他平台上的快捷键类似，
-- 而`Mac OS X 10.5+`更加符合 OS X 常用的快捷键。
+- 而`Mac OS X 10.5+`更加符合 macOS 常用的快捷键。
 
 一个团队使用不同的快捷键会严重影响效率。可以用`View | Quick Switch Scheme`（`⌃ Back Quote`）快速切换 Keymap。
 
