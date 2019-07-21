@@ -231,8 +231,9 @@ brew-cask is driven by community, you may raise a pull request when you found an
 You can find the installation method on offical website.
 
 You would like to search if you not sure if some application is already in cask.
+
 ```sh
-brew cask search java7
+brew search java
 ```
 
 *Some lines are missing here. As not helping a lot - fff*
@@ -311,12 +312,9 @@ gst   | `git status`
 gup   | `git pull --rebase`
 gwip  | `git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -m "--wip--"`
 
-
 The full list is here: <https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git>, or simply run command `alias | grep git` in Oh-My-Zsh window.
 
-
 *Some lines are missing here. As not helping a lot - fff*
-
 
 ### ShiftIt
 
@@ -456,9 +454,10 @@ After symlinking all your dotfiles to `~/dotfiles`, push it to github. There is 
 
 ### Java
 
-There is no default JDK any more for new version of OS X, so you need to download and install it before you want to do some Java projects.
+There is no default JDK any more for new version of macOS, so you need to download and install it before you want to do some Java projects.
 
 Before brew-cask, we are used to download from: <https://developer.apple.com/downloads/>. But the drawback is that uninstall or upgrades take significant time.
+
 For JDK package, which is pkg format, there is no automatic way to uninstall it.
 
 But good news is brew-cask can do it for you:
@@ -467,16 +466,16 @@ But good news is brew-cask can do it for you:
 brew cask install java
 ```
 
-If you need Java-7 or Java-6, you can get from `homebrew-cask-versions`：
+If you need Java-11 or Java-6, you can get from [homebrew-cask-versions](https://github.com/Homebrew/homebrew-cask-versions)：
 
 ```sh
-brew tap caskroom/versions
-brew cask install java6
+brew tap homebrew/cask-versions
+brew cask install java11
 ```
 
-You can install several versions of JDK in Mac OS X, `/usr/libexec/java_home -V` will list all of them.
+You can install several versions of JDK in macOS, `/usr/libexec/java_home -V` will list all of them.
 
-So here is the problem, Which one is the one used by running `java` or any Java application? normally, OS X invokes the newest version of all those installed JDK versions. But you can change it by set `JAVA_HOME`:
+So here is the problem, Which one is the one used by running `java` or any Java application? normally, macOS invokes the newest version of all those installed JDK versions. But you can change it by set `JAVA_HOME`:
 
 ```sh
 $ java -version

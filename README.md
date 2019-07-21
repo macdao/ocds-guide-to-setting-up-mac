@@ -266,7 +266,7 @@ brew-cask 是社区驱动的，如果你发现 brew-cask 上的应用不是最�
 
 应用也可以通过 App Store 安装，而且有些应用只能通过 App Store 安装，比如 Xcode 等一些 Apple 的应用。App Store 没有对应的命令行工具，还需要 Apple ID。倒是更新起来很方便。
 
-几乎所有常用的应用都可以通过 brew-cask 安装，而且是从应用的官网上下载，所以你要安装新的应用时，建议用 brew-cask 安装。如果你不知道应用在 brew-cask 中的 ID，可以先用`brew cask search`命令搜索。
+几乎所有常用的应用都可以通过 brew-cask 安装，而且是从应用的官网上下载，所以你要安装新的应用时，建议用 brew-cask 安装。如果你不知道应用在 brew-cask 中的 ID，可以先用`brew search`命令搜索。
 
 ### [iTerm2](https://www.iterm2.com/)
 
@@ -340,9 +340,7 @@ gst   | `git status`
 gup   | `git pull --rebase`
 gwip  | `git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -m "--wip--"`
 
-
 完整列表请参考：<https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git>
-
 
 ### Scroll Reverser
 
@@ -490,26 +488,26 @@ brew install stow
 
 ### Java
 
-现在 OS X 都不会自带 JDK 了，所以进行 Java 开发的话，需要下载 JDK。在 brew-cask 之前，我们需要从 <https://developer.apple.com/downloads/> 或者 Oracle 网站上下载。还有更麻烦的－－卸载 JDK 和升级 JDK。
+macOS 都不会自带 JDK 了，所以进行 Java 开发的话，需要下载 JDK。在 brew-cask 之前，我们需要从 <https://developer.apple.com/downloads/> 或者 Oracle 网站上下载。还有更麻烦的－－卸载 JDK 和升级 JDK。
 
 JDK 安装文件是 pkg 格式，卸载和`.app`不一样，且没有自动卸载方式。
 
-而 brew-cask 提供了自动安装和卸载功能，能够自动从官网上下载并安装 JDK 8。
+而 brew-cask 提供了自动安装和卸载功能，能够自动从官网上下载并安装最新的 JDK。
 
 ```sh
 brew cask install java
 ```
 
-如果你需要安装 JDK 7 或者 JDK 6，可以使用`homebrew-cask-versions`：
+如果你需要安装 JDK 11 或者 JDK 6，可以使用 [homebrew-cask-versions](https://github.com/Homebrew/homebrew-cask-versions)：
 
 ```sh
-brew tap caskroom/versions
-brew cask install java6
+brew tap homebrew/cask-versions
+brew cask install java11
 ```
 
-在 OS X 上，你可以同时安装多个版本的 JDK。你可以通过命令`/usr/libexec/java_home -V`来查看安装了哪几个 JDK。
+在 macOS 上，你可以同时安装多个版本的 JDK。你可以通过命令`/usr/libexec/java_home -V`来查看安装了哪几个 JDK。
 
-那问题来了，当你运行`java`或者 Java 程序时使用的是哪个 JDK 呢？在 OS X 下，`java`也就是`/usr/bin/java`在默认情况下指向的是已经安装的最新版本。但是你可以设置环境变量`JAVA_HOME`来更改其指向：
+那问题来了，当你运行`java`或者 Java 程序时使用的是哪个 JDK 呢？在 macOS 下，`java`也就是`/usr/bin/java`在默认情况下指向的是已经安装的最新版本。但是你可以设置环境变量`JAVA_HOME`来更改其指向：
 
 ```sh
 $ java -version
