@@ -522,6 +522,8 @@ Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-466.1, mixed mode)
 
 其中`JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home`可以用`` JAVA_HOME=`/usr/libexec/java_home -v 1.6` ``这种更加通用的方式代替。
 
+需要 JDK 8/9？很遗憾，由于一些原因（[Java8 not working anymore](https://github.com/Homebrew/homebrew-cask-versions/issues/7253)），brew-cask 不再提供 Oracle JDK 这些版本的安装。不过你可以尝试 [AdoptOpenJDK](https://github.com/AdoptOpenJDK/homebrew-openjdk)，或者从 [Oracle](https://www.oracle.com) 官网手工下载安装。
+
 ### [jEnv](https://github.com/gcuisinier/jenv)
 
 也可以使用 jEnv 来管理不同版本的 JDK，这个工具跟 [rbenv](#rbenv) 类似，通过当前目录下的`.java-version`来决定使用哪个 JDK。jEnv 也可以用 brew 安装。不过要使用 jEnv 要有几个问题：

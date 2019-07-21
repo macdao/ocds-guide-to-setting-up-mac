@@ -490,6 +490,9 @@ Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-466.1, mixed mode)
 
 You may change `JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home` into `` JAVA_HOME=`/usr/libexec/java_home -v 1.6` ``, which is more widely used.
 
+
+Need to install JDK 8/9? Due to [Java8 not working anymore](https://github.com/Homebrew/homebrew-cask-versions/issues/7253), brew-cask does not privde those Oracle JDK any more. You can try [AdoptOpenJDK](https://github.com/AdoptOpenJDK/homebrew-openjdk) or download pkg from [Oracle](https://www.oracle.com).
+
 *Some lines are missing here. As not helping a lot - fff*
 
 ### [rbenv](https://github.com/sstephenson/rbenv)
