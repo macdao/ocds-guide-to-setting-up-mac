@@ -273,31 +273,62 @@ hdiutil create -type SPARSE -fs 'Case-sensitive Journaled HFS+' -size 100g -voln
 
 安装步骤见官网。
 
-有了 brew 以后，要下载工具，比如 MySQL、Gradle、Maven、Node.js 等工具，就不需要去网上下载了，只要一行命令就能搞定：
+有了 Homebrew 以后，要下载工具，比如 Wget、Gradle、Maven 等工具，就不需要去网上下载了，只要一行命令就能搞定：
 
 ```sh
-brew install mysql gradle maven node
+brew install wget gradle maven
 ```
 
-PS：安装 brew 的时候会自动下载和安装 Apple 的 Command Line Tools。
+PS：安装 Homebrew 的时候会自动下载和安装 Apple 的 Command Line Tools。
 
-brew 的替代品有 [MacPorts](https://www.macports.org/)，现在基本没人用它。
+Homebrew 的替代品有 [MacPorts](https://www.macports.org/)，我没有用过。
 
-### [Homebrew Cask](https://caskroom.github.io)
+#### 使用国内镜像安装 Homebrew
 
-brew-cask 允许你使用命令行安装 macOS 应用。比如你可以这样安装 Chrome：`brew cask install google-chrome`。还有 Evernote、Skype、Sublime Text、VirtualBox 等都可以用 brew-cask 安装。
+有时候在国内访问 GitHub 非常慢，导致安装 Homebrew 总是失败。我查阅了一些资料，可以使用国内镜像来安装 Homebrew。我这里给出一个方便的方法。
 
-brew-cask 是社区驱动的，如果你发现 brew-cask 上的应用不是最新版本，或者缺少你某个应用，你可以自己提交 pull request。
+先看原理。官网上安装 Homebrew 的方法是执行命令：`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
-安装步骤见官网。
+在这个`install`脚本里，和 GitHub 有关的有两步：
 
-应用也可以通过 App Store 安装，而且有些应用只能通过 App Store 安装，比如 Xcode 等一些 Apple 的应用。App Store 没有对应的命令行工具，还需要 Apple ID。倒是更新起来很方便。
+- 通过 Git 获取`https://github.com/Homebrew/brew`
+- 通过`brew update --force`来`Tap` `Homebrew/core`。
 
-几乎所有常用的应用都可以通过 brew-cask 安装，而且是从应用的官网上下载，所以你要安装新的应用时，建议用 brew-cask 安装。如果你不知道应用在 brew-cask 中的 ID，可以先用`brew search`命令搜索。
+知道了之后，我们就可以直接修改下这个安装命令，将`https://github.com/Homebrew/brew`替换成国内镜像并暂时跳过`brew update --force`；然后使用镜像手动`Tap` `Homebrew/core`；最后执行`brew update --force`完成安装：
 
-### [iTerm2](https://www.iterm2.com/)
+```sh
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install | sed 's#"https://github.com/Homebrew/brew"#"https://mirrors.ustc.edu.cn/brew.git"#' | sed '/system.*brew.*update/s/^/#/')" && \
+brew tap homebrew/core https://mirrors.ustc.edu.cn/homebrew-core.git && \
+brew update --force
+```
 
-iTerm2 是最常用的终端应用，是 Terminal 应用的替代品。提供了诸如`Split Panes`等[一群实用特性](https://www.iterm2.com/features.html)。它默认的黑色背景让我毫不犹豫的抛弃了 Terminal。
+> 本方法基于`https://github.com/Homebrew/install/blob/c744a716f9845988d01e6e238eee7117b8c366c9/install`，如果`install`脚本更新有可能导致本方法失效。若发现失效请提交`issue`。
+
+另外下载安装包也可以使用国内镜像，具体参考：<https://lug.ustc.edu.cn/wiki/mirrors/help/homebrew-bottles>
+
+### [Homebrew Cask](https://github.com/Homebrew/homebrew-cask)
+
+Homebrew Cask 允许你使用命令行安装 macOS 应用。比如你可以这样安装 Chrome：`brew cask install google-chrome`。还有 Evernote `evenote`、Sublime Text `sublime-text`、VirtualBox `virtualbox`、Docker `docker`、Firefox `firefox`、Visual Studio Code `visual-studio-code` 等都可以用 Homebrew Cask 安装。
+
+Homebrew Cask 是社区驱动的，如果你发现 Homebrew Cask 上的应用不是最新版本，或者缺少你某个应用，你可以自己提交 pull request。
+
+目前 Homebrew Cask 已经和 Homebrew 深度集成，不需要单独安装了。
+
+应用也可以通过 App Store 安装，而且有些应用只能通过 App Store 安装，比如 Xcode 等一些 Apple 的应用。App Store 没有对应的命令行工具，并且还需要 Apple ID，相对有些麻烦。倒是更新起来很方便。
+
+几乎所有常用的应用都可以通过 Homebrew Cask 安装，而且是从应用的官网上下载，所以你要安装新的应用时，建议用 Homebrew Cask 安装。如果你不知道应用在 Homebrew Cask 中的 ID，可以先用`brew search`命令搜索。
+
+#### 使用国内镜像安装 Homebrew Cask
+
+可以使用国内镜像安装 Homebrew Cask：
+
+```sh
+brew tap homebrew/cask https://mirrors.ustc.edu.cn/homebrew-cask.git
+```
+
+### [iTerm2](https://iterm2.com/)
+
+iTerm2 是最常用的终端应用，是 Terminal 应用的替代品。提供了诸如`Split Panes`等[一群实用特性](https://iterm2.com/features.html)。它默认的黑色背景让我毫不犹豫的抛弃了 Terminal。
 
 安装：
 
@@ -305,15 +336,15 @@ iTerm2 是最常用的终端应用，是 Terminal 应用的替代品。提供了
 brew cask install iterm2
 ```
 
-感谢 brew-cask，我们可以通过命令行自动安装 iTerm2 了。
+感谢 Homebrew Cask，我们可以通过命令行自动安装 iTerm2 了。
 
 在终端里，除了可以用`⌃E`等快捷键（详见[其他快捷键](#其他快捷键)）之外，还可以使用`⌥B`、`⌥F`等快捷键（具体可以参考[这里](http://ss64.com/bash/syntax-keyboard.html)）。前提是这样设置一下：
 
-选择`Iterm`菜单 > `Preferences` > `Profiles`，选择你在使用的 Profile（默认是`Default`），在`Keys`标签页中把`Left option (⌥) key acts as`和`Right option (⌥) key acts as`都设置成`+ESC`。
+选择`Iterm2`菜单 > `Preferences` > `Profiles`，选择你在使用的 Profile（默认是`Default`），在`Keys`标签页中把`Left option (⌥) key acts as`和`Right option (⌥) key acts as`都设置成`ESC+`。
 
 在打开新的窗口/标签页的时候，默认情况下新窗口总是 HOME 目录，还需要我每次敲命令才能进入工作目录。如果想要这个新窗口在打开的时候就自动进入工作目录，需要如下设置：
 
-选择`Iterm`菜单 > `Preferences` > `Profiles`，选择你在使用的 Profile（默认是Default），在`General`标签页中的`Working Directory`部分中选择`Reuse previous seesion's directory`。
+选择`Iterm2`菜单 > `Preferences` > `Profiles`，选择你在使用的 Profile（默认是Default），在`General`标签页中的`Working Directory`部分中选择`Reuse previous seesion's directory`。
 
 至此，Terminal 应用已经出色的完成了其历史使命。后面命令行就交给 iTerm2 啦。
 
@@ -405,11 +436,11 @@ PS：ShiftIt的旧版本需要安装 X11，最新版本已经修正了这个问�
 brew cask install sublime-text
 ```
 
-在命令行中指定使用 Sublime Text 打开某文件，是一个非常常用的功能，一般我们会按照 [OS X Command Line](https://www.sublimetext.com/docs/2/osx_command_line.html) 中所说执行 `ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl` 来增加`subl`链接。但是如果你用 brew-cask 安装的话，恭喜你，你不需要运行这个命令，因为 brew-cask 自动帮你做了这件事情。而且你卸载 Sublime Text 的时候 brew-cask 会自动删掉这个链接。
+在命令行中指定使用 Sublime Text 打开某文件，是一个非常常用的功能，一般我们会按照 [OS X Command Line](https://www.sublimetext.com/docs/2/osx_command_line.html) 中所说执行 `ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl` 来增加`subl`链接。但是如果你用 Homebrew Cask 安装的话，恭喜你，你不需要运行这个命令，因为 Homebrew Cask 自动帮你做了这件事情。而且你卸载 Sublime Text 的时候 Homebrew Cask 会自动删掉这个链接。
 
-同时 Oh My Zsh 也提供了 Sublime Text 插件，叫做`sublime`。参考：<https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/sublime>，这个插件和通过 brew-cask 安装的 Sublime Text 完美兼容。
+同时 Oh My Zsh 也提供了 Sublime Text 插件，叫做`sublime`。参考：<https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/sublime>，这个插件和通过 Homebrew Cask 安装的 Sublime Text 完美兼容。
 
-替代品有 Atom、TextMate、Sublime Text 3 等，跟 Sublime Text 2 一样，用 brew-cask 安装的话命令行工具会被自动加入`$PATH`。
+替代品有 Atom、TextMate、Sublime Text 3 等，跟 Sublime Text 2 一样，用 Homebrew Cask 安装的话命令行工具会被自动加入`$PATH`。
 
 ### MacDown
 
@@ -473,7 +504,7 @@ SourceTree 是 Atlassian 公司出品的一款优秀的 Git 图形化客户端�
 brew cask install sourcetree
 ```
 
-用 brew-cask 安装会自动增加命令行工具`stree`到`$PATH`里。在命令行中输入`stree`可以快速用 SourceTree 打开当前 Git 仓库。详细用法请参见`stree --help`。
+用 Homebrew Cask 安装会自动增加命令行工具`stree`到`$PATH`里。在命令行中输入`stree`可以快速用 SourceTree 打开当前 Git 仓库。详细用法请参见`stree --help`。
 
 ### [CheatSheet](http://www.mediaatelier.com/CheatSheet/)
 
@@ -515,11 +546,11 @@ brew install stow
 
 ### Java
 
-macOS 都不会自带 JDK 了，所以进行 Java 开发的话，需要下载 JDK。在 brew-cask 之前，我们需要从 <https://developer.apple.com/downloads/> 或者 Oracle 网站上下载。还有更麻烦的－－卸载 JDK 和升级 JDK。
+macOS 都不会自带 JDK 了，所以进行 Java 开发的话，需要下载 JDK。在 Homebrew Cask 之前，我们需要从 <https://developer.apple.com/downloads/> 或者 Oracle 网站上下载。还有更麻烦的－－卸载 JDK 和升级 JDK。
 
 JDK 安装文件是 pkg 格式，卸载和`.app`不一样，且没有自动卸载方式。
 
-而 brew-cask 提供了自动安装和卸载功能，能够自动从官网上下载并安装最新的 JDK。
+而 Homebrew Cask 提供了自动安装和卸载功能，能够自动从官网上下载并安装最新的 JDK。
 
 ```sh
 brew cask install java
@@ -549,7 +580,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-466.1, mixed mode)
 
 其中`JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home`可以用`` JAVA_HOME=`/usr/libexec/java_home -v 1.6` ``这种更加通用的方式代替。
 
-需要 JDK 8/9？很遗憾，由于一些原因（[Java8 not working anymore](https://github.com/Homebrew/homebrew-cask-versions/issues/7253)），brew-cask 不再提供 Oracle JDK 这些版本的安装。不过你可以尝试 [AdoptOpenJDK](https://github.com/AdoptOpenJDK/homebrew-openjdk)，或者从 [Oracle](https://www.oracle.com) 官网手工下载安装。
+需要 JDK 8/9？很遗憾，由于一些原因（[Java8 not working anymore](https://github.com/Homebrew/homebrew-cask-versions/issues/7253)），Homebrew Cask 不再提供 Oracle JDK 这些版本的安装。不过你可以尝试 [AdoptOpenJDK](https://github.com/AdoptOpenJDK/homebrew-openjdk)，或者从 [Oracle](https://www.oracle.com) 官网手工下载安装。
 
 ### [jEnv](https://github.com/gcuisinier/jenv)
 
