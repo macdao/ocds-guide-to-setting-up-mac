@@ -558,12 +558,16 @@ JDK 安装文件是 pkg 格式，卸载和`.app`不一样，且没有自动卸�
 brew cask install java
 ```
 
-如果你需要安装 JDK 11 或者 JDK 6，可以使用 [homebrew-cask-versions](https://github.com/Homebrew/homebrew-cask-versions)：
+目前有`java`、`oracle-jdk`、`adoptopenjdk`可以安装 JDK 13，分别来自 OpenJDK、Oracle 和 AdoptOpenJDK。
+
+如果你需要安装其他版本，可以使用 [homebrew-cask-versions](https://github.com/Homebrew/homebrew-cask-versions)：
 
 ```sh
 brew tap homebrew/cask-versions
 brew cask install java11
 ```
+
+目前 homebrew-cask-versions 提供`java11`、`java6`和`adoptopenjdk8`。
 
 在 macOS 上，你可以同时安装多个版本的 JDK。你可以通过命令`/usr/libexec/java_home -V`来查看安装了哪几个 JDK。
 
@@ -582,7 +586,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-466.1, mixed mode)
 
 其中`JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home`可以用`` JAVA_HOME=`/usr/libexec/java_home -v 1.6` ``这种更加通用的方式代替。
 
-需要 JDK 8/9？很遗憾，由于一些原因（[Java8 not working anymore](https://github.com/Homebrew/homebrew-cask-versions/issues/7253)），Homebrew Cask 不再提供 Oracle JDK 这些版本的安装。不过你可以尝试 [AdoptOpenJDK](https://github.com/AdoptOpenJDK/homebrew-openjdk)，或者从 [Oracle](https://www.oracle.com) 官网手工下载安装。
+需要 Oracle JDK 8/9？很遗憾，由于一些原因（[Java8 not working anymore](https://github.com/Homebrew/homebrew-cask-versions/issues/7253)），Homebrew Cask 不再提供 Oracle JDK 这些版本的安装。不过你可以尝试 [AdoptOpenJDK](https://github.com/AdoptOpenJDK/homebrew-openjdk)，或者从 [Oracle](https://www.oracle.com) 官网手工下载安装。
 
 ### [jEnv](https://github.com/gcuisinier/jenv)
 
