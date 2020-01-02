@@ -352,7 +352,7 @@ brew cask install iterm2
 
 ### [Oh My Zsh](http://ohmyz.sh)
 
-默认的 Bash 是黑白的，没有色彩。而 Oh My Zsh 可以带你进入彩色时代。Oh My Zsh 同时提供一套插件和工具，可以简化命令行操作。后面我们会看到很多介绍，你会看到我爱死这家伙了。
+默认的 Bash （Catalina 已经默认使用 Zsh）是黑白的，没有色彩。而 Oh My Zsh 可以带你进入彩色时代。Oh My Zsh 同时提供一套插件和工具，可以简化命令行操作。后面我们会看到很多介绍，你会看到我爱死这家伙了。
 
 安装方法见官网。
 
@@ -368,7 +368,7 @@ Oh My Zsh 使用了 Z shell（zsh），一个和 Bash 相似的 Shell，而非 B
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 ```
 
-> [2016年6月17号的一次提交](https://github.com/robbyrussell/oh-my-zsh/commit/551abfcbb48a0c001eadef80abc3276af4e9ad26)后，`zshrc.zsh-template`就不再修改`$PATH`了。请找到`# export PATH=$HOME/bin:/usr/local/bin:$PATH`这一行，把前面的`#`去掉。
+> [2016年6月17号的一次提交](https://github.com/robbyrussell/oh-my-zsh/commit/551abfcbb48a0c001eadef80abc3276af4e9ad26)后，`zshrc.zsh-template`就不再修改`$PATH`了。如果需要，可以找到`# export PATH=$HOME/bin:/usr/local/bin:$PATH`这一行，把前面的`#`去掉。
 
 Oh My Zsh 还有很多[有价值的插件](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview)。
 
@@ -384,21 +384,21 @@ Alias | Command
 ----- | -------
 gapa  | `git add --patch`
 gc!   | `git commit -v --amend`
-gcl   | `git clone --recursive`
-gclean| `git reset --hard && git clean -dfx`
+gcl   | `git clone --recurse-submodules`
+gclean| `git clean -id`
 gcm   | `git checkout master`
 gcmsg | `git commit -m`
 gco   | `git checkout`
 gd    | `git diff`
 gdca  | `git diff --cached`
-glola | `git log --graph --pretty = format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all`
+glola | `git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --all`
 gp    | `git push`
 grbc  | `git rebase --continue`
 gst   | `git status`
 gup   | `git pull --rebase`
-gwip  | `git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -m "--wip--"`
+gwip  | `git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign -m "--wip-- [skip ci]"`
 
-完整列表请参考：<https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git>
+完整列表请参考：<https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git/>
 
 ### Scroll Reverser
 
@@ -422,13 +422,11 @@ PS：这货会让三指点击失效
 brew cask install shiftit
 ```
 
-PS：ShiftIt的旧版本需要安装 X11，最新版本已经修正了这个问题。
-
 替代者有 SizeUp，主要快捷键和 ShiftIt 相同。
 
-当然如果喜欢 hacking，[Slate](https://github.com/jigish/slate)  是个不错的 hackable 的窗口管理工具。配置可以参照 http://thume.ca/howto/2012/11/19/using-slate/
+当然如果喜欢 hacking，[Slate](https://github.com/jigish/slate)  是个不错的 hackable 的窗口管理工具。配置可以参照 <http://thume.ca/howto/2012/11/19/using-slate/>
 
-### Sublime Text 2
+### Sublime Text 3
 
 安装：
 
@@ -436,11 +434,13 @@ PS：ShiftIt的旧版本需要安装 X11，最新版本已经修正了这个问�
 brew cask install sublime-text
 ```
 
-在命令行中指定使用 Sublime Text 打开某文件，是一个非常常用的功能，一般我们会按照 [OS X Command Line](https://www.sublimetext.com/docs/2/osx_command_line.html) 中所说执行 `ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl` 来增加`subl`链接。但是如果你用 Homebrew Cask 安装的话，恭喜你，你不需要运行这个命令，因为 Homebrew Cask 自动帮你做了这件事情。而且你卸载 Sublime Text 的时候 Homebrew Cask 会自动删掉这个链接。
+在命令行中指定使用 Sublime Text 打开某文件，是一个非常常用的功能，一般我们会按照 [OS X Command Line](https://www.sublimetext.com/docs/3/osx_command_line.html) 中所说执行 `ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl` 来增加`subl`链接。但是如果你用 Homebrew Cask 安装的话，恭喜你，你不需要运行这个命令，因为 Homebrew Cask 自动帮你做了这件事情。而且你卸载 Sublime Text 的时候 Homebrew Cask 会自动删掉这个链接。
 
-同时 Oh My Zsh 也提供了 Sublime Text 插件，叫做`sublime`。参考：<https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/sublime>，这个插件和通过 Homebrew Cask 安装的 Sublime Text 完美兼容。
+同时 Oh My Zsh 也提供了 Sublime Text 插件，叫做`sublime`。参考：<https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins#sublime>，这个插件和通过 Homebrew Cask 安装的 Sublime Text 完美兼容。
 
-替代品有 Atom、TextMate、Sublime Text 3 等，跟 Sublime Text 2 一样，用 Homebrew Cask 安装的话命令行工具会被自动加入`$PATH`。
+替代品有 Atom、TextMate、Sublime Text 2 等，跟 Sublime Text 3 一样，用 Homebrew Cask 安装的话命令行工具会被自动加入`$PATH`。
+
+PS：我现在使用 Visual Studio Code 更多一些。Visual Studio Code 同样也有 Homebrew Cask 自动建立`code`链接，也有 Oh My Zsh 插件支持。
 
 ### MacDown
 
@@ -454,11 +454,13 @@ MacDown 是 Markdown 编辑器。由于 Mou 一直不支持代码高亮，我就
 brew cask install macdown
 ```
 
+> 最新的 0.7.2 有很多问题，我暂时改用 Visual Studio Code 写 Markdown。
+
 ### z
 
 在打开终端后，你是怎么进入项目的工作目录？是`cd xxx`，`⌃R`还是用别名？
 
-[z](https://github.com/rupa/z) 工具可以帮你快速进入目录。比如在我的 Mac 上运行`z cask`就会进入`/usr/local/Library/Taps/caskroom/homebrew-cask/Casks`目录。
+[z](https://github.com/rupa/z) 工具可以帮你快速进入目录。比如在我的 Mac 上运行`z cask`就会进入`/usr/local/Homebrew/Library/Taps/homebrew/homebrew-cask`目录。
 
 这货的安装非常方便，甚至都不需要下载任何东西，因为它已经整合在了 Oh My Zsh 中。编辑`~/.zshrc`文件，在`plugins=(git)`这行中加上`z`变成`plugins=(git z)`，然后运行`source ~/.zshrc`重新加载配置文件，就可以使用 z 了。
 
@@ -470,7 +472,7 @@ Vimium 是一个 Google Chrome 扩展，让你可以纯键盘操作 Chrome，把
 
 安装方法请参考官方网站。
 
-其他浏览器也有类似的工具，比如 FireFox 的 [KeySnail](https://github.com/mooz/keysnail)。
+其他浏览器也有类似的工具，比如 Firefox 的 [KeySnail](https://github.com/mooz/keysnail)。Vimium 也有 Firefox 版本。
 
 ### [LastPass](https://lastpass.com)
 
