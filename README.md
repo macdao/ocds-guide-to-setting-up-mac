@@ -4,9 +4,9 @@
 
 [English Version](https://github.com/macdao/ocds-guide-to-setting-up-mac/blob/master/README.en.md)
 
-本文的最初版本写于 2015 年，那时候我刚拿到 2015 款的 15 英寸的 MacBook Pro。我还记得相较于 2012 款它最大的变化是触摸板四个角都可以按压。虽然我没记录，但那时用的应该是 OS X El Capitan 10.11。
+本文的最初版本写于 2015 年，那时候我刚拿到 2015 款的 MacBook Pro。我还记得相较于 2012 款它最大的变化是触摸板四个角都可以按压。虽然我没记录，但那时用的应该是 OS X El Capitan 10.11。
 
-转眼到了 2019 年，我刚刚拿到 2019 款的 16 英寸 MacBook Pro，系统自带的是 macOS Catalina 10.15。我特意没有从 Time Machine 恢复，而选择从头配置。当我按照本文配置时我发现，很多地方都变了。本次更新也由此而来。
+转眼到了 2019 年，我刚刚拿到 2019 款的 MacBook Pro，系统自带的是 macOS Catalina 10.15。我特意没有从 Time Machine 恢复，而选择从头配置。当我按照本文配置时我发现，很多地方都变了。本次更新也由此而来。
 
 想要怀旧的可以来这里：[2015 Version](https://github.com/macdao/ocds-guide-to-setting-up-mac/tree/2015)
 
@@ -40,7 +40,8 @@
    - [Git 常用别名](#git-常用别名)
    - [Scroll Reverser](#scroll-reverser)
    - [ShiftIt](#shiftit)
-   - [Sublime Text 2](#sublime-text-2)
+   - [Sublime Text 3](#sublime-text-3)
+   - [Visual Studio Code](#visual-studio-code)
    - [MacDown](#macdown)
    - [z](#z)
    - [Vimium](#vimium)
@@ -239,6 +240,8 @@ defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
 
 ### 创建大小写敏感的工作区
 
+> unverified
+
 在多人合作的项目开发时，因为 Mac 文件系统默认是大小写不敏感的，所以经常会出现一些诡异的问题。创建一个大小写敏感的工作区（workspace）来解决避免这些问题：
 
 ```sh
@@ -280,6 +283,12 @@ brew install wget gradle maven
 ```
 
 PS：安装 Homebrew 的时候会自动下载和安装 Apple 的 Command Line Tools。
+
+执行`install`的时候经常会更新。我可以设置环境变量`HOMEBREW_NO_AUTO_UPDATE`关闭更新：
+
+```sh
+echo export HOMEBREW_NO_AUTO_UPDATE=1 >> ~/.zprofile
+```
 
 Homebrew 的替代品有 [MacPorts](https://www.macports.org/)，我没有用过。
 
@@ -358,9 +367,9 @@ brew cask install iterm2
 
 目前我使用的插件有：`git z sublime history rbenv bundler rake`
 
-Oh My Zsh 使用了 Z shell（zsh），一个和 Bash 相似的 Shell，而非 Bash。
+Oh My Zsh 使用了 Z shell（Zsh），一个和 Bash 相似的 Shell，而非 Bash。
 
-在 Z shell 中，`~/.zshrc`是最重要的配置文件。Oh My Zsh 在安装的时候会把当前环境的`$PATH`写入`~/.zshrc`中。这并不是我期望的行为，因为使用了 brew，我们基本不再需要去定制`$PATH`，而 Oh My Zsh 提供的默认`$PATH`值`$HOME/bin:/usr/local/bin:$PATH`是非常合适的一个值，它把`$HOME/bin`加入了`$PATH`，可以让我们把自己用的脚本放到`$HOME/bin`下。
+在 Zsh 中，`~/.zshrc`是最重要的配置文件。Oh My Zsh 在安装的时候会把当前环境的`$PATH`写入`~/.zshrc`中。这并不是我期望的行为，因为使用了 brew，我们基本不再需要去定制`$PATH`，而 Oh My Zsh 提供的默认`$PATH`值`$HOME/bin:/usr/local/bin:$PATH`是非常合适的一个值，它把`$HOME/bin`加入了`$PATH`，可以让我们把自己用的脚本放到`$HOME/bin`下。
 
 所以建议把`~/.zshrc`重置：
 
@@ -372,7 +381,7 @@ cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
 Oh My Zsh 还有很多[有价值的插件](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview)。
 
-替代品有 [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)。基于 [Fishshell](http://fishshell.com/) 。
+替代品有 [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)。基于 [fish shell](https://fishshell.com/) 。
 
 ### Git 常用别名
 
@@ -402,6 +411,8 @@ gwip  | `git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -
 
 ### Scroll Reverser
 
+> unverified
+
 当你在浏览一个很长的网页时，你看完了当前显示的内容，想要看后续的内容，你可以在 Trackpad 上双指上滑，或者鼠标滚轮向上滚动。这是被称作“自然”的滚动方向。
 
 然而在 Windows 里鼠标滚动的行为是相反的：鼠标滚轮向下滚动才会让浏览器显示后续的内容，向上滚动会达到页面的顶部。你可以在 macOS 的系统偏好设置里修改（选择`System Preferences` > `Trackpad`，在`Scroll & Zoom`标签页中不选中`Scroll direction: natural`），但是这样会同时改变鼠标滚轮的方向和 Trackpad 的方向。
@@ -428,6 +439,8 @@ brew cask install shiftit
 
 ### Sublime Text 3
 
+> unverified
+
 安装：
 
 ```sh
@@ -440,7 +453,13 @@ brew cask install sublime-text
 
 替代品有 Atom、TextMate、Sublime Text 2 等，跟 Sublime Text 3 一样，用 Homebrew Cask 安装的话命令行工具会被自动加入`$PATH`。
 
-PS：我现在使用 Visual Studio Code 更多一些。Visual Studio Code 同样也有 Homebrew Cask 自动建立`code`链接，也有 Oh My Zsh 插件支持。
+### Visual Studio Code
+
+我现在使用 Visual Studio Code 更多一些。Visual Studio Code 同样也有 Homebrew Cask 自动建立`code`链接，也有 Oh My Zsh 插件支持。
+
+```sh
+brew cask install visual-studio-code
+```
 
 ### MacDown
 
@@ -472,19 +491,21 @@ Vimium 是一个 Google Chrome 扩展，让你可以纯键盘操作 Chrome，把
 
 安装方法请参考官方网站。
 
-其他浏览器也有类似的工具，比如 Firefox 的 [KeySnail](https://github.com/mooz/keysnail)。Vimium 也有 Firefox 版本。
+其他浏览器也有类似的工具，比如 Firefox 的 [KeySnail](https://github.com/mooz/keysnail)。Vimium 也有 Firefox 版本 Vimium-FF。
 
 ### [LastPass](https://lastpass.com)
 
+> unverified
+
 LastPass 是管理密码的工具，支持二次验证，提供所有浏览器插件以及 Mac 桌面版本。
 
-最重要的是，它提供 **命令行** 的版本，可以直接通过 brew 安装
+最重要的是，它提供**命令行**的版本，可以直接通过 brew 安装
 
 ```sh
 brew install lastpass-cli --with-pinentry
 ```
 
-之后，只需要登陆：
+之后，只需要命令：
 
 ```sh
 lpass login you@email.com
@@ -498,6 +519,8 @@ lpass show --password gmail.com -c
 
 ### [SourceTree](https://www.sourcetreeapp.com/)
 
+> unverified
+
 SourceTree 是 Atlassian 公司出品的一款优秀的 Git 图形化客户端。如果你发现命令行无法满足你的要求，可以试试 SourceTree。
 
 安装：
@@ -509,6 +532,8 @@ brew cask install sourcetree
 用 Homebrew Cask 安装会自动增加命令行工具`stree`到`$PATH`里。在命令行中输入`stree`可以快速用 SourceTree 打开当前 Git 仓库。详细用法请参见`stree --help`。
 
 ### [CheatSheet](http://www.mediaatelier.com/CheatSheet/)
+
+> unverified
 
 CheatSheet 能够显示当前程序的快捷键列表，默认的快捷键是长按`⌘`。
 
@@ -522,6 +547,8 @@ brew cask install cheatsheet
 
 ### [Alfred](https://www.alfredapp.com)
 
+> unverified
+
 Mac 用户不用鼠标键盘的必备神器，配合大量 Workflows，习惯之后可以大大减少操作时间。
 
 上手简单，调教成本在后期自定义 Workflows，不过有大量雷锋使用者提供的现成扩展，访问[这里](http://www.alfredworkflow.com/)挑选喜欢的，并可以极其简单地根据自己的需要修改。
@@ -533,6 +560,8 @@ brew cask install alfred
 ```
 
 ### [Stow](http://www.gnu.org/software/stow/)
+
+> unverified
 
 GNU Stow 是管理符号链接（symlink）的一个小公举。主要用于 symlink 你的 [dotfiles](http://dotfiles.github.io/) 如 Emacs、Git、fish shell/Zsh 的配置文件。安装只需要
 
@@ -590,6 +619,8 @@ Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-466.1, mixed mode)
 
 ### [jEnv](https://github.com/gcuisinier/jenv)
 
+> unverified
+
 也可以使用 jEnv 来管理不同版本的 JDK，这个工具跟 [rbenv](#rbenv) 类似，通过当前目录下的`.java-version`来决定使用哪个 JDK。jEnv 也可以用 brew 安装。不过要使用 jEnv 要有几个问题：
 
 - 需要手动把`eval "$(jenv init -)"`加入 profile，没有 Oh My Zsh 插件。这点是我非常反感的。
@@ -643,18 +674,22 @@ brew cask install intellij-idea
 brew cask install intellij-idea-ce
 ```
 
-IntelliJ IDEA 有几套内建的快捷键方案（Keymap）。其中适用于 macOS 的有`Mac OS X`和`Mac OS X 10.5+`两种。区别是:
+IntelliJ IDEA 有几套内建的快捷键方案（Keymap）。其中适用于 macOS 的有`macOS`和`IntelliJ IDEA Classic`两种。区别是:
 
-- `Mac OS X`方案和其他平台上的快捷键类似，
-- 而`Mac OS X 10.5+`更加符合 macOS 常用的快捷键。
+- `macOS`更加符合 macOS 常用的快捷键
+- `IntelliJ IDEA Classic`方案和其他平台上的快捷键类似
 
-一个团队使用不同的快捷键会严重影响效率。可以用`View | Quick Switch Scheme`（`⌃ Back Quote`）快速切换 Keymap。
+一个团队使用不同的快捷键会影响效率。可以用`View | Quick Switch Scheme`（`⌃ Back Quote`）快速切换 Keymap。
 
-如果可以选择的话，我建议使用`Mac OS X`方案。因为我经常遇到使用 Windows 的客户，而 Windows 平台上的快捷键和`Mac OS X`方案类似。
+因为我经常会在 macOS 和 Windows 平台上使用 IDEA，所以我一般使用`IntelliJ IDEA Classic`方案。
 
-可以从 IDEA 的`Help > Default Keymap Reference`打开快捷键的参考手册。不过从这里打开的是`Mac OS X 10.5+`方案的，而`Mac OS X`方案的可以从这里找到：<http://www.basrikahveci.com/static/ij_keymap_mac.pdf>。
+可以从 IDEA 的`Help > Keymap Reference`打开快捷键的参考手册。不过从这里打开的是`macOS`方案的，而`IntelliJ IDEA Classic`方案的可以从这里找到：<http://android.cs.uchicago.edu/content/slides/keymap_mac.pdf>。
+
+IntelliJ IDEA 自带了 Fira Code 字体，支持字体连笔（font ligatures）。使用 Fira Code 可以在不同平台可以有相同的编辑器字体，设置方法：`Intellij IDEA` > `Preference...`，在左边选择`Editor` > `Font`，在右边选择`Font:` - `Fira Code Retina`，然后选中`Enable font ligatures`。
 
 ### [rbenv](https://github.com/sstephenson/rbenv)
+
+> unverified
 
 人人都需要一个 Ruby 版本管理工具。rbenv 就是这样一个轻量级工具，它可以通过 brew 安装。
 
@@ -676,9 +711,11 @@ brew install rbenv-aliases
 
 ### Ruby 常用别名
 
+> unverified
+
 几乎所有 Ruby 开发人员都会把`bi`作为`bundle install`的别名。Oh My Zsh 提供`builder`插件，这个插件提供了一套别名，比如`bi`、`be`。同时还能让你在运行一些常用 gem 的时候直接输入`rspec`，不需要`be rspec`这样了。具体包括哪些命令请参考[这里](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/bundler)。
 
-Z shell 对于`[`和`]`符号有特殊的处理，所以在运行`rake task[parameter]`的时候会报错，你需要改成`rake task\[parameter\]`或者`noglob rake task[parameter]`。然而 Oh My Zsh 已经看穿这一切，自带的 rake 插件已经解决了这个问题：`brake task[parameter]`。
+Zsh 对于`[`和`]`符号有特殊的处理，所以在运行`rake task[parameter]`的时候会报错，你需要改成`rake task\[parameter\]`或者`noglob rake task[parameter]`。然而 Oh My Zsh 已经看穿这一切，自带的 rake 插件已经解决了这个问题：`brake task[parameter]`。
 
 添加插件的时候注意把`rake`放到`bundler`后面，例如这样：
 
@@ -687,6 +724,8 @@ plugins=(git z sublime history rbenv bundler rake)
 ```
 
 ### Node 版本管理
+
+> unverified
 
 Node 的版本管理工具有很多，常用的会有以下几个：
 
