@@ -50,6 +50,7 @@
    - [CheatSheet](#cheatsheet)
    - [Alfred](#alfred)
    - [Stow](#stow)
+   - [安装字体](#安装字体)
 
 3. [开发工具](#3-开发工具)
 
@@ -311,6 +312,8 @@ brew tap homebrew/core https://mirrors.ustc.edu.cn/homebrew-core.git && \
 brew update --force
 ```
 
+PS：这是一句命令，不是三句。
+
 > 本方法基于`https://github.com/Homebrew/install/blob/c744a716f9845988d01e6e238eee7117b8c366c9/install`，如果`install`脚本更新有可能导致本方法失效。若发现失效请提交`issue`。
 
 另外下载安装包也可以使用国内镜像，具体参考：<https://lug.ustc.edu.cn/wiki/mirrors/help/homebrew-bottles>
@@ -473,8 +476,6 @@ MacDown 是 Markdown 编辑器。由于 Mou 一直不支持代码高亮，我就
 brew cask install macdown
 ```
 
-> 最新的 0.7.2 有很多问题，我暂时改用 Visual Studio Code 写 Markdown。
-
 ### z
 
 在打开终端后，你是怎么进入项目的工作目录？是`cd xxx`，`⌃R`还是用别名？
@@ -572,6 +573,15 @@ brew install stow
 安装了 stow 之后，我们可以开始 symlink 一些 dotfiles 了。完整使用 stow 和 dotfiles 的流程可以参考 <https://github.com/jcouyang/dotfiles>
 
 当你的 dotfiles 都妥妥的 symlink 到 `~/dotfiles` 后，push 到 github 上就再也不怕换电脑了。
+
+### 安装字体
+
+我经常会使用一些开源字体，比如`Open Sans`。之前我会从网上寻找并下载字体，后来使用[SkyFonts](https://www.monotype.com/products/skyfonts)安装字体，直到我发现了 [homebrew-cask-fonts](https://github.com/Homebrew/homebrew-cask-fonts)：
+
+```sh
+brew tap homebrew/cask-fonts
+brew cask install font-open-sans
+```
 
 ## 3. 开发工具
 
@@ -753,7 +763,6 @@ Node 的版本管理工具有很多，常用的会有以下几个：
   一个简单的工具，安装方式类似 nvm，无需额外配置。具体参考官方文档。
 
 目前根据 GitHub Stars，这三个管理工具的排名依次是 nvm、n、nodenv。但是个人建议采用 nodenv，原因同 rbenv，尤其已经在使用 rbenv 的伙伴们会觉得 nodenv 更顺手 :smile: 。
-
 
 ## 参考资料
 
