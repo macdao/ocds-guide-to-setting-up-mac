@@ -7,7 +7,6 @@
 ## Table of Contents
   * [1. macOS](#1-macos)
     * [Function Keys](#function-keys)
-    * [Efficient Cursor](#efficient-cursor)
     * [Keyboard Only Control](#keyboard-only-control)
     * [Others](#others)
     * [Change `click` of Trackpad to `Tap`](#change-`click`-of-trackpad-to-`tap`)
@@ -17,6 +16,7 @@
     * [Remove all Dock icons[OCD]](#remove-all-dock-icons[ocd])
     * [Reset the order of icons on Launchpad[OCD]](#reset-the-order-of-icons-on-launchpad[ocd])
     * [Keychain Access](#keychain-access)
+    * [Efficient Cursor](#efficient-cursor)
   * [2. Daily Tools](#2-daily-tools)
     * [Homebrew](#homebrew)
     * [Homebrew Cask](#homebrew-cask)
@@ -95,12 +95,6 @@ Things related with macOS settings.
 By default, F1-F12 are special function keys, like adjust screen brightness. You are required to press Fn at the same time, when you need input F1-F12(like IntelliJ IDEA shortcuts). It's not so convenient for developers.
 
 To avoid pressing Fn: go to `System Preferences` > `Keyboard`，select `Use all F1, F2, etc. keys as standard function keys` in `Keyboard` tab。
-
-### Efficient Cursor
-
-By default, cursor has pretty slow blinking and moving speed. When you need delete a large paragraphs of text by pressing the backspace, you are probably wasting your time. Even you hold the backspace key hardly, the cursor is still as slow as a snail.
-
-Speed up cursor: Go to `System Preferences` > `Keyboard`, move `Key Repeat` and `Delay Until Repeat` slidebars to rightmost under `Keyboard` tab. Enjoy your speed now!
 
 ### Keyboard Only Control
 
@@ -208,6 +202,12 @@ defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
 Keychain Access is a macOS application. It can be used to find saved accounts and passwords including Wi-Fi password.
 
 *Some lines are missing here. As not helping a lot - fff*
+
+### Efficient Cursor
+
+By default, cursor has pretty slow blinking and moving speed. When you need delete a large paragraphs of text by pressing the backspace, you are probably wasting your time. Even you hold the backspace key hardly, the cursor is still as slow as a snail.
+
+Speed up cursor: Go to `System Preferences` > `Keyboard`, move `Key Repeat` and `Delay Until Repeat` slidebars to rightmost under `Keyboard` tab. Enjoy your speed now!
 
 ## 2. Daily Tools
 
