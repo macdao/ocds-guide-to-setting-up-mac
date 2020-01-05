@@ -182,7 +182,7 @@ brew update && brew upgrade && brew cleanup ; say mission complete
 
 ### 词典
 
-macOS 自带了词典（Dictionary）。你几乎可以在任何应用中通过三指轻拍触摸板来现实对应单词的释义。
+macOS 自带了词典（Dictionary）。你几乎可以在任何应用中通过重按触摸板来现实对应单词的释义。如果你更喜欢三指轻拍触摸板，可以在`System Preferences` > `Trackpad`，在`Point & Click`标签页中把`Look up & data detectors`改成`Tap with three fingers`。
 
 也可以打开 Dictionary 应用来查找单词。
 
@@ -226,7 +226,7 @@ PS：Dock 上的`Downloads`也会被隐藏掉。
 defaults delete com.apple.dock; killall Dock
 ```
 
-PS：使用这个方法会让所有的 Dock 配置重置。
+PS：使用这个方法会让所有的 Dock 配置重置，包括 Dock Position。
 
 ### 重置 Launchpad 上图标位置 [OCD]
 
@@ -252,9 +252,9 @@ hdiutil create -type SPARSE -fs 'Case-sensitive Journaled HFS+' -size 100g -voln
 
 可以通过三种方式挂载镜像：
 
-1. 直接双击打开 `~/Documents/workspace.dmg.sparseimage`
-2. `open ~/Documents/workspace.dmg.sparseimage`
-3. `hdiutil attach ~/Documents/workspace.dmg.sparseimage`
+- 直接双击打开`~/Documents/workspace.dmg.sparseimage`
+- `open ~/Documents/workspace.dmg.sparseimage`
+- `hdiutil attach ~/Documents/workspace.dmg.sparseimage`
 
 ### Keychain Access
 
@@ -704,7 +704,7 @@ IntelliJ IDEA 有几套内建的快捷键方案（Keymap）。其中适用于 ma
 
 可以从 IDEA 的`Help > Keymap Reference`打开快捷键的参考手册。不过从这里打开的是`macOS`方案的，而`IntelliJ IDEA Classic`方案的可以从这里找到：<http://android.cs.uchicago.edu/content/slides/keymap_mac.pdf>。
 
-IntelliJ IDEA 自带了 Fira Code 字体，支持字体连笔（font ligatures）。使用 Fira Code 可以让我们在不同平台使用相同的编辑器字体，设置方法：`Intellij IDEA` > `Preference...`，在左边选择`Editor` > `Font`，在右边选择`Font:` - `Fira Code Retina`，然后选中`Enable font ligatures`。
+IntelliJ IDEA 自带了 [Fira Code](https://github.com/tonsky/FiraCode) 字体，支持字体连笔（font ligatures）。使用 Fira Code 可以让我们在不同平台使用相同的编辑器字体，设置方法：`Intellij IDEA` > `Preference...`，在左边选择`Editor` > `Font`，在右边选择`Font:` - `Fira Code Retina`，然后选中`Enable font ligatures`。
 
 ### [rbenv](https://github.com/sstephenson/rbenv)
 
@@ -732,7 +732,7 @@ brew install rbenv-aliases
 
 > unverified
 
-几乎所有 Ruby 开发人员都会把`bi`作为`bundle install`的别名。Oh My Zsh 提供`builder`插件，这个插件提供了一套别名，比如`bi`、`be`。同时还能让你在运行一些常用 gem 的时候直接输入`rspec`，不需要`be rspec`这样了。具体包括哪些命令请参考[这里](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/bundler)。
+几乎所有 Ruby 开发人员都会把`bi`作为`bundle install`的别名。Oh My Zsh 提供`builder`插件，这个插件提供了一套别名，比如`bi`、`be`。同时还能让你在运行一些常用 gem 的时候直接输入`rspec`，不需要`be rspec`这样了。具体包括哪些命令请参考[这里](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/bundler)。
 
 Zsh 对于`[`和`]`符号有特殊的处理，所以在运行`rake task[parameter]`的时候会报错，你需要改成`rake task\[parameter\]`或者`noglob rake task[parameter]`。然而 Oh My Zsh 已经看穿这一切，自带的 rake 插件已经解决了这个问题：`brake task[parameter]`。
 
