@@ -150,7 +150,7 @@ Spotlight 的快捷键（不论是英文版还是中文版）都已经统一成�
 
 让双手尽量多的键盘和快捷键，少使用鼠标和触摸板，可以大大提高效率。
 
-- [Mac keyboard shortcts](https://support.apple.com/kb/HT201236)
+- [Mac keyboard shortcuts](https://support.apple.com/kb/HT201236)
 
   苹果官方文档。当你在写代码，怎么通过快捷键让光标转移到行首、行尾、向上翻页或者将光标移左移一个词？都在这篇文档里。
 
@@ -448,8 +448,6 @@ brew cask install shiftit
 当然如果喜欢 hacking，[Slate](https://github.com/jigish/slate)  是个不错的 hackable 的窗口管理工具。配置可以参照 <http://thume.ca/howto/2012/11/19/using-slate/>
 
 ### Sublime Text 3
-
-> unverified
 
 安装：
 
