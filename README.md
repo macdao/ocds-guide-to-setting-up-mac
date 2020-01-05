@@ -483,6 +483,8 @@ MacDown 是 Markdown 编辑器。由于 Mou 一直不支持代码高亮，我就
 brew cask install macdown
 ```
 
+Homebrew Cask 还会增加`macdown`命令，可以在命令行方便的使用 MacDown 打开文件。
+
 ### z
 
 在打开终端后，你是怎么进入项目的工作目录？是`cd xxx`，`⌃R`还是用别名？
