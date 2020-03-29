@@ -18,6 +18,7 @@
    - [全键盘控制](#全键盘控制)
    - [Spotlight 快捷键](#spotlight-快捷键)
    - [输入法快捷键](#输入法快捷键)
+   - [双拼输入法](#双拼输入法)
    - [其他快捷键](#其他快捷键)
    - [设置 Trackpad 轻点来点按](#设置-trackpad-轻点来点按)
    - [语音](#语音)
@@ -26,11 +27,11 @@
    - [更改 Caps Lock 键为 Control 键](#更改-caps-lock-键为-control-键)
    - [Remove all Dock icons [OCD]](#remove-all-dock-icons-ocd)
    - [重置 Launchpad 上图标位置 [OCD]](#重置-launchpad-上图标位置-ocd)
-   - [创建大小写敏感的工作区](#创建大小写敏感的工作区)
    - [Keychain Access](#keychain-access)
    - [三指拖动](#三指拖动)
    - [在 menu bar 上显示日期](#在-menu-bar-上显示日期)
    - [高效的光标](#高效的光标)
+   - [创建大小写敏感的工作区](#创建大小写敏感的工作区)
 
 2. [常用工具](#2-常用工具)
 
@@ -41,20 +42,21 @@
    - [Git 常用别名](#git-常用别名)
    - [Scroll Reverser](#scroll-reverser)
    - [ShiftIt](#shiftit)
-   - [Sublime Text 3](#sublime-text-3)
    - [Visual Studio Code](#visual-studio-code)
+   - [Sublime Text 3](#sublime-text-3)
    - [MacDown](#macdown)
    - [z](#z)
    - [Vimium](#vimium)
+   - [安装字体](#安装字体)
    - [LastPass](#lastpass)
    - [SourceTree](#sourcetree)
    - [CheatSheet](#cheatsheet)
    - [Alfred](#alfred)
    - [Stow](#stow)
-   - [安装字体](#安装字体)
 
 3. [开发工具](#3-开发工具)
 
+   - [asdf-vm](#asdf-vm)
    - [Java](#java)
    - [jEnv](#jenv)
    - [民间使用的 Java 版本切换方法](#民间使用的-java-版本切换方法)
@@ -145,6 +147,12 @@ Spotlight 的快捷键（不论是英文版还是中文版）都已经统一成�
 由于 JetBrains 的 IDE，比如 IntelliJ IDEA、WebStorm 等都使用`⌃Space`作为自动完成这个最常用功能的快捷键。这和输入法切换的快捷键冲突了。我不建议更改 IDE 的快捷键，因此我建议更改输入法的快捷键。而由于 macOS 已经默认使用`Caps Lock`键来切换输入法，这个非常方便，所以我建议将`⌃Space`快捷键释放。
 
 进入`System Preferences` > `Keyboard`，在`Shortcuts`标签页中选中`Input Sources`进行修改。
+
+### 双拼输入法
+
+从2020年2月，我开始使用双拼输入法，替代使用了多年的全拼输入法。和全拼（也就是最常见的“拼音输入法”）类似，双拼是一种基于拼音的，高效的输入法。它将拼音的声母和韵母分别映射到某个按键上，一个字只需要击键两次，一次声母，一次韵母。和全拼一样，主流的输入法软件都支持双拼。
+
+想了解更多可以参考我写的文章[双拼：一天内就能掌握的高效拼音输入法](https://zhuanlan.zhihu.com/p/106941572)。
 
 ### 其他快捷键
 
@@ -240,22 +248,6 @@ defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
 
 在默认顺序中，Launchpad 第一屏只有 Apple 自家应用。
 
-### 创建大小写敏感的工作区
-
-> unverified
-
-在多人合作的项目开发时，因为 Mac 文件系统默认是大小写不敏感的，所以经常会出现一些诡异的问题。创建一个大小写敏感的工作区（workspace）来解决避免这些问题：
-
-```sh
-hdiutil create -type SPARSE -fs 'Case-sensitive Journaled HFS+' -size 100g -volname workspace ~/Documents/workspace.dmg.sparseimage
-```
-
-可以通过三种方式挂载镜像：
-
-- 直接双击打开`~/Documents/workspace.dmg.sparseimage`
-- `open ~/Documents/workspace.dmg.sparseimage`
-- `hdiutil attach ~/Documents/workspace.dmg.sparseimage`
-
 ### Keychain Access
 
 钥匙串访问（Keychain Access）是一个 macOS 应用程序，对我来说它最大的功能就是查看已经保存的各种账号和密码，包括 Wi-Fi 密码。
@@ -273,6 +265,22 @@ hdiutil create -type SPARSE -fs 'Case-sensitive Journaled HFS+' -size 100g -voln
 默认情况下，光标的闪烁速度和移动速度是相当慢的。当你需要用退格键删除大段文字的时候，会觉得痛不欲生，因为即使长按退格键，光标也移动的很缓慢。
 
 调节光标移动速度：选择`System Preferences` > `Keyboard`，在`Keyboard`标签页中把`Key Repeat`以及`Delay Until Repeat`的滑块拉到最右端，从此享受飞一般的速度。
+
+### 创建大小写敏感的工作区
+
+> unverified
+
+在多人合作的项目开发时，因为 Mac 文件系统默认是大小写不敏感的，所以经常会出现一些诡异的问题。创建一个大小写敏感的工作区（workspace）来解决避免这些问题：
+
+```sh
+hdiutil create -type SPARSE -fs 'Case-sensitive Journaled HFS+' -size 100g -volname workspace ~/Documents/workspace.dmg.sparseimage
+```
+
+可以通过三种方式挂载镜像：
+
+- 直接双击打开`~/Documents/workspace.dmg.sparseimage`
+- `open ~/Documents/workspace.dmg.sparseimage`
+- `hdiutil attach ~/Documents/workspace.dmg.sparseimage`
 
 ## 2. 常用工具
 
@@ -315,8 +323,8 @@ Homebrew 的替代品有 [MacPorts](https://www.macports.org/)，我没有用过
 
 ```sh
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install | sed 's#"https://github.com/Homebrew/brew"#"https://mirrors.ustc.edu.cn/brew.git"#' | sed '/system.*brew.*update/s/^/#/')" && \
-brew tap homebrew/core https://mirrors.ustc.edu.cn/homebrew-core.git && \
-brew update --force
+    brew tap homebrew/core https://mirrors.ustc.edu.cn/homebrew-core.git && \
+    brew update --force
 ```
 
 PS：这是一句命令，不是三句。
@@ -447,6 +455,14 @@ brew cask install shiftit
 
 当然如果喜欢 hacking，[Slate](https://github.com/jigish/slate)  是个不错的 hackable 的窗口管理工具。配置可以参照 <http://thume.ca/howto/2012/11/19/using-slate/>
 
+### Visual Studio Code
+
+我现在使用 Visual Studio Code 更多一些。Visual Studio Code 同样也有 Homebrew Cask 自动建立`code`链接，也有 Oh My Zsh 插件支持。
+
+```sh
+brew cask install visual-studio-code
+```
+
 ### Sublime Text 3
 
 安装：
@@ -460,14 +476,6 @@ brew cask install sublime-text
 同时 Oh My Zsh 也提供了 Sublime Text 插件，叫做`sublime`。参考：<https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins#sublime>，这个插件和通过 Homebrew Cask 安装的 Sublime Text 完美兼容。
 
 替代品有 Atom、TextMate、Sublime Text 2 等，跟 Sublime Text 3 一样，用 Homebrew Cask 安装的话命令行工具会被自动加入`$PATH`。
-
-### Visual Studio Code
-
-我现在使用 Visual Studio Code 更多一些。Visual Studio Code 同样也有 Homebrew Cask 自动建立`code`链接，也有 Oh My Zsh 插件支持。
-
-```sh
-brew cask install visual-studio-code
-```
 
 ### MacDown
 
@@ -500,6 +508,15 @@ Vimium 是一个 Google Chrome 扩展，让你可以纯键盘操作 Chrome，把
 安装方法请参考官方网站。
 
 其他浏览器也有类似的工具，比如 Firefox 的 Vimium-FF。
+
+### 安装字体
+
+我经常会使用一些开源字体，比如`Open Sans`。之前我会从网上寻找并下载字体，后来使用 [SkyFonts](https://www.monotype.com/products/skyfonts) 安装字体，直到我发现了 [homebrew-cask-fonts](https://github.com/Homebrew/homebrew-cask-fonts)：
+
+```sh
+brew tap homebrew/cask-fonts
+brew cask install font-open-sans
+```
 
 ### [LastPass](https://lastpass.com)
 
@@ -581,18 +598,17 @@ brew install stow
 
 当你的 dotfiles 都妥妥的 symlink 到 `~/dotfiles` 后，push 到 GitHub 上就再也不怕换电脑了。
 
-### 安装字体
-
-我经常会使用一些开源字体，比如`Open Sans`。之前我会从网上寻找并下载字体，后来使用 [SkyFonts](https://www.monotype.com/products/skyfonts) 安装字体，直到我发现了 [homebrew-cask-fonts](https://github.com/Homebrew/homebrew-cask-fonts)：
-
-```sh
-brew tap homebrew/cask-fonts
-brew cask install font-open-sans
-```
-
 ## 3. 开发工具
 
+### [asdf-vm](https://asdf-vm.com)
+
+asdf-vm 是一个命令行工具，它可以让你同时安装多个版本的开发工具，版本间可以随时切换，还可以基于全局、目录、和当前 shell session 配置不同的版本。它以插件的形式支持开发工具，目前支持 .NET Core、Clojure、Deno、Groovy、Java、Kotlin、Maven、MySQL、Node.js、PHP、Python、Ruby、Yarn 等近 200 个。[官方插件列表](https://asdf-vm.com/#/plugins-all)。有了它，你就不再需要另外安装`gvm`、`nvm`、`rbenv`和`pyenv`等工具了。
+
+我现在使用 asdf-vm 来管理我使用的开发工具，包括 Java、Node.js、Gradle、Maven。
+
 ### Java
+
+> 已经使用 asdf-vm 替代
 
 macOS 都不会自带 JDK 了，所以进行 Java 开发的话，需要下载 JDK。在 Homebrew Cask 之前，我们需要从 <https://developer.apple.com/downloads/> 或者 Oracle 网站上下载。还有更麻烦的－－卸载 JDK 和升级 JDK。
 
@@ -706,6 +722,8 @@ IntelliJ IDEA 自带了 [Fira Code](https://github.com/tonsky/FiraCode) 字体�
 
 ### [rbenv](https://github.com/sstephenson/rbenv)
 
+> 已经使用 asdf-vm 替代
+
 > unverified
 
 人人都需要一个 Ruby 版本管理工具。rbenv 就是这样一个轻量级工具，它可以通过 Homebrew 安装。
@@ -741,6 +759,8 @@ plugins=(git z sublime history rbenv bundler rake)
 ```
 
 ### Node 版本管理
+
+> 已经使用 asdf-vm 替代
 
 > unverified
 
