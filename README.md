@@ -602,9 +602,15 @@ brew install stow
 
 ### [asdf-vm](https://asdf-vm.com)
 
-asdf-vm 是一个命令行工具，它可以让你同时安装多个版本的开发工具，版本间可以随时切换，还可以基于全局、目录、和当前 shell session 配置不同的版本。它以插件的形式支持开发工具，目前支持 .NET Core、Clojure、Deno、Groovy、Java、Kotlin、Maven、MySQL、Node.js、PHP、Python、Ruby、Yarn 等近 200 个。[官方插件列表](https://asdf-vm.com/#/plugins-all)。有了它，你就不再需要另外安装`gvm`、`nvm`、`rbenv`和`pyenv`等工具了。
+asdf-vm 是一个命令行工具，它可以让你同时安装多个版本的开发工具，版本间可以随时切换，还可以基于全局、目录、和当前 shell session 配置不同的版本。它以插件的形式支持开发工具，目前支持 .NET Core、Clojure、Deno、Groovy、Java、Kotlin、Maven、MySQL、Node.js、PHP、Python、Ruby、Scala、Yarn 等近 200 个，具体参见[官方插件列表](https://asdf-vm.com/#/plugins-all)。有了它，你就不再需要另外安装`gvm`、`nvm`、`rbenv`和`pyenv`等工具了。
 
 我现在使用 asdf-vm 来管理我使用的开发工具，包括 Java、Node.js、Gradle、Maven。
+
+```sh
+brew install asdf
+```
+
+替代品有 [SDKMAN!](https://sdkman.io)。
 
 ### Java
 
