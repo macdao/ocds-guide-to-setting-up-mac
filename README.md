@@ -310,6 +310,8 @@ Homebrew 的替代品有 [MacPorts](https://www.macports.org/)，我没有用过
 
 #### 使用国内镜像安装 Homebrew
 
+> 已经失效
+
 有时候在国内访问 GitHub 非常慢，导致安装 Homebrew 总是失败。我查阅了一些资料，可以使用国内镜像来安装 Homebrew。我这里给出一个方便的方法。
 
 先看原理。官网上安装 Homebrew 的方法是执行命令：`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
