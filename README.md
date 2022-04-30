@@ -42,6 +42,7 @@
    - [Git 常用别名](#git-常用别名)
    - [Scroll Reverser](#scroll-reverser)
    - [ShiftIt](#shiftit)
+   - [Hammerspoon ShiftIt](#hammerspoon-shiftIt)
    - [Visual Studio Code](#visual-studio-code)
    - [Sublime Text 3](#sublime-text-3)
    - [MacDown](#macdown)
@@ -447,6 +448,8 @@ PS：这货会让三指点击失效
 
 ### ShiftIt
 
+> 该工具在 macOS 12 的某次更新后就无法工作了。根据[其作者建议](https://github.com/fikovnik/ShiftIt#alternatives)，我更换成了[Hammerspoon ShiftIt](#hammerspoon-shiftIt)。
+
 原生 macOS 下只能手动调整窗口大小，所以我们需要窗口管理工具。我用过很多窗口管理工具，可惜大部分工具都存在快捷键冲突的问题（对我来说主要是 IntelliJ IDEA）。ShiftIt 是少见的没有冲突的窗口管理工具：
 
 ```sh
@@ -456,6 +459,10 @@ brew cask install shiftit
 替代者有 SizeUp，主要快捷键和 ShiftIt 相同。
 
 当然如果喜欢 hacking，[Slate](https://github.com/jigish/slate)  是个不错的 hackable 的窗口管理工具。配置可以参照 <http://thume.ca/howto/2012/11/19/using-slate/>
+
+### [Hammerspoon ShiftIt](https://github.com/peterklijn/hammerspoon-shiftit)
+
+一个基于 [Hammerspoon](https://www.hammerspoon.org/)，模拟 Shiftit 窗口管理功能的方法。安装步骤稍显繁琐。安装方法见链接。
 
 ### Visual Studio Code
 
