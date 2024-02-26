@@ -139,9 +139,13 @@ PS：在带 Touch Bar  的机型上，只能修改外接键盘的对应设定�
 
 ### Spotlight 快捷键
 
+> m3
+
 Spotlight 的快捷键（不论是英文版还是中文版）都已经统一成了`Command-空格键`，此处没有什么修改建议。
 
 ### 输入法快捷键
+
+> m3，没有修改快捷键
 
 输入法我一直使用系统自带的拼音输入法。
 
@@ -150,6 +154,8 @@ Spotlight 的快捷键（不论是英文版还是中文版）都已经统一成�
 进入`System Preferences` > `Keyboard`，在`Shortcuts`标签页中选中`Input Sources`进行修改。
 
 ### 双拼输入法
+
+> m3
 
 从2020年2月，我开始使用双拼输入法，替代使用了多年的全拼输入法。和全拼（也就是最常见的“拼音输入法”）类似，双拼是一种基于拼音的，高效的输入法。它将拼音的声母和韵母分别映射到某个按键上，一个字只需要击键两次，一次声母，一次韵母。和全拼一样，主流的输入法软件都支持双拼。
 
@@ -168,6 +174,8 @@ Spotlight 的快捷键（不论是英文版还是中文版）都已经统一成�
   苹果官方文档。回车触发蓝底按钮，空格触发蓝边按钮，都出自这里。
 
 ### 设置 Trackpad 轻点来点按
+
+> m3
 
 默认情况下按下触摸板才是点按（click）。我喜欢设置成用轻点作为点按：
 
@@ -191,6 +199,8 @@ brew update && brew upgrade && brew cleanup ; say mission complete
 
 ### 词典
 
+> m3
+
 macOS 自带了词典（Dictionary）。你几乎可以在任何应用中通过重按触摸板来现实对应单词的释义。如果你更喜欢三指轻拍触摸板，可以在`System Preferences` > `Trackpad`，在`Point & Click`标签页中把`Look up & data detectors`改成`Tap with three fingers`。
 
 也可以打开 Dictionary 应用来查找单词。
@@ -199,9 +209,11 @@ macOS 自带了词典（Dictionary）。你几乎可以在任何应用中通过�
 
 ### Dock Position
 
+> m3
+
 默认 Dock 在屏幕下方。我们的屏幕一般都是 16:10，Dock 在屏幕下方的话会占据本来就不大的垂直空间。建议把 Dock 放到右边或者左边。
 
-选择`System Preferences` > `Dock`，在`Position on screen:`中选择不同的位置。
+选择`System Preferences` > `Desktop & Dock`，在`Position on screen:`中选择不同的位置。
 
 ### 更改 Caps Lock 键为 Control 键
 
@@ -255,11 +267,15 @@ defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
 
 ### 三指拖动
 
-我习惯于三指拖动窗口。设置方法：选择`System Preferences` > `Accessibility`，选中左边`Pointer Control`菜单，打开`Trackpad Options…`，选中`Enable dragging`和`three finger drag`。
+> m3
+
+我习惯于三指拖动窗口。设置方法：选择`System Preferences` > `Accessibility`，选中`Pointer Control`菜单，打开`Trackpad Options…`，选中`Use trackpad for dragging`并在`Dragging style`里选择`Three Finger Drag`。
 
 ### 在 menu bar 上显示日期
 
-我喜欢让菜单栏上显示日期，这样可以方便的看到当天的日期。设置方法：选择`System Preferences` > `Date & Time`，在`Clock`标签页选中`Show date`。
+> m3，设置没了？
+
+我喜欢让菜单栏上显示日期，这样可以方便的看到当天的日期。设置方法：选择`System Preferences` > `General` > `Date & Time`，在`Clock`标签页选中`Show date`。
 
 ### 高效的光标
 
@@ -283,11 +299,17 @@ hdiutil create -type SPARSE -fs 'Case-sensitive Journaled HFS+' -size 100g -voln
 - `open ~/Documents/workspace.dmg.sparseimage`
 - `hdiutil attach ~/Documents/workspace.dmg.sparseimage`
 
+### Safari 打开上次会话的所有窗口
+
+我经常在浏览器里打开多个窗口，这时候如果不小心关闭了（比如浏览器更新）那窗口就丢失了，非常影响工作。可以设置浏览器自动打开关闭前的所有窗口。打开 Safari 的`Settings...`（或者快捷键`Command-,`），在`General`标签页中的`Safari opens with`里选择`All windows from last session`。
+
 ## 2. 常用工具
 
 本节介绍一些常用的，跟开发没有直接关系的第三方应用及其设置。
 
 ### [Homebrew](http://brew.sh)
+
+> m3
 
 包管理工具，官方称之为`The missing package manager for macOS`。
 
@@ -300,6 +322,8 @@ brew install wget gradle maven
 ```
 
 PS：安装 Homebrew 的时候会自动下载和安装 Apple 的 Command Line Tools。
+
+> ??
 
 执行`install`的时候经常会执行更新，有时候会比较慢，我们可以设置环境变量`HOMEBREW_NO_AUTO_UPDATE`关闭更新：
 
@@ -338,7 +362,9 @@ PS：这是一句命令，不是三句。
 
 ### [Homebrew Cask](https://github.com/Homebrew/homebrew-cask)
 
-Homebrew Cask 允许你使用命令行安装 macOS 应用。比如你可以这样安装 Chrome：`brew cask install google-chrome`。还有 Evernote `evenote`、Sublime Text `sublime-text`、VirtualBox `virtualbox`、Docker `docker`、Firefox `firefox`、Visual Studio Code `visual-studio-code` 等都可以用 Homebrew Cask 安装。
+> m3
+
+Homebrew Cask 允许你使用命令行安装 macOS 应用。比如你可以这样安装 Chrome：`brew install --cask google-chrome`。还有 Evernote `evenote`、Sublime Text `sublime-text`、VirtualBox `virtualbox`、Docker `docker`、Firefox `firefox`、Visual Studio Code `visual-studio-code` 等都可以用 Homebrew Cask 安装。
 
 Homebrew Cask 是社区驱动的，如果你发现 Homebrew Cask 上的应用不是最新版本，或者缺少你某个应用，你可以自己提交 pull request。
 
@@ -358,15 +384,19 @@ brew tap homebrew/cask https://mirrors.ustc.edu.cn/homebrew-cask.git
 
 ### [iTerm2](https://iterm2.com/)
 
+> m3
+
 iTerm2 是最常用的终端应用，是 Terminal 应用的替代品。提供了诸如`Split Panes`等[一群实用特性](https://iterm2.com/features.html)。它默认的黑色背景让我毫不犹豫的抛弃了 Terminal。
 
 安装：
 
 ```sh
-brew cask install iterm2
+brew install --cask iterm2
 ```
 
 感谢 Homebrew Cask，我们可以通过命令行自动安装 iTerm2 了。
+
+> 待验证
 
 在终端里，除了可以用`Control-E`等快捷键（详见[其他快捷键](#其他快捷键)）之外，还可以使用`Option-B`、`Option-F`等快捷键（具体可以参考[这里](http://ss64.com/bash/syntax-keyboard.html)）。前提是这样设置一下：
 
@@ -380,25 +410,17 @@ brew cask install iterm2
 
 在 iTerm2 中双击会自动选中对应的词，三击会选中对应的整行。选中的内容会自动进入剪贴板，不需要再按`Command-C`复制。
 
+我经常使用 iTerm2 自带的密码管理工具管理一些终端用到的密码。在 iTerm2 的`Windows` > `Password Manager`（或者快捷键`Command-Option-F`）打开。
+
 ### [Oh My Zsh](http://ohmyz.sh)
 
 默认的 Bash （Catalina 已经默认使用 Zsh）是黑白的，没有色彩。而 Oh My Zsh 可以带你进入彩色时代。Oh My Zsh 同时提供一套插件和工具，可以简化命令行操作。后面我们会看到很多介绍，你会看到我爱死这家伙了。
 
 安装方法见官网。
 
-目前我使用的插件有：`git z sublime history rbenv bundler rake`
+目前我使用的插件有：`git z history asdf`
 
 Oh My Zsh 使用了 Z shell（Zsh），一个和 Bash 相似的 Shell，而非 Bash。
-
-在 Zsh 中，`~/.zshrc`是最重要的配置文件。Oh My Zsh 在安装的时候会把当前环境的`$PATH`写入`~/.zshrc`中。这并不是我期望的行为，因为使用了 Homebrew，我们基本不再需要去定制`$PATH`，而 Oh My Zsh 提供的默认`$PATH`值`$HOME/bin:/usr/local/bin:$PATH`是非常合适的一个值，它把`$HOME/bin`加入了`$PATH`，可以让我们把自己用的脚本放到`$HOME/bin`下。
-
-所以建议把`~/.zshrc`重置：
-
-```sh
-cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-```
-
-> [2016年6月17号的一次提交](https://github.com/robbyrussell/oh-my-zsh/commit/551abfcbb48a0c001eadef80abc3276af4e9ad26)后，`zshrc.zsh-template`就不再修改`$PATH`了。如果需要，可以找到`# export PATH=$HOME/bin:/usr/local/bin:$PATH`这一行，把前面的`#`去掉。
 
 Oh My Zsh 还有很多[有价值的插件](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview)。
 
@@ -462,14 +484,18 @@ brew cask install shiftit
 
 ### [Hammerspoon ShiftIt](https://github.com/peterklijn/hammerspoon-shiftit)
 
+> m3
+
 一个基于 [Hammerspoon](https://www.hammerspoon.org/)，模拟 Shiftit 窗口管理功能的方法。安装步骤稍显繁琐。安装方法见链接。
 
 ### Visual Studio Code
 
+>m3
+
 我现在使用 Visual Studio Code 更多一些。Visual Studio Code 同样也有 Homebrew Cask 自动建立`code`链接，也有 Oh My Zsh 插件支持。
 
 ```sh
-brew cask install visual-studio-code
+brew install --cask visual-studio-code
 ```
 
 ### Sublime Text 3
@@ -606,6 +632,38 @@ brew install stow
 安装了 stow 之后，我们可以开始 symlink 一些 dotfiles 了。完整使用 stow 和 dotfiles 的流程可以参考 <https://github.com/jcouyang/dotfiles>
 
 当你的 dotfiles 都妥妥的 symlink 到 `~/dotfiles` 后，push 到 GitHub 上就再也不怕换电脑了。
+
+### [BCLM](https://github.com/zackelia/bclm)
+
+> m3
+
+我看到一个研究，说是相比于「放电到 25% 再充电，然后充电到 100%」，「放电到 45% 再充电到 75%」会让电池会有更长的寿命（健康度）。
+
+所以为了避免充电到75%以上，我会使用工具bclm（https://github.com/zackelia/bclm），将充电上限限制到 50 到 100 中的任意整数。对于 Apple silicon 电脑，仅可以设置为 80 或 100。
+
+参考[几个月电池健康掉到90%？这样充电电池寿命延长3倍（非标题党）](https://www.bilibili.com/video/BV1Ha411F7rg/?share_source=copy_web)
+
+### 查看充电功率
+
+> m3
+
+如果想知道当前的充电功率，可以使用如下命令：
+
+```sh
+system_profiler SPPowerDataType | grep Wattage -C 5
+```
+
+能看到如下内容：
+
+```
+    AC Charger Information:
+
+      Connected: Yes
+      ID: 0x0000
+      Wattage (W): 60
+      Family: 0xe000400a
+      Charging: No
+```
 
 ## 3. 开发工具
 
