@@ -48,6 +48,7 @@
    - [MacDown](#macdown)
    - [z](#z)
    - [Vimium](#vimium)
+   - [Surfingkeys](#surfingkeys)
    - [安装字体](#安装字体)
    - [LastPass](#lastpass)
    - [SourceTree](#sourcetree)
@@ -548,6 +549,10 @@ Vimium 是一个 Google Chrome 扩展，让你可以纯键盘操作 Chrome，把
 
 其他浏览器也有类似的工具，比如 Firefox 的 Vimium-FF。
 
+### [Surfingkeys](https://github.com/brookhong/Surfingkeys)
+
+Surfingkeys 是一个 Chrome/Firefox 的扩展，其基本功能是让用户可以通过 Vim 风格的键盘操作来控制浏览器。当然这个功能并不新鲜，比如 Vimium 就可以达成这种效果。但 Surfingkeys 不仅功能更为丰富，而且有非常细致且易用的可配置选项，这令用户可以脱离鼠标只用键盘来进行网页操作。
+
 ### 安装字体
 
 我经常会使用一些开源字体，比如`Open Sans`。之前我会从网上寻找并下载字体，后来使用 [SkyFonts](https://www.monotype.com/products/skyfonts) 安装字体，直到我发现了 [homebrew-cask-fonts](https://github.com/Homebrew/homebrew-cask-fonts)：
@@ -866,7 +871,11 @@ Node 的版本管理工具有很多，常用的会有以下几个：
 
   一个简单的工具，安装方式类似 nvm，无需额外配置。具体参考官方文档。
 
-目前根据 GitHub Stars，这三个管理工具的排名依次是 nvm、n、nodenv。但是个人建议采用 nodenv，原因同 rbenv，尤其已经在使用 rbenv 的伙伴们会觉得 nodenv 更顺手 :smile: 。
+* [NVS](https://github.com/jasongin/nvs)
+
+  NVS 是一个跨平台的 Node.js 的版本切换工具，并且 NVS 本身是用 Node.js 编写的。
+
+目前根据 GitHub Stars，这三个管理工具的排名依次是 nvm、n、nodenv、NVS。但是个人建议采用 nodenv，原因同 rbenv，尤其已经在使用 rbenv 的伙伴们会觉得 nodenv 更顺手 :smile: 。
 
 ## 参考资料
 

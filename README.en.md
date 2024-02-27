@@ -28,6 +28,7 @@
     * [MarkDown](#markdown)
     * [z](#z)
     * [Vimium](#vimium)
+    * [Surfingkeys](#surfingkeys)
     * [LastPass](#lastpass)
     * [SourceTree](#sourcetree)
     * [CheatSheet](#cheatsheet)
@@ -385,6 +386,10 @@ For installation please go to Chrome Extension Market.
 
 For firefox there is a similar solution: [KeySnail](https://github.com/mooz/keysnail).
 
+### [Surfingkeys](https://github.com/brookhong/Surfingkeys)
+
+Surfingkeys is another Chrome/Firefox extension that provides keyboard-based navigation and control of the web in the spirit of the VIM editor. But it's not for VIM users only, it's for anyone who just needs some more shortcuts to his own functions.
+
 ### [LastPass](https://lastpass.com)
 
 LastPass is a password management tool, support a second login step, provides plugins for every browser and also macOS desktop version.
@@ -563,6 +568,10 @@ Other tools:
 * [n](https://github.com/tj/n)
 
   Another simple tool, please reference official doc.
+
+* [NVS](https://github.com/jasongin/nvs)
+
+  A cross-platform tool for switching between versions and forks of Node.js.
 
 ## References
 
