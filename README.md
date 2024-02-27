@@ -382,6 +382,10 @@ Homebrew Cask 是社区驱动的，如果你发现 Homebrew Cask 上的应用不
 brew tap homebrew/cask https://mirrors.ustc.edu.cn/homebrew-cask.git
 ```
 
+### [homebrew-cask-fonts](https://github.com/Homebrew/homebrew-cask-fonts)
+
+> todo
+
 ### [iTerm2](https://iterm2.com/)
 
 > m3
