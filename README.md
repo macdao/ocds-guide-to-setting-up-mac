@@ -4,68 +4,17 @@
 
 [English Version](https://github.com/macdao/ocds-guide-to-setting-up-mac/blob/master/README.en.md)
 
-本文的最初版本写于 2015 年，那时候我用的是一台 2013 款的 MacBook Pro，操作系统刚升级到 OS X El Capitan 10.11。
+本文的最初版本写于 2015 年，那时候我用的是一台 2013 款的 MacBook Pro，操作系统刚升级到 OS X El Capitan 10.11。想要怀旧的可以点击这里：[2015 Version](https://github.com/macdao/ocds-guide-to-setting-up-mac/tree/2015)。
 
-转眼到了 2019 年，我刚刚拿到 2019 款的 MacBook Pro，操作系统是 macOS Catalina 10.15。我特意没有从 Time Machine 恢复，而选择从头配置。当我按照本文配置时我发现，很多地方都变了。本次更新也由此而来。
+后来到了 2019 年，我拿到了 2019 款的 MacBook Pro，操作系统是 macOS Catalina 10.15。我特意没有从 Time Machine 恢复，而选择从头配置。当我按照本文配置时我发现，很多地方都变了。彼时的内容在这里：[2019 Version](https://github.com/macdao/ocds-guide-to-setting-up-mac/tree/2019)。
 
-想要怀旧的可以来这里：[2015 Version](https://github.com/macdao/ocds-guide-to-setting-up-mac/tree/2015)
+现在是 2024 年，我升级到了一台 M3 Max 的 MacBook Pro，操作系统是 macOS Sonoma 14。这次同样增加了很多内容。
 
 ## Table of Contents
 
-1. [macOS](#1-macos)
+可以点击右上角的菜单图标打开索引。
 
-   - [功能键](#功能键)
-   - [全键盘控制](#全键盘控制)
-   - [Spotlight 快捷键](#spotlight-快捷键)
-   - [输入法快捷键](#输入法快捷键)
-   - [双拼输入法](#双拼输入法)
-   - [其他快捷键](#其他快捷键)
-   - [设置 Trackpad 轻点来点按](#设置-trackpad-轻点来点按)
-   - [语音](#语音)
-   - [词典](#词典)
-   - [Dock Position](#dock-position)
-   - [更改 Caps Lock 键为 Control 键](#更改-caps-lock-键为-control-键)
-   - [Remove all Dock icons [OCD]](#remove-all-dock-icons-ocd)
-   - [重置 Launchpad 上图标位置 [OCD]](#重置-launchpad-上图标位置-ocd)
-   - [Keychain Access](#keychain-access)
-   - [三指拖动](#三指拖动)
-   - [在 menu bar 上显示日期](#在-menu-bar-上显示日期)
-   - [高效的光标](#高效的光标)
-   - [创建大小写敏感的工作区](#创建大小写敏感的工作区)
-
-2. [常用工具](#2-常用工具)
-
-   - [Homebrew](#homebrew)
-   - [Homebrew Cask](#homebrew-cask)
-   - [iTerm2](#iterm2)
-   - [Oh My Zsh](#oh-my-zsh)
-   - [Git 常用别名](#git-常用别名)
-   - [Scroll Reverser](#scroll-reverser)
-   - [ShiftIt](#shiftit)
-   - [Hammerspoon ShiftIt](#hammerspoon-shiftIt)
-   - [Visual Studio Code](#visual-studio-code)
-   - [Sublime Text 3](#sublime-text-3)
-   - [MacDown](#macdown)
-   - [z](#z)
-   - [Vimium](#vimium)
-   - [安装字体](#安装字体)
-   - [LastPass](#lastpass)
-   - [SourceTree](#sourcetree)
-   - [CheatSheet](#cheatsheet)
-   - [Alfred](#alfred)
-   - [Stow](#stow)
-
-3. [开发工具](#3-开发工具)
-
-   - [asdf-vm](#asdf-vm)
-   - [Java](#java)
-   - [jEnv](#jenv)
-   - [民间使用的 Java 版本切换方法](#民间使用的-java-版本切换方法)
-   - [Java [OCD]](#java-ocd)
-   - [IntelliJ IDEA](#intellij-idea)
-   - [rbenv](#rbenv)
-   - [Ruby 常用别名](#ruby-常用别名)
-   - [Node 版本管理](#node-版本管理)
+## Why this document
 
 一直想写这么一篇文章，把我从同事那里学到的经验分享出来。市面上有很多类似的文章，写得都非常好，让我受益匪浅。不过我还是有一些自己总结出来的经验想要分享。
 
