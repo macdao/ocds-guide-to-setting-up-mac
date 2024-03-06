@@ -256,11 +256,14 @@ Activity Monitor 默认的 Dock 图标是静态的，可以设置为显示 CPU �
 
 ### [Homebrew](http://brew.sh)
 
-> m3
-
 包管理工具，官方称之为`The missing package manager for macOS`。
 
-安装步骤见官网。
+官网的安装命令：
+
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
 
 有了 Homebrew 以后，要下载工具，比如 Wget、Gradle、Maven 等工具，就不需要去网上下载了，只要一行命令就能搞定：
 
@@ -269,8 +272,6 @@ brew install wget gradle maven
 ```
 
 PS：安装 Homebrew 的时候会自动下载和安装 Apple 的 Command Line Tools。
-
-> ??
 
 执行`install`的时候经常会执行更新，有时候会比较慢，我们可以设置环境变量`HOMEBREW_NO_AUTO_UPDATE`关闭更新：
 
@@ -282,34 +283,31 @@ Homebrew 的替代品有 [MacPorts](https://www.macports.org/)，我没有用过
 
 #### 使用国内镜像安装 Homebrew
 
-> 已经失效
-
-有时候在国内访问 GitHub 非常慢，导致安装 Homebrew 总是失败。我查阅了一些资料，可以使用国内镜像来安装 Homebrew。我这里给出一个方便的方法。
-
-先看原理。官网上安装 Homebrew 的方法是执行命令：`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-
-在这个`install`脚本里，和 GitHub 有关的有两步：
-
-- 通过 Git 获取`https://github.com/Homebrew/brew`
-- 通过`brew update --force`来`Tap` `Homebrew/core`。
-
-知道了之后，我们就可以直接修改下这个安装命令，将`https://github.com/Homebrew/brew`替换成国内镜像并暂时跳过`brew update --force`；然后使用镜像手动`Tap` `Homebrew/core`；最后执行`brew update --force`完成安装：
+有时候在国内访问 GitHub 非常慢，导致安装 Homebrew 总是失败。之前我提供过一个[方法](https://github.com/macdao/ocds-guide-to-setting-up-mac/tree/2019#%E4%BD%BF%E7%94%A8%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85-homebrew)，不过现在 Homebrew 已经支持[使用国内的源安装](https://mirrors.ustc.edu.cn/help/brew.git.html)。
 
 ```sh
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install | sed 's#"https://github.com/Homebrew/brew"#"https://mirrors.ustc.edu.cn/brew.git"#' | sed '/system.*brew.*update/s/^/#/')" && \
-    brew tap homebrew/core https://mirrors.ustc.edu.cn/homebrew-core.git && \
-    brew update --force
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
+/bin/bash -c "$(curl -fsSL https://mirrors.ustc.edu.cn/misc/brew-install.sh)"
 ```
 
-PS：这是一句命令，不是三句。
+其中`HOMEBREW_BOTTLE_DOMAIN`的设置可以让安装过程中的`ruby`下载使用镜像。
 
-> 本方法基于 <https://github.com/Homebrew/install/blob/c744a716f9845988d01e6e238eee7117b8c366c9/install>，如果`install`脚本更新有可能导致本方法失效。若发现失效请提交`issue`。
+然后为了让镜像持续生效，请把以下内容添加到`~/.zprofile`文件中。
 
-另外下载安装包也可以使用国内镜像，具体参考：<https://lug.ustc.edu.cn/wiki/mirrors/help/homebrew-bottles>
+```sh
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
+export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
+```
+
+其中`HOMEBREW_API_DOMAIN`会把包安装信息的地址设置成镜像地址。具体参考[brew(1)](https://docs.brew.sh/Manpage)、[4.0.0](https://brew.sh/2023/02/16/homebrew-4.0.0/)。
+
+可以在[这里](https://formulae.brew.sh/analytics/)查看到下载排名，看看哪些应用工具是最热门的。
 
 ### [Homebrew Cask](https://github.com/Homebrew/homebrew-cask)
-
-> m3
 
 Homebrew Cask 允许你使用命令行安装 macOS 应用。比如你可以这样安装 Chrome：`brew install --cask google-chrome`。还有 Evernote `evenote`、Sublime Text `sublime-text`、VirtualBox `virtualbox`、Docker `docker`、Firefox `firefox`、Visual Studio Code `visual-studio-code` 等都可以用 Homebrew Cask 安装。
 
@@ -323,19 +321,9 @@ Homebrew Cask 是社区驱动的，如果你发现 Homebrew Cask 上的应用不
 
 #### 使用国内镜像安装 Homebrew Cask
 
-可以使用国内镜像安装 Homebrew Cask：
-
-```sh
-brew tap homebrew/cask https://mirrors.ustc.edu.cn/homebrew-cask.git
-```
-
-### [homebrew-cask-fonts](https://github.com/Homebrew/homebrew-cask-fonts)
-
-> todo
+根据上文[使用国内镜像安装 Homebrew](#使用国内镜像安装-homebrew)讲的方式设置后，Cask 也可以使用镜像。
 
 ### [iTerm2](https://iterm2.com/)
-
-> m3
 
 iTerm2 是最常用的终端应用，是 Terminal 应用的替代品。提供了诸如`Split Panes`等[一群实用特性](https://iterm2.com/features.html)。它默认的黑色背景让我毫不犹豫的抛弃了 Terminal。
 
@@ -347,27 +335,37 @@ brew install --cask iterm2
 
 感谢 Homebrew Cask，我们可以通过命令行自动安装 iTerm2 了。
 
-> 待验证
-
 在终端里，除了可以用`Control-E`等快捷键（详见[其他快捷键](#其他快捷键)）之外，还可以使用`Option-B`、`Option-F`等快捷键（具体可以参考[这里](http://ss64.com/bash/syntax-keyboard.html)）。前提是这样设置一下：
 
-选择`Iterm2`菜单 > `Preferences` > `Profiles`，选择你在使用的 Profile（默认是`Default`），在`Keys`标签页中把`Left option (⌥) key acts as`和`Right option (⌥) key acts as`都设置成`ESC+`。
+选择 [Settings] > [Profiles]，选择你在使用的 Profile（默认是`Default`），在 [Keys] 标签页中把 [Left Option key:] 和 [Right Option key:] 都设置成 [Esc+]。
 
 在打开新的窗口/标签页的时候，默认情况下新窗口总是 HOME 目录，还需要我每次敲命令才能进入工作目录。如果想要这个新窗口在打开的时候就自动进入工作目录，需要如下设置：
 
-选择`Iterm2`菜单 > `Preferences` > `Profiles`，选择你在使用的 Profile（默认是Default），在`General`标签页中的`Working Directory`部分中选择`Reuse previous seesion's directory`。
+选择 [Settings] > [Profiles]，选择你在使用的 Profile（默认是Default），在 [General] 标签页中的选择 [Working Directory] > [Reuse previous seesion's directory]。
 
 至此，Terminal 应用已经出色的完成了其历史使命。后面命令行就交给 iTerm2 啦。
 
 在 iTerm2 中双击会自动选中对应的词，三击会选中对应的整行。选中的内容会自动进入剪贴板，不需要再按`Command-C`复制。
 
-我经常使用 iTerm2 自带的密码管理工具管理一些终端用到的密码。在 iTerm2 的`Windows` > `Password Manager`（或者快捷键`Command-Option-F`）打开。
+我经常使用 iTerm2 自带的密码管理工具管理一些终端用到的密码。在 iTerm2 的 [Window] > [Password Manager]（或者快捷键`Command-Option-F`）打开。
+
+我最近开始使用 Timestamps 功能，可以在终端里显示每行输出的时间。一次性使用：[View] > [Show Timestamps]，默认使用：[Settings] > [Profiles] > [Session] > [Show timestamps] -> [Always]。
 
 ### [Oh My Zsh](http://ohmyz.sh)
 
 默认的 Bash （Catalina 已经默认使用 Zsh）是黑白的，没有色彩。而 Oh My Zsh 可以带你进入彩色时代。Oh My Zsh 同时提供一套插件和工具，可以简化命令行操作。后面我们会看到很多介绍，你会看到我爱死这家伙了。
 
-安装方法见官网。
+官网的安装命令：
+
+```sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+对于国内用户可以使用[如下方法](https://github.com/ohmyzsh/ohmyzsh/wiki#welcome-to-oh-my-zsh)：
+
+```sh
+sh -c "$(curl -fsSL https://install.ohmyz.sh)"
+```
 
 目前我使用的插件有：`git z history asdf`
 
@@ -386,20 +384,20 @@ Oh My Zsh 提供了一套系统别名（alias），来达到相同的功能。�
 Alias | Command
 ----- | -------
 gapa  | `git add --patch`
-gc!   | `git commit -v --amend`
+gc!   | `git commit --verbose --amend`
 gcl   | `git clone --recurse-submodules`
-gclean| `git clean -id`
-gcm   | `git checkout master`
-gcmsg | `git commit -m`
+gclean| `git clean --interactive -d`
+gcm   | `git checkout $(git_main_branch)`
+gcmsg | `git commit --message`
 gco   | `git checkout`
 gd    | `git diff`
 gdca  | `git diff --cached`
-glola | `git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --all`
+glola | `git log --graph --pretty="%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset" --all`
 gp    | `git push`
 grbc  | `git rebase --continue`
 gst   | `git status`
-gup   | `git pull --rebase`
-gwip  | `git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign -m "--wip-- [skip ci]"`
+gpr   | `git pull --rebase`
+gwip  | `git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign --message "--wip-- [skip ci]"`
 
 完整列表请参考：<https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git/>
 
@@ -409,12 +407,12 @@ gwip  | `git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -
 
 当你在浏览一个很长的网页时，你看完了当前显示的内容，想要看后续的内容，你可以在 Trackpad 上双指上滑，或者鼠标滚轮向上滚动。这是被称作“自然”的滚动方向。
 
-然而在 Windows 里鼠标滚动的行为是相反的：鼠标滚轮向下滚动才会让浏览器显示后续的内容，向上滚动会达到页面的顶部。你可以在 macOS 的系统偏好设置里修改（选择`System Preferences` > `Trackpad`，在`Scroll & Zoom`标签页中不选中`Scroll direction: natural`），但是这样会同时改变鼠标滚轮的方向和 Trackpad 的方向。
+然而在 Windows 里鼠标滚动的行为是相反的：鼠标滚轮向下滚动才会让浏览器显示后续的内容，向上滚动会达到页面的顶部。你可以在 macOS 的系统偏好设置里修改（选择 [System Settings] > [Trackpad]，在 [Scroll & Zoom] 标签页中取消 [Natural scrolling]），但是这样会同时改变鼠标滚轮的方向和 Trackpad 的方向。
 
 要想只改变鼠标滚轮的方向，而保持 Trackpad 依旧是“自然”的，我们需要 Scroll Reverser：
 
 ```sh
-brew cask install scroll-reverser
+brew install --cask scroll-reverser
 ```
 
 PS：这货会让三指点击失效
@@ -426,22 +424,22 @@ PS：这货会让三指点击失效
 原生 macOS 下只能手动调整窗口大小，所以我们需要窗口管理工具。我用过很多窗口管理工具，可惜大部分工具都存在快捷键冲突的问题（对我来说主要是 IntelliJ IDEA）。ShiftIt 是少见的没有冲突的窗口管理工具：
 
 ```sh
-brew cask install shiftit
+brew install --cask shiftit
 ```
 
 替代者有 SizeUp，主要快捷键和 ShiftIt 相同。
 
 当然如果喜欢 hacking，[Slate](https://github.com/jigish/slate)  是个不错的 hackable 的窗口管理工具。配置可以参照 <http://thume.ca/howto/2012/11/19/using-slate/>
 
+最近我又研究了下[Rectangle](https://rectangleapp.com/)，很遗憾的发现它默认快捷键和[IntelliJ IDEA](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf)有冲突。
+
 ### [Hammerspoon ShiftIt](https://github.com/peterklijn/hammerspoon-shiftit)
 
-> m3
+一个基于 [Hammerspoon](https://www.hammerspoon.org/)，模拟 Shiftit 窗口管理功能的方法。安装步骤稍显繁琐。安装方法见标题链接。
 
-一个基于 [Hammerspoon](https://www.hammerspoon.org/)，模拟 Shiftit 窗口管理功能的方法。安装步骤稍显繁琐。安装方法见链接。
+如果[Step 2](https://github.com/peterklijn/hammerspoon-shiftit?tab=readme-ov-file#step-2)中的`ShiftIt spoon`无法下载，可以使用[链接](https://github.com/peterklijn/hammerspoon-shiftit/releases/download/v1.1/ShiftIt.spoon.zip)，文件是一模一样的。
 
 ### Visual Studio Code
-
->m3
 
 我现在使用 Visual Studio Code 更多一些。Visual Studio Code 同样也有 Homebrew Cask 自动建立`code`链接，也有 Oh My Zsh 插件支持。
 
@@ -450,6 +448,8 @@ brew install --cask visual-studio-code
 ```
 
 ### Sublime Text 3
+
+> unverified
 
 安装：
 
@@ -465,6 +465,8 @@ brew cask install sublime-text
 
 ### MacDown
 
+> unverified
+
 MacDown 是 Markdown 编辑器。由于 Mou 一直不支持代码高亮，我就转向了 MacDown。完美支持 [GFM](https://help.github.com/articles/github-flavored-markdown/)。
 
 我特别喜欢 [Markdown](https://daringfireball.net/projects/markdown/)，我用 Makdown 来写文章（包括本文），写幻灯片（[reveal.js](https://github.com/hakimel/reveal.js/)）。Markdown 可以让我专注于内容本身，而无需花精力在排版和样式上。
@@ -472,7 +474,7 @@ MacDown 是 Markdown 编辑器。由于 Mou 一直不支持代码高亮，我就
 安装：
 
 ```sh
-brew cask install macdown
+brew install --cask macdown
 ```
 
 Homebrew Cask 还会增加`macdown`命令，可以在命令行方便的使用 MacDown 打开文件。
@@ -489,11 +491,9 @@ Homebrew Cask 还会增加`macdown`命令，可以在命令行方便的使用 Ma
 
 ### [Vimium](https://vimium.github.io/)
 
-Vimium 是一个 Google Chrome 扩展，让你可以纯键盘操作 Chrome，把你的 Chrome 变成“黑客的浏览器”。
+Vimium 是一个浏览器扩展，让你可以纯键盘操作浏览器，把你的浏览器变成“黑客的浏览器”。
 
-安装方法请参考官方网站。
-
-其他浏览器也有类似的工具，比如 Firefox 的 Vimium-FF。
+安装方法请参考官方网站。支持 Chrome、Edge、Firefox。
 
 ### 安装字体
 
@@ -501,7 +501,7 @@ Vimium 是一个 Google Chrome 扩展，让你可以纯键盘操作 Chrome，把
 
 ```sh
 brew tap homebrew/cask-fonts
-brew cask install font-open-sans
+brew install font-open-sans
 ```
 
 ### [LastPass](https://lastpass.com)
@@ -537,7 +537,7 @@ SourceTree 是 Atlassian 公司出品的一款优秀的 Git 图形化客户端�
 安装：
 
 ```sh
-brew cask install sourcetree
+brew install --cask sourcetree
 ```
 
 用 Homebrew Cask 安装会自动增加命令行工具`stree`到`$PATH`里。在命令行中输入`stree`可以快速用 SourceTree 打开当前 Git 仓库。详细用法请参见`stree --help`。
@@ -553,7 +553,7 @@ CheatSheet 能够显示当前程序的快捷键列表，默认的快捷键是长
 安装：
 
 ```sh
-brew cask install cheatsheet
+brew install --cask cheatsheet
 ```
 
 ### [Alfred](https://www.alfredapp.com)
@@ -567,7 +567,7 @@ Mac 用户不用鼠标键盘的必备神器，配合大量 Workflows，习惯之
 安装：
 
 ```sh
-brew cask install alfred
+brew install --cask alfred
 ```
 
 ### [Stow](http://www.gnu.org/software/stow/)
@@ -586,34 +586,25 @@ brew install stow
 
 ### [BCLM](https://github.com/zackelia/bclm)
 
-> m3
-
 我看到一个研究，说是相比于「放电到 25% 再充电，然后充电到 100%」，「放电到 45% 再充电到 75%」会让电池会有更长的寿命（健康度）。
 
 所以为了避免充电到75%以上，我会使用工具bclm（https://github.com/zackelia/bclm），将充电上限限制到 50 到 100 中的任意整数。对于 Apple silicon 电脑，仅可以设置为 80 或 100。
 
+```sh
+brew tap zackelia/formulae
+brew install bclm
+```
+
 参考[几个月电池健康掉到90%？这样充电电池寿命延长3倍（非标题党）](https://www.bilibili.com/video/BV1Ha411F7rg/?share_source=copy_web)
 
-### 查看充电功率
+### [totp-cli](https://github.com/yitsushi/totp-cli)
 
-> m3
+我经常需要输入一些 2FA 的验证码，这需要打开手机 App 复制 6 位的数字。如果可以在笔记本上直接完成，那么就会方便许多。
 
-如果想知道当前的充电功率，可以使用如下命令：
+`totp-cli`是一款在电脑上运行的 TOTP 工具，可以通过命令行生成验证码。除此之外，他还可以加密保存密钥、可以管理多组密钥，可以导入导出。
 
 ```sh
-system_profiler SPPowerDataType | grep Wattage -C 5
-```
-
-能看到如下内容：
-
-```
-    AC Charger Information:
-
-      Connected: Yes
-      ID: 0x0000
-      Wattage (W): 60
-      Family: 0xe000400a
-      Charging: No
+brew install totp-cli
 ```
 
 ## 3. 开发工具
