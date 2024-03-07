@@ -126,7 +126,9 @@ Spotlight 的快捷键（不论是英文版还是中文版）都已经统一成�
 
 - [Mac 键盘快捷键](https://support.apple.com/zh-cn/HT201236)
 
-  苹果官方文档。当你在写代码，怎么通过快捷键让光标转移到行首、行尾、向上翻页或者将光标移左移一个词？都在这篇文档里。我常用的有上厕所锁屏：`Control-Command-Q`、在当前 App 的多个窗口间切换：``Command-重音符 (`)``
+  苹果官方文档。当你在写代码，怎么通过快捷键让光标转移到行首、行尾、向上翻页或者将光标移左移一个词？都在这篇文档里。我常用的有上厕所锁屏：`Control-Command-Q`、在当前 App 的多个窗口间切换：``Command-重音符 (`)``。
+
+- [Mac 上“终端”中的键盘快捷键](https://support.apple.com/zh-cn/guide/terminal/trmlshtcts/mac)
 
 ### 语音
 
@@ -588,7 +590,7 @@ brew install stow
 
 我看到一个研究，说是相比于「放电到 25% 再充电，然后充电到 100%」，「放电到 45% 再充电到 75%」会让电池会有更长的寿命（健康度）。
 
-所以为了避免充电到75%以上，我会使用工具bclm（https://github.com/zackelia/bclm），将充电上限限制到 50 到 100 中的任意整数。对于 Apple silicon 电脑，仅可以设置为 80 或 100。
+所以为了避免充电到75%以上，我会使用工具[bclm](https://github.com/zackelia/bclm)，将充电上限限制到 50 到 100 中的任意整数。对于 Apple silicon 电脑，仅可以设置为 80 或 100。
 
 ```sh
 brew tap zackelia/formulae
@@ -599,9 +601,9 @@ brew install bclm
 
 ### [totp-cli](https://github.com/yitsushi/totp-cli)
 
-我经常需要输入一些 2FA 的验证码，这需要打开手机 App 复制 6 位的数字。如果可以在笔记本上直接完成，那么就会方便许多。
+我经常需要输入一些 2FA 的验证码，这需要打开手机 App 复制 6 位的数字。如果可以直接在笔记本上直接完成，那么就会方便许多。
 
-`totp-cli`是一款在电脑上运行的 TOTP 工具，可以通过命令行生成验证码。除此之外，他还可以加密保存密钥、可以管理多组密钥，可以导入导出。
+`totp-cli`是一款在电脑上运行的 TOTP 工具，可以通过命令行生成验证码。除此之外，他还可以加密保存密钥、管理多组密钥以及导入导出。之前我使用的是`oathtool`，自己管理密钥（我放到了 Keychain 里），还要写脚本，在发现`totp-cli`后，我就换成了它。
 
 ```sh
 brew install totp-cli
@@ -611,7 +613,7 @@ brew install totp-cli
 
 ### [asdf-vm](https://asdf-vm.com)
 
-asdf-vm 是一个命令行工具，它可以让你同时安装多个版本的开发工具，版本间可以随时切换，还可以基于全局、目录、和当前 shell session 配置不同的版本。它以插件的形式支持开发工具，目前支持 .NET Core、Clojure、Deno、Groovy、Java、Kotlin、Maven、MySQL、Node.js、PHP、Python、Ruby、Scala、Yarn 等近 200 个，具体参见[官方插件列表](https://asdf-vm.com/#/plugins-all)。有了它，你就不再需要另外安装`gvm`、`nvm`、`rbenv`和`pyenv`等工具了。
+asdf-vm 是一个命令行工具，它可以让你同时安装多个版本的开发工具，版本间可以随时切换，还可以基于全局、目录、和当前 shell session 配置不同的版本。它以插件的形式支持开发工具，目前支持 .NET Core、Clojure、Deno、Groovy、Java、Kotlin、Maven、MySQL、Node.js、PHP、Python、Ruby、Scala、Yarn 等近 200 个，具体参见[插件列表](https://github.com/asdf-vm/asdf-plugins)。有了 asdf-vm，你就不再需要另外安装`gvm`、`nvm`、`rbenv`和`pyenv`等工具了。
 
 我现在使用 asdf-vm 来管理我使用的开发工具，包括 Java、Node.js、Gradle、Maven。
 
@@ -619,65 +621,44 @@ asdf-vm 是一个命令行工具，它可以让你同时安装多个版本的开
 brew install asdf
 ```
 
+可以使用前缀的方式来安装最新稳定版本：
+
+```sh
+asdf plugin add java https://github.com/halcyon/asdf-java.git
+asdf install java latest:temurin-21
+```
+
+asdf-vm 还需要对环境变量`PATH`做一些[更改](https://asdf-vm.com/guide/getting-started.html#_3-install-asdf)。幸好还有[`asdf for oh-my-zsh`插件](https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/asdf/asdf.plugin.zsh)，可以帮助完成设置。
+
 替代品有 [SDKMAN!](https://sdkman.io)。
 
 ### Java
-
-> 已经使用 asdf-vm 替代
 
 macOS 都不会自带 JDK 了，所以进行 Java 开发的话，需要下载 JDK。在 Homebrew Cask 之前，我们需要从 <https://developer.apple.com/downloads/> 或者 Oracle 网站上下载。还有更麻烦的－－卸载 JDK 和升级 JDK。
 
 JDK 安装文件是 pkg 格式，卸载和`.app`不一样，且没有自动卸载方式。
 
-而 Homebrew Cask 提供了自动安装和卸载功能，能够自动从官网上下载并安装最新的 JDK。
+可以通过`brew install openjdk@17`或者`brew install --cask temurin`直接安装 JDK，不过我现在都改用[asdf-java](https://github.com/halcyon/asdf-java)了。
+
+替代品有 [jEnv](https://github.com/jenv/jenv)。
+
+#### 国内使用
+
+因为通过`asdf-java`的时候要访问`raw.githubusercontent.com`，所以一些命令可能会失败。可以运行以下命令来避免。
+
+对于 Intel 电脑：
 
 ```sh
-brew cask install java
+cp ~/.asdf/plugins/java/data/jdk-macosx-x86_64-ga.tsv $TMPDIR/asdf-java-$(whoami).cache/releases-macosx-x86_64.tsv
 ```
 
-目前有`java`、`oracle-jdk`、`adoptopenjdk`可以安装 JDK 13，分别来自 OpenJDK、Oracle 和 AdoptOpenJDK。
-
-如果你需要安装其他版本，可以使用 [homebrew-cask-versions](https://github.com/Homebrew/homebrew-cask-versions)：
+Apple silicon 电脑：
 
 ```sh
-brew tap homebrew/cask-versions
-brew cask install java11
+cp ~/.asdf/plugins/java/data/jdk-macosx-aarch64-ga.tsv $TMPDIR/asdf-java-$(whoami).cache/releases-macosx-aarch64.tsv
 ```
 
-目前 homebrew-cask-versions 提供`java11`、`java6`和`adoptopenjdk8`。
-
-在 macOS 上，你可以同时安装多个版本的 JDK。你可以通过命令`/usr/libexec/java_home -V`来查看安装了哪几个 JDK。
-
-那问题来了，当你运行`java`或者 Java 程序时使用的是哪个 JDK 呢？在 macOS 下，`java`也就是`/usr/bin/java`在默认情况下指向的是已经安装的最新版本。但是你可以设置环境变量`JAVA_HOME`来更改其指向：
-
-```sh
-$ java -version
-java version "1.8.0_60"
-Java(TM) SE Runtime Environment (build 1.8.0_60-b27)
-Java HotSpot(TM) 64-Bit Server VM (build 25.60-b23, mixed mode)
-$ JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home java -version
-java version "1.6.0_65"
-Java(TM) SE Runtime Environment (build 1.6.0_65-b14-466.1-11M4716)
-Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-466.1, mixed mode)
-```
-
-其中`JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home`可以用`` JAVA_HOME=`/usr/libexec/java_home -v 1.6` ``这种更加通用的方式代替。
-
-需要 Oracle JDK 8/9？很遗憾，由于一些原因（[Java8 not working anymore](https://github.com/Homebrew/homebrew-cask-versions/issues/7253)），Homebrew Cask 不再提供 Oracle JDK 这些版本的安装。不过你可以尝试 [AdoptOpenJDK](https://github.com/AdoptOpenJDK/homebrew-openjdk)，或者从 [Oracle](https://www.oracle.com) 官网手工下载安装。
-
-### [jEnv](https://github.com/gcuisinier/jenv)
-
-> unverified
-
-也可以使用 jEnv 来管理不同版本的 JDK，这个工具跟 [rbenv](#rbenv) 类似，通过当前目录下的`.java-version`来决定使用哪个 JDK。jEnv 也可以用 Homebrew 安装。不过要使用 jEnv 要有几个问题：
-
-- 需要手动把`eval "$(jenv init -)"`加入 profile，没有 Oh My Zsh 插件。这点是我非常反感的。
-
-  可以把`eval "$(jenv init -)"`加入`~/.zlogin`，这样可以避免修改`~/.zshrc`。
-- 需要手动添加 JDK，不会自动采集系统 JDK。跟 Ruby 不同，macOS 已经提供`/usr/libexec/java_home`工具来管理安装的 JDK。
-- 需要 `jenv rehash`。这个是跟 rbenv 学的。
-
-所以我建议不要使用 jEnv。
+在 macOS 上，有些应用会通过命令`/usr/libexec/java_home`来使用 JDK。对此，`asdf-java`也提供了[解决方案](https://github.com/halcyon/asdf-java#java_home-integration)。
 
 ### 民间使用的 Java 版本切换方法
 
@@ -713,29 +694,29 @@ setjdk 1.8
 Java 开发必备工具 IntelliJ IDEA。可以安装 Ultimate Edition：
 
 ```sh
-brew cask install intellij-idea
+brew install --cask intellij-idea
 ```
 
 也可以安装开源免费的 Community Edition：
 
 ```sh
-brew cask install intellij-idea-ce
+brew install --cask intellij-idea-ce
 ```
 
-IntelliJ IDEA 有几套内建的快捷键方案（Keymap）。其中适用于 macOS 的有`macOS`和`IntelliJ IDEA Classic`两种。区别是:
+IntelliJ IDEA 有几套内建的快捷键方案（Keymap）。其中我比较常用的有`macOS`和`IntelliJ IDEA Classic`两种。区别是:
 
 - `macOS`更加符合 macOS 常用的快捷键
 - `IntelliJ IDEA Classic`方案和其他平台上的快捷键类似
 
-一个团队使用不同的快捷键会影响效率。可以用`View | Quick Switch Scheme`（`⌃ Back Quote`）快速切换 Keymap。
+一个团队使用不同的快捷键会影响效率。可以用 [View] > [Quick Switch Scheme] > [4 Keymap] 快速切换 Keymap。
 
-因为我经常会在 macOS 和 Windows 平台上使用 IDEA，所以我一般使用`IntelliJ IDEA Classic`方案。
+之前我经常会在 macOS 和 Windows 平台上使用 IDEA，所以我一般使用`IntelliJ IDEA Classic`方案。最近我都使用默认的`macOS`方案。
 
-可以从 IDEA 的`Help > Keymap Reference`打开快捷键的参考手册。不过从这里打开的是`macOS`方案的，而`IntelliJ IDEA Classic`方案的可以从这里找到：<http://android.cs.uchicago.edu/content/slides/keymap_mac.pdf>。
+可以从 IDEA 的 [Help] > [Keyboard Shortcuts PDF] 打开快捷键的参考手册。
 
-IntelliJ IDEA 自带了 [Fira Code](https://github.com/tonsky/FiraCode) 字体，支持字体连笔（font ligatures）。使用 Fira Code 可以让我们在不同平台使用相同的编辑器字体，设置方法：`Intellij IDEA` > `Preference...`，在左边选择`Editor` > `Font`，在右边选择`Font:` - `Fira Code Retina`，然后选中`Enable font ligatures`。
+IntelliJ IDEA 默认的`Jetbrains Mono`字体支持字体连笔（font ligatures），设置方法：[Settings] > [Editor] > [Font]，选中 [Enable ligatures]。
 
-### [rbenv](https://github.com/sstephenson/rbenv)
+### [rbenv](https://github.com/rbenv/rbenv)
 
 > 已经使用 asdf-vm 替代
 
@@ -805,6 +786,14 @@ Node 的版本管理工具有很多，常用的会有以下几个：
   一个简单的工具，安装方式类似 nvm，无需额外配置。具体参考官方文档。
 
 目前根据 GitHub Stars，这三个管理工具的排名依次是 nvm、n、nodenv。但是个人建议采用 nodenv，原因同 rbenv，尤其已经在使用 rbenv 的伙伴们会觉得 nodenv 更顺手 :smile: 。
+
+### Docker
+
+开发中经常需要用到 Docker。因为 Docker Desktop 不再免费，我开始使用 [Colima](https://github.com/abiosoft/colima)。
+
+```sh
+brew install docker colima
+```
 
 ## 参考资料
 
