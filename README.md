@@ -4,9 +4,9 @@
 
 [English Version](https://github.com/macdao/ocds-guide-to-setting-up-mac/blob/master/README.en.md)
 
-本文的最初版本写于 2015 年，那时候我用的是一台 2013 款的 MacBook Pro，操作系统刚升级到 OS X El Capitan 10.11。想要怀旧的可以点击这里：[2015 Version](https://github.com/macdao/ocds-guide-to-setting-up-mac/tree/2015)。
+本文的最初版本写于 2015 年，那时候我用的是一台 2013 款的 MacBook Pro，操作系统刚升级到 OS X El Capitan 10.11。想要怀旧的可以点击 [2015 Version](https://github.com/macdao/ocds-guide-to-setting-up-mac/tree/2015)。
 
-后来到了 2019 年，我拿到了 2019 款的 MacBook Pro，操作系统是 macOS Catalina 10.15。我特意没有从 Time Machine 恢复，而选择从头配置。当我按照本文配置时我发现，很多地方都变了。彼时的内容在这里：[2019 Version](https://github.com/macdao/ocds-guide-to-setting-up-mac/tree/2019)。
+后来到了 2019 年，我拿到了 2019 款的 MacBook Pro，操作系统是 macOS Catalina 10.15。我特意没有从 Time Machine 恢复，而选择从头配置。当我按照本文配置时我发现，很多地方都变了。彼时的内容在 [2019 Version](https://github.com/macdao/ocds-guide-to-setting-up-mac/tree/2019)。
 
 现在是 2024 年，我升级到了一台 M3 Max 的 MacBook Pro，操作系统是 macOS Sonoma 14。这次同样增加了很多内容。
 
@@ -84,7 +84,7 @@ PS：在带 Touch Bar 的机型上，这个设置貌似没有作用。
 
 那么问题来了，如果你不想保存，想点击 [Don't Save]，是不是只能用鼠标点击了呢？
 
-并不是这样：选择 [System Settings] > [Keyboard]，选中 [Keyboard navigation]。之后这个对话框会变成这样：
+并不是这样：选择 [System Settings] > [Keyboard]，选中 [Keyboard navigation]，之后这个对话框会变成这样：
 
 ![dialog-box-with-all-controls](dialog-box-with-all-controls.png)
 
@@ -156,11 +156,13 @@ macOS 自带了词典（Dictionary）。你几乎可以在任何应用中通过�
 
 钥匙串访问（Keychain Access）是一个 macOS 应用程序，对我来说它最大的功能就是查看已经保存的各种账号和密码，包括 Wi-Fi 密码。
 
+PS：现在可以在 [System Settings] > [Wi-Fi] > [Advanced] 查看 Wi-Fi 密码，可以在 [System Settings] > [Passwords] 里查看保存的网站密码。
+
 ### 高效的光标
 
 默认情况下，光标的闪烁速度和移动速度是相当慢的。当你需要用退格键删除大段文字的时候，会觉得痛不欲生，因为即使长按退格键，光标也移动的很缓慢。
 
-调节光标移动速度：选择[System Settings] > [Keyboard]，把 [Key repeat rate] 以及 [Delay until repeat] 的滑块拉到最右端，分别把持续连续输入和首次连续输入加快，从此享受飞一般的速度。
+调节光标移动速度：选择 [System Settings] > [Keyboard]，把 [Key repeat rate] 以及 [Delay until repeat] 的滑块拉到最右端，分别把持续连续输入和首次连续输入加快，从此享受飞一般的速度。
 
 ### Safari 打开上次会话的所有窗口
 
@@ -188,7 +190,7 @@ system_profiler SPPowerDataType | grep Wattage -C 5
 
 ### Activity Monitor
 
-Activity Monitor 默认的 Dock 图标是静态的，可以设置为显示 CPU 曲线。
+Activity Monitor 默认的 Dock 图标是静态的，可以设置为显示 CPU 曲线，实时了解机器负载情况。
 
 右键（双指）点击 Dock 上 Activity Monitor 的图标，选择 [Dock Icon] > [Show CPU History]。
 
@@ -266,14 +268,13 @@ defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
+PS：安装 Homebrew 的时候会自动下载和安装 Apple 的 Command Line Tools。
 
-有了 Homebrew 以后，要下载工具，比如 Wget、Gradle、Maven 等工具，就不需要去网上下载了，只要一行命令就能搞定：
+有了 Homebrew 以后，要下载工具，比如 Wget、Gradle、Maven 等工具，就不需要单独去网上下载了，只要一行命令就能搞定：
 
 ```sh
 brew install wget gradle maven
 ```
-
-PS：安装 Homebrew 的时候会自动下载和安装 Apple 的 Command Line Tools。
 
 执行`install`的时候经常会执行更新，有时候会比较慢，我们可以设置环境变量`HOMEBREW_NO_AUTO_UPDATE`关闭更新：
 
@@ -281,11 +282,13 @@ PS：安装 Homebrew 的时候会自动下载和安装 Apple 的 Command Line To
 echo export HOMEBREW_NO_AUTO_UPDATE=1 >> ~/.zprofile
 ```
 
+想知道世界上其他人喜欢使用哪些工具？可以在[这里](https://formulae.brew.sh/analytics/)查看到下载排名，看看哪些应用工具是最热门的。
+
 Homebrew 的替代品有 [MacPorts](https://www.macports.org/)，我没有用过。
 
 #### 使用国内镜像安装 Homebrew
 
-有时候在国内访问 GitHub 非常慢，导致安装 Homebrew 总是失败。之前我提供过一个[方法](https://github.com/macdao/ocds-guide-to-setting-up-mac/tree/2019#%E4%BD%BF%E7%94%A8%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85-homebrew)，不过现在 Homebrew 已经支持[使用国内的源安装](https://mirrors.ustc.edu.cn/help/brew.git.html)。
+有时候在国内访问 GitHub 非常慢，导致安装 Homebrew 总是失败。之前我提供过一个[方法](https://github.com/macdao/ocds-guide-to-setting-up-mac/tree/2019#%E4%BD%BF%E7%94%A8%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85-homebrew)，不过现在 Homebrew 已经支持[使用国内的源安装](https://docs.brew.sh/Installation#git-remote-mirroring)。
 
 ```sh
 export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
@@ -294,7 +297,7 @@ export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
 /bin/bash -c "$(curl -fsSL https://mirrors.ustc.edu.cn/misc/brew-install.sh)"
 ```
 
-其中`HOMEBREW_BOTTLE_DOMAIN`的设置可以让安装过程中的`ruby`下载使用镜像。
+其中`HOMEBREW_BOTTLE_DOMAIN`的设置可以让安装过程中的`ruby`下载使用镜像。参考[Homebrew 源使用帮助](https://mirrors.ustc.edu.cn/help/brew.git.html)。
 
 然后为了让镜像持续生效，请把以下内容添加到`~/.zprofile`文件中。
 
@@ -305,9 +308,7 @@ export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
 export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
 ```
 
-其中`HOMEBREW_API_DOMAIN`会把包安装信息的地址设置成镜像地址。具体参考[brew(1)](https://docs.brew.sh/Manpage)、[4.0.0](https://brew.sh/2023/02/16/homebrew-4.0.0/)。
-
-可以在[这里](https://formulae.brew.sh/analytics/)查看到下载排名，看看哪些应用工具是最热门的。
+其中`HOMEBREW_API_DOMAIN`会把包安装信息的地址设置成镜像地址。具体参考 [brew(1)](https://docs.brew.sh/Manpage)、[4.0.0](https://brew.sh/2023/02/16/homebrew-4.0.0/)。
 
 ### [Homebrew Cask](https://github.com/Homebrew/homebrew-cask)
 
@@ -317,13 +318,13 @@ Homebrew Cask 是社区驱动的，如果你发现 Homebrew Cask 上的应用不
 
 目前 Homebrew Cask 已经和 Homebrew 深度集成，不需要单独安装了。
 
-应用也可以通过 App Store 安装，而且有些应用只能通过 App Store 安装，比如 Xcode 等一些 Apple 的应用。App Store 没有对应的命令行工具，并且还需要 Apple ID，相对有些麻烦。倒是更新起来很方便。
+应用也可以通过 App Store 安装，而且有些应用只能通过 App Store 安装，比如 Xcode 等一些 Apple 的应用。App Store 没有对应的命令行工具，并且还需要 Apple ID，相对有些麻烦，倒是更新起来很方便。
 
 几乎所有常用的应用都可以通过 Homebrew Cask 安装，而且是从应用的官网上下载，所以你要安装新的应用时，建议用 Homebrew Cask 安装。如果你不知道应用在 Homebrew Cask 中的 ID，可以先用`brew search`命令搜索。
 
 #### 使用国内镜像安装 Homebrew Cask
 
-根据上文[使用国内镜像安装 Homebrew](#使用国内镜像安装-homebrew)讲的方式设置后，Cask 也可以使用镜像。
+根据上文[使用国内镜像安装 Homebrew](#使用国内镜像安装-homebrew) 讲的方式设置后，Cask 也可以使用镜像。
 
 ### [iTerm2](https://iterm2.com/)
 
@@ -337,15 +338,15 @@ brew install --cask iterm2
 
 感谢 Homebrew Cask，我们可以通过命令行自动安装 iTerm2 了。
 
+至此，Terminal 应用已经出色的完成了其历史使命。后面命令行就交给 iTerm2 啦。
+
 在终端里，除了可以用`Control-E`等快捷键（详见[其他快捷键](#其他快捷键)）之外，还可以使用`Option-B`、`Option-F`等快捷键（具体可以参考[这里](http://ss64.com/bash/syntax-keyboard.html)）。前提是这样设置一下：
 
 选择 [Settings] > [Profiles]，选择你在使用的 Profile（默认是`Default`），在 [Keys] 标签页中把 [Left Option key:] 和 [Right Option key:] 都设置成 [Esc+]。
 
-在打开新的窗口/标签页的时候，默认情况下新窗口总是 HOME 目录，还需要我每次敲命令才能进入工作目录。如果想要这个新窗口在打开的时候就自动进入工作目录，需要如下设置：
+在打开新的窗口/标签页的时候，默认情况下新窗口总是`$HOME`目录，还需要我每次敲命令才能进入工作目录。如果想要这个新窗口在打开的时候就自动进入工作目录，需要如下设置：
 
 选择 [Settings] > [Profiles]，选择你在使用的 Profile（默认是Default），在 [General] 标签页中的选择 [Working Directory] > [Reuse previous seesion's directory]。
-
-至此，Terminal 应用已经出色的完成了其历史使命。后面命令行就交给 iTerm2 啦。
 
 在 iTerm2 中双击会自动选中对应的词，三击会选中对应的整行。选中的内容会自动进入剪贴板，不需要再按`Command-C`复制。
 
@@ -401,13 +402,13 @@ gst   | `git status`
 gpr   | `git pull --rebase`
 gwip  | `git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign --message "--wip-- [skip ci]"`
 
-完整列表请参考：<https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git/>
+完整列表请参考：<https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git/>。
 
 ### ShiftIt
 
-> 该工具在 macOS 12 的某次更新后就无法工作了。根据[其作者建议](https://github.com/fikovnik/ShiftIt#alternatives)，我更换成了[Hammerspoon ShiftIt](#hammerspoon-shiftIt)。
+> 该工具在 macOS 12 的某次更新后就无法工作了。根据[其作者建议](https://github.com/fikovnik/ShiftIt#alternatives)，我更换成了 [Hammerspoon ShiftIt](#hammerspoon-shiftIt)。
 
-原生 macOS 下只能手动调整窗口大小，所以我们需要窗口管理工具。我用过很多窗口管理工具，可惜大部分工具都存在快捷键冲突的问题（对我来说主要是 IntelliJ IDEA）。ShiftIt 是少见的没有冲突的窗口管理工具：
+原生 macOS 下只能手动调整窗口大小，所以我们需要窗口管理工具。我用过很多窗口管理工具，可惜大部分工具都存在快捷键冲突的问题（对我来说主要和 IntelliJ IDEA 冲突）。ShiftIt 是少见的没有冲突的窗口管理工具：
 
 ```sh
 brew install --cask shiftit
@@ -415,15 +416,15 @@ brew install --cask shiftit
 
 替代者有 SizeUp，主要快捷键和 ShiftIt 相同。
 
-当然如果喜欢 hacking，[Slate](https://github.com/jigish/slate)  是个不错的 hackable 的窗口管理工具。配置可以参照 <http://thume.ca/howto/2012/11/19/using-slate/>
+当然如果喜欢 hacking，[Slate](https://github.com/jigish/slate)  是个不错的 hackable 的窗口管理工具。配置可以参照 <http://thume.ca/howto/2012/11/19/using-slate/>。
 
-最近我又研究了下[Rectangle](https://rectangleapp.com/)，很遗憾的发现它默认快捷键和[IntelliJ IDEA](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf)有冲突。
+最近我又研究了下 [Rectangle](https://rectangleapp.com/)（在 Homebrew 排行榜上排名很高），很遗憾的发现它默认快捷键和 [IntelliJ IDEA](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf) 有冲突。
 
 ### [Hammerspoon ShiftIt](https://github.com/peterklijn/hammerspoon-shiftit)
 
 一个基于 [Hammerspoon](https://www.hammerspoon.org/)，模拟 Shiftit 窗口管理功能的方法。安装步骤稍显繁琐。安装方法见标题链接。
 
-如果[Step 2](https://github.com/peterklijn/hammerspoon-shiftit?tab=readme-ov-file#step-2)中的`ShiftIt spoon`无法下载，可以使用[链接](https://github.com/peterklijn/hammerspoon-shiftit/releases/download/v1.1/ShiftIt.spoon.zip)，文件是一模一样的。
+如果 [Step 2](https://github.com/peterklijn/hammerspoon-shiftit?tab=readme-ov-file#step-2) 中的`ShiftIt spoon`无法下载，可以使用[链接](https://github.com/peterklijn/hammerspoon-shiftit/releases/download/v1.1/ShiftIt.spoon.zip)，文件是一模一样的。
 
 ### z
 
@@ -454,20 +455,20 @@ brew install font-open-sans
 
 我看到一个研究，说是相比于「放电到 25% 再充电，然后充电到 100%」，「放电到 45% 再充电到 75%」会让电池会有更长的寿命（健康度）。
 
-所以为了避免充电到75%以上，我会使用工具[bclm](https://github.com/zackelia/bclm)，将充电上限限制到 50 到 100 中的任意整数。对于 Apple silicon 电脑，仅可以设置为 80 或 100。
+所以为了避免充电到 75% 以上，我会使用工具 [bclm](https://github.com/zackelia/bclm)，将充电上限限制到 50 到 100 中的任意整数。对于 Apple silicon 电脑，可以设置为 80 或 100。
 
 ```sh
 brew tap zackelia/formulae
 brew install bclm
 ```
 
-参考[几个月电池健康掉到90%？这样充电电池寿命延长3倍（非标题党）](https://www.bilibili.com/video/BV1Ha411F7rg/?share_source=copy_web)
+参考[几个月电池健康掉到90%？这样充电电池寿命延长3倍（非标题党）](https://www.bilibili.com/video/BV1Ha411F7rg/?share_source=copy_web)。
 
 ### [totp-cli](https://github.com/yitsushi/totp-cli)
 
 我经常需要输入一些 2FA 的验证码，这需要打开手机 App 复制 6 位的数字。如果可以直接在笔记本上直接完成，那么就会方便许多。
 
-`totp-cli`是一款在电脑上运行的 TOTP 工具，可以通过命令行生成验证码。除此之外，他还可以加密保存密钥、管理多组密钥以及导入导出。之前我使用的是`oathtool`，自己管理密钥（我放到了 Keychain 里），还要写脚本，在发现`totp-cli`后，我就换成了它。
+`totp-cli`是一款在电脑上运行的 TOTP 工具，可以通过命令行生成验证码。除此之外，他还可以加密保存密钥、管理多组密钥以及导入导出。之前我使用的是`oathtool`，自己管理密钥（我放到了 Keychain 里），还要写脚本。现在我已经换成了`totp-cli`。
 
 ```sh
 brew install totp-cli
@@ -519,7 +520,7 @@ Homebrew Cask 还会增加`macdown`命令，可以在命令行方便的使用 Ma
 
 当你在浏览一个很长的网页时，你看完了当前显示的内容，想要看后续的内容，你可以在 Trackpad 上双指上滑，或者鼠标滚轮向上滚动。这是被称作“自然”的滚动方向。
 
-然而在 Windows 里鼠标滚动的行为是相反的：鼠标滚轮向下滚动才会让浏览器显示后续的内容，向上滚动会达到页面的顶部。你可以在 macOS 的系统偏好设置里修改（选择 [System Settings] > [Trackpad]，在 [Scroll & Zoom] 标签页中取消 [Natural scrolling]），但是这样会同时改变鼠标滚轮的方向和 Trackpad 的方向。
+然而在 Windows 里鼠标滚动的行为是相反的：鼠标滚轮向下滚动才会让浏览器显示后续的内容，向上滚动会达到页面的顶部。你可以在 macOS 的系统偏好设置里修改（选择 [System Settings] > [Trackpad]，在 [Scroll & Zoom] 标签页中取消 [Natural scrolling]），但是这样会同时改变 Trackpad 的方向。
 
 要想只改变鼠标滚轮的方向，而保持 Trackpad 依旧是“自然”的，我们需要 Scroll Reverser：
 
@@ -527,7 +528,7 @@ Homebrew Cask 还会增加`macdown`命令，可以在命令行方便的使用 Ma
 brew install --cask scroll-reverser
 ```
 
-PS：这货会让三指点击失效
+PS：这货会让三指点击失效。
 
 ### [LastPass](https://lastpass.com)
 
@@ -535,7 +536,7 @@ PS：这货会让三指点击失效
 
 LastPass 是管理密码的工具，支持二次验证，提供所有浏览器插件以及 Mac 桌面版本。
 
-最重要的是，它提供**命令行**的版本，可以直接通过 Homebrew 安装
+最重要的是，它提供命令行的版本，可以直接通过 Homebrew 安装：
 
 ```sh
 brew install lastpass-cli --with-pinentry
@@ -573,8 +574,6 @@ brew install --cask sourcetree
 
 CheatSheet 能够显示当前程序的快捷键列表，默认的快捷键是长按`Command`。
 
-![CheatSheet](http://www.mediaatelier.com/CheatSheet/imgs/main.png)
-
 安装：
 
 ```sh
@@ -599,13 +598,13 @@ brew install --cask alfred
 
 > unverified
 
-GNU Stow 是管理符号链接（symlink）的一个小公举。主要用于 symlink 你的 [dotfiles](http://dotfiles.github.io/) 如 Emacs、Git、fish shell/Zsh 的配置文件。安装只需要
+GNU Stow 是管理符号链接（symlink）的一个小公举。主要用于 symlink 你的 [dotfiles](http://dotfiles.github.io/) 如 Emacs、Git、fish shell/Zsh 的配置文件。安装只需要：
 
-```
+```sh
 brew install stow
 ```
 
-安装了 stow 之后，我们可以开始 symlink 一些 dotfiles 了。完整使用 stow 和 dotfiles 的流程可以参考 <https://github.com/jcouyang/dotfiles>
+安装了 stow 之后，我们可以开始 symlink 一些 dotfiles 了。完整使用 stow 和 dotfiles 的流程可以参考 <https://github.com/jcouyang/dotfiles>。
 
 当你的 dotfiles 都妥妥的 symlink 到 `~/dotfiles` 后，push 到 GitHub 上就再也不怕换电脑了。
 
@@ -638,7 +637,7 @@ macOS 都不会自带 JDK 了，所以进行 Java 开发的话，需要下载 JD
 
 JDK 安装文件是 pkg 格式，卸载和`.app`不一样，且没有自动卸载方式。
 
-可以通过`brew install openjdk@17`或者`brew install --cask temurin`直接安装 JDK，不过我现在都改用[asdf-java](https://github.com/halcyon/asdf-java)了。
+可以通过`brew install openjdk@17`或者`brew install --cask temurin`直接安装 JDK，不过我现在都改用 [asdf-java](https://github.com/halcyon/asdf-java)了。
 
 替代品有 [jEnv](https://github.com/jenv/jenv)。
 
@@ -700,7 +699,7 @@ IntelliJ IDEA 有几套内建的快捷键方案（Keymap）。其中我比较常
 
 可以从 IDEA 的 [Help] > [Keyboard Shortcuts PDF] 打开快捷键的参考手册。
 
-IntelliJ IDEA 默认的`Jetbrains Mono`字体支持字体连笔（font ligatures），设置方法：[Settings] > [Editor] > [Font]，选中 [Enable ligatures]。
+IntelliJ IDEA 默认的`Jetbrains Mono`字体支持字体连笔（font ligatures），非常酷。设置方法：[Settings] > [Editor] > [Font]，选中 [Enable ligatures]。
 
 ### Docker
 
@@ -709,6 +708,18 @@ IntelliJ IDEA 默认的`Jetbrains Mono`字体支持字体连笔（font ligatures
 ```sh
 brew install docker colima
 ```
+
+### [PlantUML](https://plantuml.com/)
+
+开发中经常需要画图。我的很多同事会用 draw.io 一类的工具来画图，然而我更喜欢基于纯文本的格式，例如 Markdown 来写文档、用 reveal.js 做幻灯片、用 PlantUML 画架构图和类图。使用纯文本，可以方便的比较差异，可以方便的合并，也更加开放可以选择不同的工具。
+
+我之前会使用 [Graph-Easy](https://github.com/ironcamel/Graph-Easy)，而现在会使用 PlantUML。 PlantUML 有着繁荣的开放生态。[C4 model](https://c4model.com) 已经集成到[标准库](https://plantuml.com/stdlib)中。
+
+IntelliJ IDEA、[Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml) 都有插件支持。Visual Studio Code 还可以在 [Markdown 里嵌入 PlantUML](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml#markdown-integrating)。
+
+除了 [GraphViz](https://plantuml.com/graphviz-dot)，PlantUML 还支持了其他布局引擎，包括基于 Java 的 [Smetana](https://plantuml.com/smetana02)、[Eclipse Layout Kernel / ELK](https://plantuml.com/elk)。由于 ELK 会用折线来绘制连线，所以布局上会比 GraphViz 和 Smetana 更加清晰一些，所以我最近会更多的使用 ELK。
+
+我喜欢在[本地运行](https://plantuml.com/server)，相比于官方的服务，本地运行可以使用更好的中文字体。我使用的是 [PlantUML PicoWeb Server](https://plantuml.com/picoweb) 方法，可以方便的加入 ELK。
 
 ### [rbenv](https://github.com/rbenv/rbenv)
 
@@ -724,7 +735,7 @@ brew install docker colima
 brew install rbenv ruby-build
 ```
 
-然后在`~/.zshrc`中加上`rbenv`插件。否则你需要手动添加`eval "$(rbenv init -)"`到`~/zshrc`或者`~/.zprofile`文件里。
+然后在`~/.zshrc`中加上`rbenv`插件，否则你需要手动添加`eval "$(rbenv init -)"`到`~/zshrc`或者`~/.zprofile`文件里。
 
 有时候项目会依赖一些奇怪的版本号，比如`ruby-2.1.0`，这个时候你需要 [rbenv-aliases](https://github.com/tpope/rbenv-aliases) 帮忙：
 
@@ -780,19 +791,6 @@ Node 的版本管理工具有很多，常用的会有以下几个：
   一个简单的工具，安装方式类似 nvm，无需额外配置。具体参考官方文档。
 
 目前根据 GitHub Stars，这三个管理工具的排名依次是 nvm、n、nodenv。但是个人建议采用 nodenv，原因同 rbenv，尤其已经在使用 rbenv 的伙伴们会觉得 nodenv 更顺手 :smile: 。
-
-### [PlantUML](https://plantuml.com/)
-
-开发中经常需要画图。我的很多同事会用 draw.io 一类的工具来画图，然而我更喜欢基于纯文本的格式，例如 Markdown 来写文档、用 reveal.js 做幻灯片、用 PlantUML 画架构图和类图。使用纯文本，可以方便的比较差异，可以方便的合并，也更加开放可以选择不同的工具。
-
-我之前会使用 [Graph-Easy
-](https://github.com/ironcamel/Graph-Easy)，而现在会使用 PlantUML。 PlantUML 有着繁荣的开放生态。[C4 model](https://c4model.com) 已经集成到[标准库](https://plantuml.com/stdlib)中。
-
-IntelliJ IDEA、[Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml) 都有插件支持。Visual Studio Code 还可以在 [Markdown 里嵌入 PlantUML](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml#markdown-integrating)。
-
-除了 [GraphViz](https://plantuml.com/graphviz-dot)，PlantUML 还支持了其他布局引擎，包括基于 Java 的 [Smetana](https://plantuml.com/smetana02)、[Eclipse Layout Kernel / ELK](https://plantuml.com/elk)。由于 ELK 会用折线来绘制连线，所以布局上会比 GraphViz 和 Smetana 更加清晰一些，所以我最近会更多的使用 ELK。
-
-我喜欢在[本地运行](https://plantuml.com/server)，相比于官方的服务，本地运行可以使用更好的中文字体。我使用的是 [PlantUML PicoWeb Server](https://plantuml.com/picoweb) 方法，可以方便的加入 ELK。
 
 ### Java [OCD]
 
