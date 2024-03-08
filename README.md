@@ -12,7 +12,7 @@
 
 ## Table of Contents
 
-可以点击右上角的菜单图标打开索引。
+可以点击 GitHub 右上角的菜单图标打开索引。
 
 ## Why this document
 
@@ -780,6 +780,19 @@ Node 的版本管理工具有很多，常用的会有以下几个：
   一个简单的工具，安装方式类似 nvm，无需额外配置。具体参考官方文档。
 
 目前根据 GitHub Stars，这三个管理工具的排名依次是 nvm、n、nodenv。但是个人建议采用 nodenv，原因同 rbenv，尤其已经在使用 rbenv 的伙伴们会觉得 nodenv 更顺手 :smile: 。
+
+### [PlantUML](https://plantuml.com/)
+
+开发中经常需要画图。我的很多同事会用 draw.io 一类的工具来画图，然而我更喜欢基于纯文本的格式，例如 Markdown 来写文档、用 reveal.js 做幻灯片、用 PlantUML 画架构图和类图。使用纯文本，可以方便的比较差异，可以方便的合并，也更加开放可以选择不同的工具。
+
+我之前会使用 [Graph-Easy
+](https://github.com/ironcamel/Graph-Easy)，而现在会使用 PlantUML。 PlantUML 有着繁荣的开放生态。[C4 model](https://c4model.com) 已经集成到[标准库](https://plantuml.com/stdlib)中。
+
+IntelliJ IDEA、[Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml) 都有插件支持。Visual Studio Code 还可以在 [Markdown 里嵌入 PlantUML](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml#markdown-integrating)。
+
+除了 [GraphViz](https://plantuml.com/graphviz-dot)，PlantUML 还支持了其他布局引擎，包括基于 Java 的 [Smetana](https://plantuml.com/smetana02)、[Eclipse Layout Kernel / ELK](https://plantuml.com/elk)。由于 ELK 会用折线来绘制连线，所以布局上会比 GraphViz 和 Smetana 更加清晰一些，所以我最近会更多的使用 ELK。
+
+我喜欢在[本地运行](https://plantuml.com/server)，相比于官方的服务，本地运行可以使用更好的中文字体。我使用的是 [PlantUML PicoWeb Server](https://plantuml.com/picoweb) 方法，可以方便的加入 ELK。
 
 ### Java [OCD]
 
