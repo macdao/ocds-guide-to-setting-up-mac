@@ -352,7 +352,7 @@ brew install --cask iterm2
 
 我经常使用 iTerm2 自带的密码管理工具管理一些终端用到的密码。在 iTerm2 的 [Window] > [Password Manager]（或者快捷键`Command-Option-F`）打开。
 
-我最近开始使用 Timestamps 功能，可以在终端里显示每行输出的时间。一次性使用：[View] > [Show Timestamps]，默认使用：[Settings] > [Profiles] > [Session] > [Show timestamps] -> [Always]。
+Timestamps 功能，可以在终端里显示每行输出的时间。一次性使用：[View] > [Show Timestamps]，默认使用：[Settings] > [Profiles] > [Session] > [Show timestamps] -> [Always]。
 
 ### [Oh My Zsh](http://ohmyz.sh)
 
