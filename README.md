@@ -464,6 +464,10 @@ brew install bclm
 
 参考[几个月电池健康掉到90%？这样充电电池寿命延长3倍（非标题党）](https://www.bilibili.com/video/BV1Ha411F7rg/?share_source=copy_web)。
 
+### [AlDente](https://apphousekitchen.com/)
+
+AlDente 可以视为 BCLM 的加强版，它会安装一个 Helper，让电量维持在 20-100 之间的任意值，这一点比 BCLM 强大。
+
 ### [totp-cli](https://github.com/yitsushi/totp-cli)
 
 我经常需要输入一些 2FA 的验证码，这需要打开手机 App 复制 6 位的数字。如果可以直接在笔记本上直接完成，那么就会方便许多。
