@@ -270,6 +270,8 @@ defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
 
 PS：安装 Homebrew 的时候会自动下载和安装 Apple 的 Command Line Tools。
 
+安装完成后，Homebrew 建议你加入这样一句话到`~/.zprofile`中：`eval "$(${HOMEBREW_PREFIX}/bin/brew shellenv)`。而如果你使用了 [Oh My Zsh](#oh-my-zsh)，你可以直接使用`brew`插件来代替这一步。修改`~/.zshrc`，在`plugins=(git)`的括号中加上`brew`，例如`plugins=(git brew)`。
+
 有了 Homebrew 以后，要下载工具，比如 Wget、Gradle、Maven 等工具，就不需要单独去网上下载了，只要一行命令就能搞定：
 
 ```sh
@@ -370,7 +372,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 sh -c "$(curl -fsSL https://install.ohmyz.sh)"
 ```
 
-目前我使用的插件有：`git z history asdf`
+目前我使用的插件有：`git z history brew asdf`
 
 Oh My Zsh 使用了 Z shell（Zsh），一个和 Bash 相似的 Shell，而非 Bash。
 
@@ -378,9 +380,9 @@ Oh My Zsh 还有很多[有价值的插件](https://github.com/robbyrussell/oh-my
 
 替代品有基于 [fish shell](https://fishshell.com/) 的 [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)，基于 Bash 的 [Oh My Bash](https://github.com/ohmybash/oh-my-bash)。
 
-### 自动补全
+### 命令补全
 
-Z shell 支持自动补全，而 Oh My Zsh 会默认启用它。现在你在终端里里键入`curl -`然后按`Tab`键，就可以看到各种候选参数：
+Z shell 支持命令补全，而 Oh My Zsh 会默认启用它。现在你在终端里里键入`curl -`然后按`Tab`键，就可以看到各种候选参数：
 
 ```
 --data         -d  -- HTTP POST data
@@ -399,7 +401,7 @@ zsh completions have been installed to:
 ...
 ```
 
-说明这个工具自带了自动补全配置，通过 Homebrew 安装后就可以直接使用了。例如在终端里里键入`colima `然后按`Tab`键，就可以看到各种候选参数：
+说明这个工具自带了命令补全配置，通过 Homebrew 安装后就可以直接使用了。例如在终端里里键入`colima `然后按`Tab`键，就可以看到各种候选参数：
 
 ```
 completion  -- Generate completion script
@@ -407,13 +409,13 @@ delete      -- delete and teardown Colima
 ...
 ```
 
-然而，如果你使用的是 Apple silicon 电脑，那么这样还不行。具体参考[brew Shell Completion](https://docs.brew.sh/Shell-Completion)。简而言之，Z shell 通过`compinit`命令来启用自动补全，`compinit`会遍历`$fpath`变量里的目录，加载其中的自动补全配置。对于 Intel 电脑， Homebrew 会把自动补全配置安装到`/usr/local/share/zsh/site-functions`目录中，这也是 Z shell默认的`$fpath`。但是对于 Apple silicon 电脑， Homebrew 的目录变成了`/opt/homebrew/share/zsh/site-functions`，所以需要我们自己配置一下，把以下内容添加到`~/.zprofile`文件里：
+然而，如果你使用的是 Apple silicon 电脑，那么这样还不行。具体参考 [brew Shell Completion](https://docs.brew.sh/Shell-Completion)。简而言之，Z shell 通过`compinit`命令来启用命令补全，`compinit`会遍历`$fpath`变量里的目录，加载其中的命令补全配置。对于 Intel 电脑， Homebrew 会把命令补全配置安装到`/usr/local/share/zsh/site-functions`目录中，这也是 Z shell 默认的`$fpath`。但是对于 Apple silicon 电脑， Homebrew 的目录变成了`/opt/homebrew/share/zsh/site-functions`，所以需要我们自己配置一下，把以下内容添加到`~/.zprofile`文件里：
 
 ```sh
 FPATH="/opt/homebrew/share/zsh/site-functions:${FPATH}"
 ```
 
-我看到很多文章建议使用`zsh-completions`(https://github.com/zsh-users/zsh-completions)。其实这不是自动补全必须的，这个仓库包含了很多 Homebrew 的工具没有带的，常用命令的自动补全配置，例如`mvn`、`yarn`。如果你需要用到它们，可以安装它。
+我看到很多文章建议使用 [zsh-completions](https://github.com/zsh-users/zsh-completions)。其实这不是命令补全必须的，这个仓库包含了很多 Homebrew 的工具没有带的、常用命令的补全配置，例如`mvn`、`yarn`。如果你需要用到它们，可以安装它。
 
 ### Git 常用别名
 
@@ -669,6 +671,12 @@ asdf install java latest:temurin-21
 ```
 
 asdf-vm 还需要对环境变量`PATH`做一些[更改](https://asdf-vm.com/guide/getting-started.html#_3-install-asdf)。幸好还有[`asdf for oh-my-zsh`插件](https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/asdf/asdf.plugin.zsh)，可以帮助完成设置。
+
+需要注意的是，这个插件依赖于 Homebrew，所以在插件配置时需要把`brew`放在`asdf`前面，例如：
+
+```
+plugins=(git z history brew asdf)
+```
 
 替代品有 [SDKMAN!](https://sdkman.io)。
 
