@@ -378,6 +378,43 @@ Oh My Zsh 还有很多[有价值的插件](https://github.com/robbyrussell/oh-my
 
 替代品有基于 [fish shell](https://fishshell.com/) 的 [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)，基于 Bash 的 [Oh My Bash](https://github.com/ohmybash/oh-my-bash)。
 
+### 自动补全
+
+Z shell 支持自动补全，而 Oh My Zsh 会默认启用它。现在你在终端里里键入`curl -`然后按`Tab`键，就可以看到各种候选参数：
+
+```
+--data         -d  -- HTTP POST data
+--fail         -f  -- Fail fast with no output on HTTP errors
+...
+```
+
+再次按下`Tab`键还可以通过方向键选择参数。
+
+我们通过 Homebrew 查看工具的信息时，例如`brew info colima`：
+
+```
+==> Caveats
+zsh completions have been installed to:
+  /usr/local/share/zsh/site-functions
+...
+```
+
+说明这个工具自带了自动补全配置，通过 Homebrew 安装后就可以直接使用了。例如在终端里里键入`colima `然后按`Tab`键，就可以看到各种候选参数：
+
+```
+completion  -- Generate completion script
+delete      -- delete and teardown Colima
+...
+```
+
+然而，如果你使用的是 Apple silicon 电脑，那么这样还不行。具体参考[brew Shell Completion](https://docs.brew.sh/Shell-Completion)。简而言之，Z shell 通过`compinit`命令来启用自动补全，`compinit`会遍历`$fpath`变量里的目录，加载其中的自动补全配置。对于 Intel 电脑， Homebrew 会把自动补全配置安装到`/usr/local/share/zsh/site-functions`目录中，这也是 Z shell默认的`$fpath`。但是对于 Apple silicon 电脑， Homebrew 的目录变成了`/opt/homebrew/share/zsh/site-functions`，所以需要我们自己配置一下，把以下内容添加到`~/.zprofile`文件里：
+
+```sh
+FPATH="/opt/homebrew/share/zsh/site-functions:${FPATH}"
+```
+
+我看到很多文章建议使用`zsh-completions`(https://github.com/zsh-users/zsh-completions)。其实这不是自动补全必须的，这个仓库包含了很多 Homebrew 的工具没有带的，常用命令的自动补全配置，例如`mvn`、`yarn`。如果你需要用到它们，可以安装它。
+
 ### Git 常用别名
 
 几乎每个人都会使用一些方法比如 Git 别名来提高效率，几乎所有人都会把使用`git st`来代替`git status`。然而这需要手动设置，每个人也都不完全一样。
