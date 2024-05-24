@@ -666,7 +666,7 @@ brew install asdf
 可以使用前缀的方式来安装最新稳定版本：
 
 ```sh
-asdf plugin add java https://github.com/halcyon/asdf-java.git
+asdf plugin add java
 asdf install java latest:temurin-21
 ```
 
@@ -675,8 +675,10 @@ asdf-vm 还需要对环境变量`PATH`做一些[更改](https://asdf-vm.com/guid
 需要注意的是，这个插件依赖于 Homebrew，所以在插件配置时需要把`brew`放在`asdf`前面，例如：
 
 ```
-plugins=(git z history brew asdf)
+plugins=(git z history brew asdf gradle)
 ```
+
+使用 asdf-vm 安装的工具的[命令补全](#命令补全)可能会有问题。每个命令的补全配置需要额外安装，使用 Homebrew 往往会自动安装补全配置。另外 Oh My Zsh 也可能带了补全配置，例如 [Gradle](https://github.com/gradle/gradle-completion)。
 
 替代品有 [SDKMAN!](https://sdkman.io)。
 
