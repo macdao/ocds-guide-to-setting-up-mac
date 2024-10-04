@@ -503,9 +503,13 @@ brew install bclm
 
 参考[几个月电池健康掉到90%？这样充电电池寿命延长3倍（非标题党）](https://www.bilibili.com/video/BV1Ha411F7rg/?share_source=copy_web)。
 
+最近我的 M3 Max Macbook Pro 升级到 macOS 的最新版本（14.7）后， BCLM [不能使用了](https://github.com/zackelia/bclm/issues/49)。我正在尝试使用 [batt](https://github.com/charlie0129/batt) 替代。`batt`也可以使用 Homebrew 安装。注意安装好后需要使用`sudo brew services start batt`来启动服务。
+
 ### [AlDente](https://apphousekitchen.com/)
 
 AlDente 可以视为 BCLM 的加强版，它会安装一个 Helper，让电量维持在 20-100 之间的任意值，这一点比 BCLM 强大。
+
+使用过一段时候后，我发现 AlDente 会占用我的 Menu Bar，让我的刘海 MacBook Pro 的 Menu Bar 空间更加拙荆见肘。我还是喜欢命令行和开源，所以最近在尝试`batt`。
 
 ### [totp-cli](https://github.com/yitsushi/totp-cli)
 
