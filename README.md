@@ -254,6 +254,14 @@ defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
 
 在默认顺序中，Launchpad 第一屏只有 Apple 自家应用。
 
+在我更新到 macOS 15.2 以后，上面命令就失效了，我[找到](https://forums.macrumors.com/threads/macos-15-2-launchpad-default-layout.2445232/)了下面这个命令：
+
+```sh
+find 2>/dev/null /private/var/folders/ -type d -name com.apple.dock.launchpad -exec rm -rf {} +; killall Dock
+```
+
+这个命令查找目录`/private/var/folders/`下名为`com.apple.dock.launchpad`的文件夹，然后删除。
+
 ## 2. 常用工具
 
 本节介绍一些常用的，跟开发没有直接关系的第三方应用及其设置。
